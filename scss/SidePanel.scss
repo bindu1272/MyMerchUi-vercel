@@ -1,0 +1,111 @@
+.filter_modal{
+  transition-timing-function: ease-in;
+  transition: 0.2s;
+  transform: translateX(-450px);
+  position: fixed;
+  width: 400px;
+  background-color: #ffffff;
+  height: 100%;
+  z-index: 9999999;
+  top: 0;
+  opacity: 0;
+  overflow: hidden;
+  @media(max-width:1025px){
+    width: 100%;
+    transform: translateX(-110%);
+  }
+}
+.filter_modal_open{
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+   transform: translateX(0);
+   opacity: 1;
+   overflow: visible;
+}
+.side_panel_section {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+  .top_title_header {
+    position: relative;
+    background-color: #d1dde6;
+    min-height: 80px;
+    @include displayFlex;
+    @include alignItemsCenter;
+    @include justifyContentCenter;
+    margin: 0;
+    h1 {
+      color: #0b1920;
+      line-height: normal;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close_btn {
+      position: absolute;
+      right: -20px;
+      background-color: #0032a0;
+      border-radius: 100px;
+      height: 40px;
+      width: 40px;
+      font-size: 20px;
+      @include displayFlex;
+      @include alignItemsCenter;
+      @include justifyContentCenter;
+      color: #ffffff;
+      @media(max-width:1025px){
+        right: 20px;
+      }
+    }
+  }
+  .panel_info_block {
+    padding: 20px;
+
+    .product_title {
+      color: #0b1920;
+      line-height: normal;
+      text-align: center;
+      margin: 0 0 30px 0;
+    }
+  }
+  .left_colour_panel {
+    display: inline-flex;
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    .color_section {
+      width: 20px;
+      height: 20px;
+      margin: 8px 5px;
+      transition: box-shadow 0.25s;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px transparent;
+      display: inline-block;
+      border: 1px solid #ebebeb;
+      position: relative;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .active {
+      border-radius: 100px;
+      display: inline-block;
+      margin-left: 10px;
+      border: solid 3px #a1afb3;
+    }
+  }
+  .category_block {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style-type: none;
+        font-family: $Neutra-Text;
+        font-size: 17px;
+        @include displayFlex;
+        @include alignItemsCenter;
+        @include flexDirectionRow;
+        line-height: 40px;
+        .avaiable-items {
+          color: #adadac;
+        }
+      }
+    }
+  }
+}

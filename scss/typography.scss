@@ -1,0 +1,136 @@
+// TYPOGRAPHY
+// @font-face {
+//   font-family: "Neutra Text";
+//   src: url("./fonts/NeutraText-Book.eot");
+//   src: url("./fonts/NeutraText-Book.eot?#iefix") format("embedded-opentype"),
+//     url("./fonts/NeutraText-Book.woff2") format("woff2"),
+//     url("./fonts/NeutraText-Book.woff") format("woff"),
+//     url("./fonts/NeutraText-Book.svg#NeutraText-Book") format("svg");
+//   font-style: normal;
+//   font-display: swap;
+// }
+@font-face {
+  font-family: "Neutra Text Alt";
+  src: url("https://db.onlinewebfonts.com/t/d4b7563549083b581a03472d6defc49f.eot");
+    src: url("https://db.onlinewebfonts.com/t/d4b7563549083b581a03472d6defc49f.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d4b7563549083b581a03472d6defc49f.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d4b7563549083b581a03472d6defc49f.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/d4b7563549083b581a03472d6defc49f.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d4b7563549083b581a03472d6defc49f.svg#NeutraText-BoldAlt")format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neutra Text";
+  src: url("https://db.onlinewebfonts.com/t/90820e3d7b32d7491b62bd1aae2aafbe.eot");
+  src: url("https://db.onlinewebfonts.com/t/90820e3d7b32d7491b62bd1aae2aafbe.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/90820e3d7b32d7491b62bd1aae2aafbe.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/90820e3d7b32d7491b62bd1aae2aafbe.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/90820e3d7b32d7491b62bd1aae2aafbe.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/90820e3d7b32d7491b62bd1aae2aafbe.svg#NeutraText-Book")format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neutra Text Demi Alt";
+  src: url("https://db.onlinewebfonts.com/t/dc7655bbe821034b0cc65201bd672124.eot");
+  src: url("https://db.onlinewebfonts.com/t/dc7655bbe821034b0cc65201bd672124.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/dc7655bbe821034b0cc65201bd672124.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/dc7655bbe821034b0cc65201bd672124.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/dc7655bbe821034b0cc65201bd672124.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/dc7655bbe821034b0cc65201bd672124.svg#Neutraface Text Demi Alt")format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+
+$Neutra-Text: "Neutra Text";
+$Neutra-Text-Alt: "Neutra Text Alt";
+$Neutra-Text-Demi-Alt: "Neutra Text Demi Alt";
+@mixin BannerTitle {
+  font-size: 65px;
+  font-family: $Neutra-Text-Alt;
+  font-weight: 700;
+}
+
+@mixin Title {
+  font-family: $Neutra-Text-Alt;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@mixin BodyText {
+  font-family: $Neutra-Text;
+  font-size: 16px;
+  line-height: 20px;
+  @media (min-width: 1140px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@mixin BodyTextBold {
+  font-family: $Neutra-Text-Alt;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@mixin HeaderRolloverBox {
+  font-family: $Neutra-Text-Demi-Alt;
+  font-size: 20px;
+}
+
+@mixin Button {
+  font-family: $Neutra-Text-Demi-Alt;
+  font-size: 14px;
+  @media (min-width: 1140px) {
+    font-size: 15px;
+  }
+}
+
+@mixin Navigation {
+  font-family: $Neutra-Text-Demi-Alt;
+  font-size: 16px;
+}
+
+@mixin IconHeading {
+  font-family: $Neutra-Text;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@mixin BigNumbers {
+  font-family: $Neutra-Text-Alt;
+  font-size: 187px;
+}
+
+@mixin PercentageText {
+  font-family: $Neutra-Text-Alt;
+  font-size: 100px;
+}
+
+@mixin Neutra-Text-Alt {
+  font-family: $Neutra-Text-Alt;
+}
+
+@mixin Neutra-Text {
+  font-family: $Neutra-Text;
+}
+
+@mixin body-text {
+  font-size: 18px;
+  font-family: $Neutra-Text;
+}
+
+.numbers-text {
+  font-family: $Neutra-Text-Alt;
+  font-size: 17px;
+}
+
+.sub-heading {
+  font-family: $Neutra-Text-Alt;
+  font-size: 24px;
+  line-height: 37px;
+}

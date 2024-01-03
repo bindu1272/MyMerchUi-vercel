@@ -1,0 +1,203 @@
+.blog_details_section {
+  background-color: #fff;
+  .blog_details_container {
+    .top_border {
+      width: 42px;
+      height: 4px;
+      background-color: #ff808b;
+      margin: 0 auto;
+      @media (min-width: 1140px) {
+        height: 8px;
+        width: 84px;
+      }
+    }
+    .merch_title {
+      padding: 34px 0 21px 0;
+      margin: 0 auto;
+      font-weight: 700;
+      max-width: 947px;
+      line-height: 28px;
+      @media (min-width: 768px) {
+        padding: 17px 0 20px 0;
+        line-height: 42px;
+      }
+      @media (min-width: 1140px) {
+        padding: 38px 0 33px 0;
+      }
+    }
+    .merch_description {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 500;
+      @media (max-width: 1140px) {
+        line-height: 24px;
+      }
+      &.blog_text {
+        font-weight: 700;
+        font-family: $Neutra-Text-Alt;
+        @media (max-width: 1140px) {
+          line-height: 24px;
+        }
+      }
+      @media (min-width: 1140px) {
+        max-width: 716px;
+      }
+      @media (max-width: 1140px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .img_block {
+      padding: 0 0 20px 0;
+      text-align: center;
+      display: none;
+
+      @media (min-width: 768px) {
+        padding-bottom: 25px;
+      }
+      @media (min-width: 1140px) {
+        padding-bottom: 47px;
+        display: block;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+      &.tablet {
+        display: none;
+        @media (min-width: 768px) and (max-width: 990px) {
+          display: block;
+        }
+      }
+      &.mobile {
+        display: none;
+        @media (max-width: 767px) {
+          display: block;
+        }
+      }
+    }
+    .cs_img_section {
+      .img_block {
+        padding-bottom: 13px;
+        @media (min-width: 768px) {
+          padding-bottom: 18px;
+        }
+        @media (min-width: 1140px) {
+          padding-bottom: 28px;
+        }
+      }
+      @media (max-width: 1140px) {
+        margin: 0 -9px;
+      }
+      .col-sm-6,
+      .col-sm-12 {
+        @media (max-width: 1140px) {
+          padding: 0 9px;
+        }
+      }
+    }
+    .bottom_full_img {
+      @media (min-width: 1140px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  .cs_list_items {
+    background: #f2f2f2;
+    padding: 34px 0 30px 0;
+    @media (min-width: 768px) {
+      padding: 27px 0 22px 0;
+    }
+    @media (min-width: 1140px) {
+      padding: 58px 0 22px 0;
+    }
+    .cs_bottom_list {
+      text-align: center;
+      p {
+        font-family: $Neutra-Text;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23px;
+        @media (min-width: 1140px) {
+          font-size: 20px;
+        }
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 15px;
+        margin-top: 30px;
+        max-width: 716px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        li {
+          font-family: $Neutra-Text;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 700;
+          color: #0072ce;
+          text-align: center;
+          position: relative;
+          list-style: none;
+          span {
+            background-color: #0072ce;
+            height: 4px;
+            width: 4px;
+            display: inline-block;
+            border-radius: 100px;
+            position: relative;
+            top: -2px;
+            margin-right: 8px;
+          }
+          @media (min-width: 1140px) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .blog_written_user {
+    background: #f2f2f2;
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    .b_avatar_block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .avatar_info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        p,
+        label {
+          font-family: $Neutra-Text;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 700;
+          color: #0072ce;
+          margin: 0;
+          span {
+            font-family: $Neutra-Text;
+            font-weight: 500;
+          }
+        }
+      }
+      .avatar {
+        height: 74px;
+        width: 74px;
+        overflow: hidden;
+        border-radius: 100px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
