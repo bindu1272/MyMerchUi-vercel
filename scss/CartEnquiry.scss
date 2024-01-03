@@ -1,0 +1,1673 @@
+.cart_steps {
+  background-color: $MerchBlue;
+  min-height: 64px;
+  @include displayFlex;
+  @include alignItemsCenter;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  @media (min-width: 768px) {
+    min-height: 60px;
+  }
+  @media (min-width: 1140px) {
+    min-height: 88px;
+  }
+  .dt_btn {
+    display: none !important;
+    @media (min-width: 768px) {
+      display: block !important;
+    }
+  }
+  .m_btn {
+    display: block !important;
+
+    @media (min-width: 767px) {
+      display: none !important;
+    }
+  }
+  .btn_white {
+    text-decoration: none;
+    min-width: 88px;
+    min-height: 34px;
+    height: auto;
+    border: none;
+    @media (min-width: 768px) {
+      min-width: 118px;
+    }
+    @media (min-width: 1140px) {
+      min-width: 160px;
+      min-height: 48px;
+    }
+  }
+  label {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    @media (min-width: 1140px) {
+      font-size: 26px;
+      line-height: 22px;
+    }
+    &.active {
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+  .line {
+    margin: 0 6px;
+    width: 16px;
+    border-bottom: dotted 4px rgba(232, 237, 242, 0.6);
+    display: inline-block;
+    margin-top: 5px !important;
+    @media (min-width: 768px) {
+      width: 60px;
+      margin: 0 20px;
+    }
+    @media (min-width: 1140px) {
+      width: 85px;
+      border-width: 5px;
+      margin: 0 30px;
+    }
+  }
+}
+.cart_enquiry_items_section {
+  .container {
+    position: relative;
+  }
+  .ed_title {
+    font-family: $Neutra-Text-Alt;
+    font-size: 14px;
+    line-height: 29px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 5px;
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 42px;
+      margin-bottom: 8px;
+    }
+  }
+  .category_title {
+    font-family: $Neutra-Text-Alt;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 114, 206, 1);
+    margin-bottom: 20px;
+    @media (min-width: 1140px) {
+      margin-bottom: 13px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  .no_of_packs {
+    font-family: $Neutra-Text-Alt;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @media (min-width: 1140px) {
+      position: relative;
+      font-size: 23px;
+      line-height: 42px;
+      margin-bottom: 26px;
+    }
+    .anticon {
+      font-size: 18px;
+    }
+  }
+  background-color: $LightGrey;
+  .cart_item {
+    @include displayFlex;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    margin-bottom: 40px;
+    @media (min-width: 768px) {
+      margin-bottom: 28px;
+    }
+    @media (min-width: 1140px) {
+      margin-bottom: 41px;
+    }
+    .cart_img {
+      height: 93px;
+      width: 93px;
+      overflow: hidden;
+      border: solid 1px #c2c6c9;
+      background-color: #fff;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media (min-width: 1140px) {
+        height: 135px;
+        width: 135px;
+      }
+      @media (min-width: 1140px) {
+        margin-right: 30px;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    .cart_item_info {
+      width: 69%;
+      .bg_color {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        border-radius: 100%;
+        margin: 0 5px;
+        @media (min-width: 1140px) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      h4 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 0;
+        font-family: $Neutra-Text-Alt;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        border: none;
+        height: auto;
+        min-width: auto;
+        background-color: transparent;
+        @media (min-width: 1140px) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        span {
+          margin: 0;
+          width: auto;
+        }
+      }
+      .ant-btn {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 15px;
+        font-family: $Neutra-Text-Alt;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        border: none;
+        height: auto;
+        min-width: auto;
+        background-color: transparent;
+        @media (min-width: 1140px) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        span {
+          margin: 0;
+          width: auto;
+        }
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+        @media (min-width: 1140px) {
+          margin-bottom: 5px;
+        }
+      }
+      .item_price_details {
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        @media (max-width: 767px) {
+          bottom: 0;
+        }
+        h6 {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 17px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #000;
+          margin: 0;
+          font-family: $Neutra-Text-Demi-Alt;
+          @media (min-width: 1140px) {
+            font-size: 23px;
+            line-height: 24px;
+          }
+        }
+        h5 {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #000;
+          font-family: $Neutra-Text-Demi-Alt;
+          margin-bottom: 0;
+          @media (min-width: 768px) {
+            font-size: 18px;
+          }
+        }
+      }
+      .cart_link_info {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        @media (max-width: 768px) {
+          .packs_filter_option {
+            margin: 0 -30px;
+            width: auto;
+            top: 80px;
+          }
+        }
+        @media (min-width: 1140px) {
+          .packs_filter_option {
+            top: 110px;
+          }
+        }
+        a {
+          color: $MerchBlue;
+          text-decoration: underline;
+          font-family: $Neutra-Text-Alt;
+          font-size: 12px;
+          line-height: 17px;
+          @media (min-width: 1140px) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+        .delete_link {
+          color: #747576;
+          text-decoration: none;
+          margin: 0;
+          padding: 0;
+          height: auto;
+          min-width: auto;
+          border: none;
+          background-color: transparent;
+          i {
+            margin: 0 0 0 7px;
+            font-size: 16px;
+            @media (min-width: 1140px) {
+              font-size: 24px;
+              margin: 0 0 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sub_total_info {
+    padding: 20px 0;
+    @media (min-width: 768px) {
+      padding: 25px 0;
+    }
+    @media (min-width: 1140px) {
+      padding: 35px 0;
+    }
+    @media (min-width: 768px) and (max-width: 1140px) {
+      .col-sm-6 {
+        padding-left: 15px;
+      }
+    }
+    border-top: solid 1.5px #000;
+    .st_mb {
+      margin-bottom: 15px;
+      @media (min-width: 1140px) {
+        margin-bottom: 30px;
+      }
+    }
+    h6 {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: right;
+      font-family: $Neutra-Text-Demi-Alt;
+      color: #000;
+      margin: 0;
+      @media (min-width: 1140px) {
+        font-size: 23px;
+        line-height: 24px;
+      }
+    }
+    h5 {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #000;
+      margin: 0;
+      font-family: $Neutra-Text-Demi-Alt;
+      @media (min-width: 1140px) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+.total_price_info_section {
+  .total_price_details {
+    border-top: solid 1.5px #000;
+    border-bottom: solid 1.5px #000;
+    padding: 20px 0;
+    @include displayFlex;
+    @include alignItemsCenter;
+    @include justifyContentBetween;
+    @media (min-width: 768px) {
+      padding: 27px 0 21px 0;
+    }
+    @media (min-width: 1140px) {
+      padding: 33px 0 27px 0;
+    }
+    .tc_block {
+      @include displayFlex;
+      @include alignItemsCenter;
+      h2 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #000;
+        font-family: $Neutra-Text-Alt;
+        margin-bottom: 0;
+        margin-left: 30px;
+        @media (min-width: 768px) {
+          margin-left: 55px;
+        }
+        @media (min-width: 1140px) {
+          margin-left: 80px;
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+      label {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $MerchBlue;
+        font-family: $Neutra-Text-Alt;
+        margin-bottom: 0;
+        @media (min-width: 1140px) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+      a {
+        color: $MerchBlue;
+        text-decoration: underline;
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #000;
+    font-family: $Neutra-Text-Alt;
+    margin-bottom: 0;
+    @media (min-width: 1140px) {
+      font-size: 23px;
+      line-height: 24px;
+    }
+  }
+}
+
+.price_message {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  place-items: flex-end;
+  justify-content: space-between;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 31px;
+    align-items: center;
+  }
+  @media (min-width: 1140px) {
+    margin-top: 23px;
+  }
+  .btn_blue {
+    text-decoration: none;
+    border-color: #0072ce;
+    @media (max-width: 1140px) {
+      padding-left: 24px;
+      padding-right: 24px;
+      height: 34px;
+      min-height: 34px;
+    }
+    &:disabled {
+      background-color: #0072ce;
+      opacity: 0.5;
+    }
+  }
+  p {
+    text-align: left;
+    font-family: $Neutra-Text-Demi-Alt;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 114, 206, 1);
+    margin: 0;
+    padding: 0;
+    @media (min-width: 768px) {
+      padding: 0 35px 0 0;
+    }
+    @media (min-width: 1024px) {
+      padding: 0 50px 0 0;
+    }
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+.bottom_submit_section {
+  // margin-top: 33px;
+  .submit_btn {
+    min-width: 150px;
+    @media (min-width: 1140px) {
+      min-width: 205px;
+    }
+    &[ant-click-animating-without-extra-node="false"] {
+      .ant-btn-loading-icon {
+        .anticon-spin {
+          left: -100px;
+        }
+      }
+    }
+  }
+  .ant-btn-loading-icon {
+    width: 50px !important;
+    transform: none !important;
+
+    .anticon-spin {
+      left: -40px;
+      top: 8%;
+      width: 20px;
+      height: 15px;
+      color: #fff;
+    }
+  }
+
+  .price_message {
+    justify-content: space-between;
+    border-top: 1.5px solid #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @media (min-width: 768px) {
+      padding-bottom: 170px;
+    }
+    @media (min-width: 1140px) {
+      padding-top: 33px;
+      padding-bottom: 170px;
+    }
+  }
+  .btn_blue {
+    text-decoration: none;
+    max-width: 150px;
+    min-height: 34px;
+    height: 34px;
+    @media (min-width: 1140px) {
+      max-width: 200px;
+      min-height: 48px;
+      height: 48px;
+    }
+  }
+}
+.add_final_details_section {
+  background-color: $LightGrey;
+  .merch_text_link {
+    font-size: 14px;
+    line-height: 17px;
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  .merch_description {
+    margin-bottom: 14px !important;
+    @media (max-width: 1140px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    @media (min-width: 1140px) {
+      margin-bottom: 20px !important;
+    }
+  }
+  .bottom_btn_group {
+    .btn_blue {
+    text-decoration: none;
+      span {
+        color: #fff;
+      }
+      .anticon {
+        color: #fff;
+        font-size: 15px;
+        line-height: normal;
+        margin-left: 8px;
+      }
+    }
+  }
+  .cd_title {
+    font-family: $Neutra-Text-Alt;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 11px;
+    @media (max-width: 768px) {
+      line-height: 17px;
+    }
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 42px;
+      margin-bottom: 18px;
+    }
+  }
+  .cd_radio_group {
+    font-family: $Neutra-Text-Demi-Alt;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 10px;
+    .ant-form-item {
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 13px;
+    }
+    @media (min-width: 1140px) {
+      margin-bottom: 28px;
+    }
+    .ant-radio-group {
+      @include displayFlex;
+      @include alignItemsCenter;
+      input[type="radio"] {
+        height: 12px;
+        width: 12px;
+        @media (min-width: 1140px) {
+          height: 18px;
+          width: 18px;
+        }
+      }
+      .ant-radio-inner {
+        height: 12px;
+        width: 12px;
+        @media (min-width: 1140px) {
+          height: 18px;
+          width: 18px;
+        }
+        &::after {
+          height: 10px;
+          width: 10px;
+          left: 11px;
+          top: 11px;
+          transform: scale(1);
+          @media (max-width: 1140px) {
+            height: 8px;
+            width: 8px;
+            left: 9px;
+            top: 9px;
+          }
+        }
+      }
+      .ant-space-item {
+        margin-bottom: 15px !important;
+        @media (min-width: 1140px) {
+          margin-bottom: 30px !important;
+        }
+      }
+      label {
+        @include displayFlex;
+        @include alignItemsCenter;
+        span {
+          padding-left: 0;
+          padding-right: 5px;
+        }
+        margin-right: 0;
+        &:last-child {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+  span,
+  label {
+    font-family: $Neutra-Text-Demi-Alt;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000;
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  .cd_form_section {
+    .ant-form {
+      @include displayFlex;
+      flex-wrap: wrap;
+      row-gap: 30px;
+      @media (min-width: 768px) {
+        column-gap: 57px;
+        row-gap: 12px;
+      }
+      @media (min-width: 1140px) {
+        row-gap: 20px;
+        column-gap: 90px;
+      }
+      .ant-form-item {
+        width: 45.7%;
+        margin-bottom: 0;
+        @media (min-width: 768px) and (max-width: 1140px) {
+          width: 43.5%;
+        }
+        @media (max-width: 767px) {
+          width: 100%;
+          @include flexDirectionRow;
+        }
+        .ant-form-item-label {
+          padding: 0;
+        }
+        label {
+          font-family: $Neutra-Text-Demi-Alt;
+          font-size: 14px !important;
+          font-weight: 500;
+          line-height: 17px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #000;
+          margin-bottom: 7px;
+          @media (min-width: 1140px) {
+            font-size: 18px !important;
+            line-height: 24px;
+            margin-bottom: 12px;
+          }
+        }
+        .ant-input {
+          height: 40px;
+          font-family: $Neutra-Text-Demi-Alt;
+          font-size: 14px !important;
+          font-weight: 500;
+          line-height: 17px;
+          border: 1.5px solid #c4c4c4;
+          @media (min-width: 1140px) {
+            height: 62px;
+            font-size: 18px !important;
+            line-height: 24px;
+          }
+        }
+        .ant-picker {
+          height: 40px;
+          border: 1.5px solid #c4c4c4;
+          border-radius: 6px;
+          min-width: 154px;
+          font-family: $Neutra-Text-Demi-Alt;
+          font-size: 14px !important;
+          font-weight: 500;
+          line-height: 27px;
+          @media (min-width: 1140px) {
+            height: 62px;
+            font-size: 18px !important;
+            line-height: 24px;
+            min-width: 220px;
+          }
+          .ant-picker-input {
+            input {
+              font-size: 14px;
+              @media (min-width: 1140px) {
+                font-size: 18px;
+              }
+            }
+          }
+          .ant-picker-suffix {
+            color: #d6dfe8;
+            .anticon {
+              color: #d6dfe8;
+              font-size: 20px;
+              @media (min-width: 1140px) {
+                font-size: 26px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .brand_assets_section {
+    margin: 0;
+    // @include displayFlex;
+    @include flexWrap;
+    .brand_upload_item {
+      // height: 325px;
+      // width: 329px;
+      // background-color: #fff;
+      margin: 38px 0;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #0f191f;
+        @media (max-width: 768px) {
+          font-size: 16px;
+          line-height: normal;
+        }
+        span {
+          color: $MerchBlue;
+          @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: normal;
+          }
+        }
+      }
+      .ant-upload-picture-card-wrapper {
+        height: 100%;
+        .ant-upload-list-picture-card {
+          height: 100%;
+          @include displayFlex;
+          @include flexWrap;
+          gap: 30px;
+          @media (max-width: 768px) {
+            gap: 12px;
+          }
+          &::before {
+            display: none;
+          }
+          .ant-upload-list-picture-card-container {
+            height: 325px;
+            width: 329px;
+            margin: 0;
+            @media (max-width: 768px) {
+              height: 175px;
+              width: 175px;
+            }
+            .ant-upload-list-item {
+              border: none;
+              background-color: #fff;
+            }
+          }
+          .ant-upload-select-picture-card {
+            height: 325px;
+            width: 329px;
+            border: none;
+            margin: 0;
+            padding: 30px 15px;
+            background-color: #fff;
+            @media (max-width: 768px) {
+              height: 175px;
+              width: 175px;
+            }
+            .ant-upload {
+              .anticon {
+                color: #747576;
+                font-size: 130px;
+                opacity: 0.8;
+                @media (max-width: 768px) {
+                  font-size: 80px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .img_tooltip {
+      color: $MerchBlue;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      button {
+        color: $MerchBlue;
+        font-weight: 500;
+        text-decoration: underline;
+        border: none;
+        @media (max-width: 650px) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+.img_upload_tips {
+  border: 3px solid #0072ce;
+  border-radius: 10px;
+  padding: 50px;
+  margin: 0 auto;
+  @media (max-width: 1024px) {
+    padding: 30px 20px;
+    max-width: 700px;
+    vertical-align: top !important;
+    top: 73px !important;
+  }
+  @media (max-width: 650px) {
+    max-width: 100%;
+  }
+  background-color: #fff;
+  .ant-modal-content {
+    box-shadow: none;
+    overflow: inherit;
+    .ant-modal-close {
+      position: absolute;
+      top: -40px;
+      right: -30px;
+      @media (max-width: 1140px) {
+        padding: 20px;
+        top: -50px;
+        right: -40px;
+      }
+      .ant-modal-close-x {
+        color: black;
+        font-size: 20px;
+      }
+    }
+    .ant-modal-header {
+      border: none;
+      padding: 0;
+      .ant-modal-title {
+        @include MerchTitle;
+        text-align: left !important;
+      }
+    }
+  }
+  .ant-modal-body {
+    padding: 0;
+
+    .title {
+      font-family: $Neutra-Text-Alt;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: $MerchBlue;
+      margin-bottom: 24px;
+      @media (min-width: 768px) and (max-width: 992px) {
+        line-height: 26px;
+      }
+      @media (min-width: 1140px) {
+        font-size: 38px;
+        line-height: 42px;
+        margin-bottom: 32px;
+      }
+    }
+    .header_title_section {
+      .divider {
+        padding-top: 0;
+      }
+    }
+    .info_message {
+      font-family: $Neutra-Text-Demi-Alt;
+      color: rgba(0, 114, 206, 1);
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 500;
+      margin: 20px 0 0 0;
+      padding: 0 0 0 20px;
+      position: relative;
+      @media (min-width: 1140px) {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 0 0 0 25px;
+        margin: 44px 0 0 0;
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        max-width: 82%;
+      }
+      span {
+        position: absolute;
+        left: 0;
+      }
+      strong {
+        font-family: $Neutra-Text-Alt;
+        font-weight: 700;
+      }
+    }
+    .merch_description {
+      font-family: $Neutra-Text;
+      margin: 0;
+      line-height: 30px;
+      color: #000;
+      &.margin_bottom {
+        margin-bottom: 20px;
+        @media (min-width: 1140px) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+.distribution_form_section {
+  margin-top: 10px;
+  // .ant-space-item {
+  //   .ant-radio-wrapper {
+  //     .ant-radio {
+  //       margin-top: 3px;
+  //     }
+  //   }
+  // }
+  @media (max-width: 1024px) {
+    .cd_title {
+      margin-top: 20px;
+    }
+  }
+  .ant-input {
+    border-radius: 5px;
+    border: 1.5px solid #e9edf1;
+    max-width: 420px;
+    min-height: 48px;
+    font-size: 18px;
+    font-family: $Neutra-Text-Demi-Alt;
+    @media (max-width: 650px) {
+      margin-top: 10px;
+      margin-left: -25px;
+    }
+  }
+  label {
+    @media (max-width: 767px) {
+      white-space: normal;
+      align-items: center;
+      line-height: normal;
+    }
+  }
+}
+.warehousing_from_section {
+  margin-top: 26px !important;
+  @media (min-width: 1140px) {
+    margin-top: 42px !important;
+  }
+}
+.review_collapse_section {
+  .ant-collapse {
+    border: none;
+    background-color: transparent;
+    .ant-collapse-item {
+      border: none;
+      .ant-collapse-header {
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 42px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $MerchBlue;
+        padding: 0;
+        margin: 0;
+        @include displayFlex;
+        @include alignItemsCenter;
+        @include justifyContentEnd;
+        @include flexDirectionReverse;
+        .ant-collapse-arrow {
+          position: relative;
+          top: 0;
+          left: 8px;
+        }
+      }
+      .ant-collapse-content {
+        border: none;
+        background-color: transparent;
+        .ant-collapse-content-box {
+          padding: 13px 0 20px 0;
+          @media (min-width: 768px) {
+            padding: 17px 0;
+          }
+          @media (min-width: 1140px) {
+            padding: 24px 0 12px 0;
+          }
+          p {
+            font-family: $Neutra-Text-Demi-Alt;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #000;
+            @media (max-width: 768px) {
+              margin: 0;
+            }
+          }
+          h3 {
+            font-family: $Neutra-Text;
+            font-size: 23px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 50px;
+            @media (max-width: 768px) {
+              margin-bottom: 30px;
+              font-size: 18px;
+            }
+          }
+          .text_link {
+            font-family: $Neutra-Text;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+            text-decoration-line: underline;
+            color: $MerchBlue;
+          }
+          .brand_assets_block {
+            .upload-list-inline {
+              .ant-upload-list {
+                @include displayFlex;
+                @include flexWrap;
+                column-gap: 45px;
+                &::before {
+                  display: none;
+                }
+                .ant-upload-list-picture-container {
+                  .ant-upload-list-item {
+                    border: none;
+                    padding: 0;
+                    height: auto;
+                    margin: 0;
+                    .ant-upload-list-item-info {
+                      .ant-upload-span {
+                        @include flexWrap;
+                        width: 210px;
+                        .ant-upload-list-item-name {
+                          padding: 0;
+                          margin: 0;
+                          width: 80%;
+                          font-family: $Neutra-Text;
+                          font-style: normal;
+                          font-weight: 500;
+                          font-size: 18px;
+                          line-height: 24px;
+                          text-decoration-line: underline;
+                          color: $MerchBlue;
+                        }
+                        .ant-upload-list-item-card-actions {
+                          width: 20%;
+
+                          .ant-upload-list-item-card-actions-btn {
+                            min-width: auto;
+                            .anticon-delete {
+                              font-size: 18px !important;
+                              color: #747576 !important;
+                            }
+                          }
+                        }
+                        .ant-upload-list-item-thumbnail {
+                          height: 210px;
+                          width: 210px;
+                          opacity: 9;
+                          margin-bottom: 15px;
+                          border: 1px solid #c2c6c9;
+                          .ant-upload-list-item-image {
+                            height: 100%;
+                            width: 100%;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.upload_brand_assets_section {
+  .cd_title {
+    font-family: $Neutra-Text-Alt;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 11px;
+    @media (max-width: 768px) {
+      line-height: 17px;
+    }
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 42px;
+      margin-bottom: 18px;
+    }
+  }
+  .upload_info {
+    margin-bottom: 15px;
+    display: flex;
+    column-gap: 20px;
+  }
+
+  .ant-upload-list-text {
+    display: none;
+  }
+  .ant-upload-list {
+    &.ant-upload-list-text {
+      .ant-upload-list-text-container {
+        .ant-upload-list-item {
+          .ant-upload-list-item-info {
+            .ant-upload-span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  .merch_description {
+    text-align: left !important;
+    margin-bottom: 32px;
+    @media (max-width: 1140px) {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
+  }
+  p {
+    margin-bottom: 16px;
+    font-family: $Neutra-Text-Demi-Alt;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    @media (min-width: 1140px) {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 0;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      padding-right: 130px;
+    }
+  }
+  .ant-upload-picture-card-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    width: auto;
+    .ant-upload-list {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      overflow-y: hidden;
+      height: 100%;
+      padding-bottom: 40px;
+      .ant-upload-list-picture-card-container {
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        margin-right: 15px;
+        margin-bottom: 0;
+        @media (min-width: 1140px) {
+          width: 270px;
+          height: 270px;
+        }
+        .ant-upload-list-item {
+          border: none;
+          .ant-upload-list-item-info {
+            overflow: visible;
+            .ant-upload-list-item-thumbnail {
+              opacity: 1;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              width: 100%;
+              background-color: #f2f2f2;
+              img {
+                height: auto;
+                width: auto;
+              }
+            }
+            .ant-upload-list-item-name {
+              display: block;
+              text-align: left;
+              font-family: $Neutra-Text;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 24px;
+              letter-spacing: 0em;
+              text-align: left;
+              color: #000;
+              margin-top: 22px;
+              @media (max-width: 767px) {
+                margin-top: 0;
+                position: absolute;
+                bottom: -35px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .ant-upload-select {
+        border: none;
+        background-color: transparent;
+        height: 100%;
+        width: auto;
+        margin-left: 13px;
+        .ant-btn {
+          border-radius: 40px;
+          background: #0072ce;
+          border: none;
+          color: #fff;
+          font-family: $Neutra-Text;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: left;
+          min-width: 70px;
+          height: 34px;
+          span {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          @media (min-width: 1140px) {
+            font-size: 15px;
+            line-height: 24px;
+          }
+          @media (min-width: 1140px) {
+            min-width: 105px;
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+  .ant-upload-drag {
+    height: 200px;
+    width: 200px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    @media (min-width: 1140px) {
+      height: 270px;
+      width: 270px;
+    }
+    .anticon {
+      color: #747576 !important;
+      font-size: 70px !important;
+      @media (min-width: 1140px) {
+        font-size: 100px !important;
+      }
+    }
+    label {
+      color: #0f191f;
+      font-size: 15px;
+      @media (min-width: 1140px) {
+        font-size: 20px;
+      }
+    }
+    p {
+      font-size: 15px;
+      font-weight: 700;
+      font-family: $Neutra-Text-Alt;
+      @media (max-width: 1140px) {
+        margin: 0;
+        padding: 0;
+      }
+      @media (min-width: 1140px) {
+        font-size: 20px;
+      }
+      span {
+        color: $MerchBlue;
+        font-size: 15px;
+        @media (min-width: 1140px) {
+          font-size: 20px;
+        }
+      }
+    }
+    .ant-upload {
+      padding: 0;
+      .ant-upload-drag-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 15px;
+        @media (min-width: 1140px) {
+          padding: 25px;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.cp_loader {
+  background-color: #fff;
+  left: 0;
+  top: 73px;
+  position: absolute;
+  padding: 30px 0;
+  width: 100%;
+  z-index: 99;
+  @media (min-width: 1140px) {
+    top: 130px;
+    padding: 64px 0;
+  }
+  .title {
+    font-family: $Neutra-Text-Alt;
+    font-size: 22px;
+    line-height: 23px;
+    color: rgba(0, 114, 206, 1);
+    padding: 15px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @media (min-width: 1140px) {
+      font-size: 38px;
+      line-height: 42px;
+      padding: 38px 0;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      border-bottom: 4px solid #ff808b;
+      width: 40px;
+      position: absolute;
+      top: 0;
+      @media (min-width: 1140px) {
+        border-bottom: 8px solid #ff808b;
+        width: 83px;
+      }
+    }
+  }
+
+  .cp_box_loading {
+    @media (max-width: 1140px) {
+      height: 83px;
+      width: 103px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.curated_packs_items {
+  .cart_item {
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
+  }
+  .cp_info {
+    max-width: 68%;
+    .merch_description {
+      margin-bottom: 20px;
+      @media (max-width: 1140px) {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 12px;
+      }
+    }
+    .merch_title {
+      margin-bottom: 5px;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+      @media (min-width: 768px) {
+        font-size: 15px;
+        line-height: 16px;
+        margin-bottom: 12px;
+      }
+      @media (min-width: 1140px) {
+        font-size: 23px;
+        line-height: 24px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  .cp_sub_items {
+    @media (min-width: 768px) {
+      margin-left: 115px;
+    }
+    @media (min-width: 1140px) {
+      margin-left: 165px;
+    }
+    .sub_items_title {
+      font-family: $Neutra-Text-Alt;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 30px;
+
+      @media (min-width: 1140px) {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 12px;
+      }
+    }
+    .cart_item_info {
+      width: 100%;
+      p {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+// SIZE GUIDE MODAL
+
+.size_guide_modal {
+  .ant-modal-content {
+    border-radius: 0;
+    padding: 43px 20px 20px 23px;
+    width: auto !important;
+    background-color: #fff;
+    border: solid 1.7721px $MerchBlue;
+    border-radius: 5px;
+    max-width: 670px;
+    margin: 30px auto 0 auto;
+    @media (min-width: 1140px) {
+      padding: 50px;
+      border: solid 3px $MerchBlue;
+      border-radius: 10px;
+      max-width: 1070px;
+      margin: 40px auto 0 auto;
+    }
+
+    .ant-modal-close {
+      top: 15px;
+      right: 15px;
+      @media (min-width: 768px) {
+        top: 21px;
+        right: 21px;
+      }
+      @media (min-width: 1140px) {
+        top: 34px;
+        right: 42px;
+      }
+      .ant-modal-close-x {
+        height: 19px;
+        width: 19px;
+        line-height: normal;
+        color: rgba(15, 25, 31, 1);
+        display: flex;
+        align-items: center;
+        .anticon {
+          font-size: 19px;
+        }
+      }
+    }
+    .ant-modal-body {
+      padding: 0;
+      @media (min-width: 1140px) {
+        width: 875px;
+      }
+      .header_title_section {
+        .divider {
+          padding-top: 0;
+          margin-bottom: 34px;
+          @media (max-width: 767px) {
+            margin-bottom: 25px;
+          }
+        }
+      }
+
+      .title {
+        font-family: $Neutra-Text-Alt;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $MerchBlue;
+        margin-bottom: 24px;
+
+        @media (min-width: 1140px) {
+          font-size: 38px;
+          line-height: 42px;
+          margin-bottom: 32px;
+        }
+      }
+      p {
+        font-family: $Neutra-Text-Demi-Alt;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $MerchBlue;
+        margin-left: 20px;
+        margin-bottom: 30px;
+      }
+      .size_info {
+        margin-bottom: 30px;
+        table {
+          width: 100%;
+          thead {
+            border-bottom: 1.03554px solid #000000;
+            tr {
+              th {
+                padding: 15px 0;
+                font-family: $Neutra-Text-Alt;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 32px;
+                letter-spacing: 0em;
+                text-align: center;
+                @media (min-width: 768px) {
+                  text-align: left;
+                }
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                padding-top: 15px;
+                font-family: $Neutra-Text-Demi-Alt;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 32px;
+                letter-spacing: 0em;
+                text-align: center;
+                @media (min-width: 768px) {
+                  text-align: left;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.error_modal {
+  border: 3px solid #0072ce;
+  border-radius: 10px;
+  padding: 0;
+  .ant-modal-content {
+    padding: 30px;
+    @media (min-width: 1140px) {
+      padding: 80px 50px;
+    }
+    .ant-modal-body {
+      padding: 0;
+    }
+    .error_icon {
+      color: #ff0f00;
+      font-size: 40px;
+      @media (min-width: 1140px) {
+        font-size: 80px;
+      }
+    }
+    h1 {
+      color: #ff0f00;
+      margin: 24px 0 0 0;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 26px;
+      font-family: $Neutra-Text-Alt;
+      @media (min-width: 1140px) {
+        font-size: 38px;
+        line-height: 42px;
+      }
+    }
+  }
+}
+
+.enquiry_products_page {
+  .floating_icon {
+    top: 150px !important;
+    @media (min-width: 1140px) {
+      top: 240px !important;
+    }
+  }
+}

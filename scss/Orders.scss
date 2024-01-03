@@ -1,0 +1,132 @@
+.order_history_block {
+  background-color: #d1dde6;
+  .product_select .ant-select-selector{
+    height: 45px;
+  }
+  .search_bar {
+    margin-top: 20px;
+    @media (min-width: 768px) {
+      margin-top: 50px;
+    }
+    .ant-input-affix-wrapper {
+      min-height: 46px;
+      border-radius: 50px;
+      &:hover,
+      &:focus {
+        border: 1px solid #0b1920;
+        border-radius: 50px;
+        box-shadow: noneL3jn;
+      }
+    }
+    .ant-input {
+      background-color: #ffffff;
+      font-size: 20px;
+      border: none;
+    }
+  }
+  .filter_nav {
+    margin: 50px 0 0 0;
+    padding: 0;
+    @media (max-width: 650px) {
+      @include displayFlex;
+      @include flexDirectionColumn;
+      margin-top: 20px;
+      li {
+        margin-bottom: 15px;
+      }
+    }
+    li {
+      list-style-type: none;
+      display: inline-block;
+      a {
+        padding: 10px 15px;
+        border-radius: 30px;
+        background-color: #ffffff;
+        color: #000000;
+        @include displayFlex;
+        @include alignItemsCenter;
+        @include justifyContentCenter;
+        margin-right: 15px;
+        font-size: 16px;
+        @media (max-width: 650px) {
+          margin: 0;
+        }
+        &.active {
+          background-color: #0032a0;
+          color: #ffffff;
+        }
+        &:hover {
+          background-color: #0032a0;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  .order_history_info {
+    background-color: #ffffff;
+    border-radius: 4px;
+    // padding: 15px;
+    margin: 40px auto;
+    overflow: auto;
+  }
+}
+
+.order_confirmation {
+  @include displayFlex;
+  @include flexDirectionColumn;
+  @include alignItemsCenter;
+  @include justifyContentCenter;
+  margin: 20px;
+  margin-top: 30px;
+  button {
+    border-radius: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.order_details {
+  @include displayFlex;
+  @include flexDirectionColumn;
+  background-color: white;
+  @include alignItemsCenter;
+  .order_info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 50px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    @media (max-width: 650px) {
+      .ant-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        
+      }
+    }
+    @media (max-width: 650px) {
+    .item_details {
+      .ant-col {
+        flex: 0 0 33%;
+        max-width: 33%;
+      }
+    }
+  }
+    strong {
+      margin: 8px 0;
+      display: block;
+    }
+  }
+}
+
+.price_details {
+  border: 1px solid #e6e6e6;
+  margin: 20px 0 20px 0;
+  border-radius: 4px;
+}
+
+.total {
+  background-color: #e6e6e6;
+  padding: 10px;
+}
