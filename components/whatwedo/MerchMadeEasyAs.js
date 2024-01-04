@@ -1,4 +1,4 @@
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Carousel } from "antd";
 import S3Image from "../../common/S3Image";
 import MerchTitle from "../../components/MerchTitle";
@@ -31,7 +31,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                     STEP 1
                   </h1>
                   <div className="bottom_info">
-                    <ScrollAnimation animateIn="bounceIn" delay={100}>
+                    {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
                       <S3Image
                         src={
                           activeStep === 0
@@ -44,7 +44,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                       <h2 className={activeStep === 0 ? "step_active" : ""}>
                         Match merch <br /> with your goals
                       </h2>
-                    </ScrollAnimation>
+                    </ScrollAnimation> */}
                   </div>
                 </div>
                 <div className="step_item">
@@ -52,7 +52,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                     STEP 2
                   </h1>
                   <div className="bottom_info">
-                    <ScrollAnimation animateIn="bounceIn" delay={200}>
+                    {/* <ScrollAnimation animateIn="bounceIn" delay={200}>
                       <S3Image
                         src={
                           activeStep === 1
@@ -65,7 +65,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                       <h2 className={activeStep === 1 ? "step_active" : ""}>
                         Approve your <br /> bespoke design
                       </h2>
-                    </ScrollAnimation>
+                    </ScrollAnimation> */}
                   </div>
                 </div>
                 <div className="step_item">
@@ -73,7 +73,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                     STEP 3
                   </h1>
                   <div className="bottom_info">
-                    <ScrollAnimation animateIn="bounceIn" delay={300}>
+                    {/* <ScrollAnimation animateIn="bounceIn" delay={300}>
                       <S3Image
                         src={
                           activeStep === 2
@@ -86,7 +86,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                       <h2 className={activeStep === 2 ? "step_active" : ""}>
                         Kick back while <br /> we produce it
                       </h2>
-                    </ScrollAnimation>
+                    </ScrollAnimation> */}
                   </div>
                 </div>
                 <div className="step_item">
@@ -94,7 +94,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                     STEP 4
                   </h1>
                   <div className="bottom_info">
-                    <ScrollAnimation animateIn="bounceIn" delay={400}>
+                    {/* <ScrollAnimation animateIn="bounceIn" delay={400}>
                       <S3Image
                         src={
                           activeStep === 3
@@ -107,7 +107,7 @@ const MerchMadeEasyAs = ({ activeStep, beforeChangeStepCarousel }) => {
                       <h2 className={activeStep === 3 ? "step_active" : ""}>
                         Store, send and <br /> manage with MyMerch
                       </h2>
-                    </ScrollAnimation>
+                    </ScrollAnimation> */}
                   </div>
                 </div>
               </div>

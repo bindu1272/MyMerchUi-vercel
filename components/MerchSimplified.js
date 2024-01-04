@@ -1,4 +1,4 @@
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Carousel } from "antd";
 import S3Image from "../common/S3Image";
 
@@ -58,54 +58,54 @@ const MerchSimplified = () => {
           <div className="step_item">
             <h1 className="step_active">STEP 1</h1>
             <div className="bottom_info">
-              <ScrollAnimation animateIn="bounceIn" delay={100}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
                 <S3Image src={"/step1.svg"}  className="icon" width={130} height={130} />
-              </ScrollAnimation>
+              </ScrollAnimation> */}
             </div>
-            <ScrollAnimation animateIn="bounceIn" delay={100}>
+            {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
               <h2 className="step_active">
                 Match merch <br /> with your goals
               </h2>
-            </ScrollAnimation>
+            </ScrollAnimation> */}
           </div>
           <div className="step_item">
             <h1 className="step_active">STEP 2</h1>
             <div className="bottom_info">
-              <ScrollAnimation animateIn="bounceIn" delay={200}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={200}>
                 <S3Image src={"/step2.svg"} className="icon" width={130} height={130} />
-              </ScrollAnimation>
+              </ScrollAnimation> */}
             </div>
-            <ScrollAnimation animateIn="bounceIn" delay={200}>
+            {/* <ScrollAnimation animateIn="bounceIn" delay={200}>
               <h2 className="step_active">
                 Approve your <br /> bespoke design
               </h2>
-            </ScrollAnimation>
+            </ScrollAnimation> */}
           </div>
           <div className="step_item">
             <h1 className="step_active">STEP 3</h1>
             <div className="bottom_info">
-              <ScrollAnimation animateIn="bounceIn" delay={300}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={300}>
                 <S3Image src={"/step3.svg"} className="icon" width={130} height={130} />
-              </ScrollAnimation>
+              </ScrollAnimation> */}
             </div>
-            <ScrollAnimation animateIn="bounceIn" delay={300}>
+            {/* <ScrollAnimation animateIn="bounceIn" delay={300}>
               <h2 className="step_active">
                 Kick back while <br /> we produce it
               </h2>
-            </ScrollAnimation>
+            </ScrollAnimation> */}
           </div>
           <div className="step_item">
             <h1 className="step_active">STEP 4</h1>
             <div className="bottom_info">
-              <ScrollAnimation animateIn="bounceIn" delay={400}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={400}>
                 <S3Image src={"/step4.svg"} className="icon" width={130} height={130}/>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
             </div>
-            <ScrollAnimation animateIn="bounceIn" delay={400}>
+            {/* <ScrollAnimation animateIn="bounceIn" delay={400}>
               <h2 className="step_active">
                 Store, send and <br /> manage with MyMerch
               </h2>
-            </ScrollAnimation>
+            </ScrollAnimation> */}
           </div>
         </Carousel>
       </div>

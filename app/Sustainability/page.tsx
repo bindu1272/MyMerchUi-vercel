@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Carousel } from "antd";
 import S3Image from "@/common/S3Image";
@@ -151,11 +151,11 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
             <div className="our_commitement_section">
               <div className="our_commitement_info">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={100}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
                     <S3Image
                       src={"/sustainability/Eco-friendly-products.svg"}
                     />
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label className="max-width">Eco-friendly products</label>
                 </div>
                 <p>
@@ -166,9 +166,9 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={200}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={200}>
                     <S3Image src={"/sustainability/Reducing-waste.svg"} />
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label className="max-width">Reducing waste</label>
                 </div>
                 <p>
@@ -179,11 +179,11 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info full-width">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={300}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={300}>
                     <S3Image
                       src={"/sustainability/Paper-and-cardboard-recycling.svg"}
                     />
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label>Paper and cardboard recycling</label>
                 </div>
                 <p>
@@ -195,11 +195,11 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info w-sm-50">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={400}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={400}>
                     <S3Image
                       src={"/sustainability/Sustainable-supply-chain.svg"}
                     />
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label>Sustainable supply chain</label>
                 </div>
                 <p>
@@ -211,9 +211,9 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info w-sm-50 w-xs-100">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={500}>
                     <S3Image src={"/sustainability/Cutting-down-kWh.svg"} />
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label style={{ whiteSpace: "nowrap" }}>
                     Cutting down kWh
                   </label>

@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Carousel } from "antd";
 import S3Image from "@/common/S3Image";
 import {useDispatch } from "react-redux";
@@ -161,10 +161,10 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
           </div>
           <div className="grid_info_section mt-sm-4">
             <div className="info_block">
-              <ScrollAnimation animateIn="bounceIn" delay={100}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
                 <S3Image src={"/icons/warehouse-1.svg"} width={71} height={88} />
                 <h1>Store your merch securely</h1>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
               <p>
                 Save space and store all your merch in one of our two secure
                 warehouse facilities . With monthly inventory control and all
@@ -173,10 +173,10 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
               </p>
             </div>
             <div className="info_block">
-              <ScrollAnimation animateIn="bounceIn" delay={200}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={200}>
                 <S3Image src={"/icons/warehouse-2.svg"} width={107} height={86}/>
                 <h1>Saving you time</h1>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
               <p>
                 With us taking care of the logistics, you have more time to
                 spend on nurturing your brand. Or playing ping-pong. Your
@@ -184,10 +184,10 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
               </p>
             </div>
             <div className="info_block">
-              <ScrollAnimation animateIn="bounceIn" delay={300}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={300}>
                 <S3Image src={"/icons/warehouse-3.svg"} width={72} height={88} />
                 <h1>Feel wrapped in confidence</h1>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
               <p>
                 We carefully pick and pack your curated packs, special campaigns
                 and bulk order to make sure everything arrives safe and sound,
@@ -195,20 +195,20 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
               </p>
             </div>
             <div className="info_block">
-              <ScrollAnimation animateIn="bounceIn" delay={400}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={400}>
                 <S3Image src={"/icons/warehouse-4.svg"}  width={72} height={88}/>
                 <h1>Save on shipping</h1>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
               <p>
                 With exclusive shipping rates, you save even more with every
                 delivery.
               </p>
             </div>
             <div className="info_block">
-              <ScrollAnimation animateIn="bounceIn" delay={500}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={500}>
                 <S3Image src={"/icons/warehouse-5.svg"} width={89} height={88}/>
                 <h1>Stretch your budget</h1>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
               <p>
                 Storing your merch in our warehouse means more room for that
                 ping-pong table. But you can also save through economies of
@@ -216,10 +216,10 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
               </p>
             </div>
             <div className="info_block">
-              <ScrollAnimation animateIn="bounceIn" delay={600}>
+              {/* <ScrollAnimation animateIn="bounceIn" delay={600}>
                 <S3Image src={"/icons/warehouse-6.svg"} width={74} height={88}/>
                 <h1>Deliver anywhere</h1>
-              </ScrollAnimation>
+              </ScrollAnimation> */}
               <p>
                 We can send your merch to one person or to multiple locations in
                 Australia or anywhere in the world.

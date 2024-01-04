@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Carousel, notification } from "antd";
 import S3Image from "@/common/S3Image";
@@ -230,9 +230,9 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12 text-center">
               <div className="our_values_info_block">
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={100}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
                     <S3Image src={"/simplicity.svg"} width={106} height={126}/>
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label>Simplicity</label>
                   <p>
                     We ’re all about making things simpler in today’s complex
@@ -240,9 +240,9 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   </p>
                 </div>
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={200}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={200}>
                     <S3Image src={"/obsessed.svg"} width={124} height={124} />
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label>Obsessed</label>
                   <p>
                     With quality, our craft, customers, nailing briefs and
@@ -252,9 +252,9 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_values_info_block">
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={300}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={300}>
                     <S3Image src={"/customer-first.svg"} width={113} height={122}/>
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label>Customer-first </label>
                   <p>
                     As an extension of our customers, we put your needs first,
@@ -263,9 +263,9 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   </p>
                 </div>
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={400}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={400}>
                     <S3Image src={"/thoughtful.svg"} width={97} height={122}/>
-                  </ScrollAnimation>
+                  </ScrollAnimation> */}
                   <label>Thoughtful</label>
                   <p>
                     We carefully consider every detail to make sure we get it
