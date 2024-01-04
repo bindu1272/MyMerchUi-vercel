@@ -1,5 +1,5 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import { Button } from "antd";
 
 const InspoDetails = ({
@@ -17,10 +17,10 @@ const InspoDetails = ({
         <div className="row">
           <div className="col-sm-12">
             <div className="grid">
-              <ReactMarkdown
+              {/* <ReactMarkdown
                 source={inspo.content}
                 escapeHtml={false}
-              />
+              /> */}
             </div>
           </div>
         </div>

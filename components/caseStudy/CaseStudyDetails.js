@@ -1,5 +1,5 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 
 const CaseStudyDetails = ({
   caseStudy,
@@ -31,10 +31,11 @@ const CaseStudyDetails = ({
               {caseStudy.contentText &&
                 caseStudy.contentText.length > 0 &&
                 caseStudy.contentText.map((ct) => {
-                  return <ReactMarkdown className={'merch_description'}
-                    source={ct?.text}
-                    // escapeHtml={false}
-                  />
+                  return 
+                  // <ReactMarkdown className={'merch_description'}
+                  //   source={ct?.text}
+                  //   // escapeHtml={false}
+                  // />
                 })
               }
               <div className="row cs_img_section">
