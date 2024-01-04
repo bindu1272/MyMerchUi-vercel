@@ -32,6 +32,7 @@ import {
   fetchFooterBannersRequest,
 } from "@/actions/strapiActions";
 import Image from "next/image";
+import { useSearchParams } from "@/node_modules/next/navigation";
 
 const EnquiryProductsPage = ({
   enquiryProducts,
@@ -42,7 +43,8 @@ const EnquiryProductsPage = ({
 }:any) => {
   const dispatch = useDispatch();
   const history = useRouter();
-  const pathname = usePathname() 
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [showStepsModal, setShowStepsModal] = useState(false);
   const [productsQuantity, setProductsQuantity] = useState(
@@ -77,11 +79,9 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    let window:any={}
-    var currentUrl = new URL(window.location.href);
-    if (currentUrl.pathname.toLowerCase().startsWith("/curatedpacks")) {
+    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
       return "curated-pack";
-    } else if (currentUrl.pathname.toLowerCase().startsWith("/custompacks")) {
+    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
       return "custom-pack";
     } else {
       return "all-merch";
@@ -103,7 +103,9 @@ const EnquiryProductsPage = ({
   );
 
   useEffect(() => {
-    trackPageViewInGoogle();
+    if(typeof window != undefined){
+      trackPageViewInGoogle();
+    }
   }, []);
 
   useEffect(() => {
@@ -141,10 +143,9 @@ const EnquiryProductsPage = ({
     setLoading(true);
     let currentProductsType = getCurrentProductsType();
     let currentSearchString = "";
-    let window:any={location:{href:{}}}
-    const queryParams:any = getQueryParams(window.location.href);
-    if (queryParams.searchString) {
-      currentSearchString = queryParams.searchString;
+    const searchString:any = searchParams.get("searchString");
+    if (searchString) {
+      currentSearchString = searchString;
     }
     if (
       enquiryProducts == null ||
@@ -230,7 +231,7 @@ const EnquiryProductsPage = ({
       );
       setLoading(false);
     }
-  }, [window.location.href]);
+  }, []);
 
   const onClickHeaderTitle = () => {
     setShowStepsModal(true);

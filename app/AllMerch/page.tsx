@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useDispatch, connect } from "react-redux";
 import { notification, Button } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
@@ -43,6 +43,7 @@ const EnquiryProductsPage = ({
   const dispatch = useDispatch();
   const history = useRouter();
   const pathname = usePathname() 
+  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(false);
   const [showStepsModal, setShowStepsModal] = useState(false);
   const [productsQuantity, setProductsQuantity] = useState(
@@ -77,10 +78,9 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    var currentUrl = new URL(window.location.href);
-    if (currentUrl.pathname.toLowerCase().startsWith("/curatedpacks")) {
+    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
       return "curated-pack";
-    } else if (currentUrl.pathname.toLowerCase().startsWith("/custompacks")) {
+    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
       return "custom-pack";
     } else {
       return "all-merch";
@@ -140,10 +140,9 @@ const EnquiryProductsPage = ({
     setLoading(true);
     let currentProductsType = getCurrentProductsType();
     let currentSearchString = "";
-    let window:any={location:{href:{}}}
-    const queryParams:any = getQueryParams(window.location.href);
-    if (queryParams.searchString) {
-      currentSearchString = queryParams.searchString;
+    const searchString:any = searchParams.get("searchString");
+    if (searchString) {
+      currentSearchString = searchString;
     }
     if (
       enquiryProducts == null ||
@@ -229,7 +228,7 @@ const EnquiryProductsPage = ({
       );
       setLoading(false);
     }
-  }, [window.location.href]);
+  }, []);
 
   const onClickHeaderTitle = () => {
     setShowStepsModal(true);

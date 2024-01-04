@@ -15,7 +15,7 @@ import {
   fetchHeaderBannersRequest,
 } from "@/actions/strapiActions";
 
-const ContactUsPage = ({ headerBanners }:any) => {
+const GetAQuote = ({ headerBanners }:any) => {
   const dispatch = useDispatch();
   const history = useRouter();
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,9 @@ const ContactUsPage = ({ headerBanners }:any) => {
   const [currentHelpOption, SetCurrentHelpOption]:any = useState({});
 
   useEffect(() => {
-    trackPageViewInGoogle();
+    if(typeof window != 'undefined'){
+      trackPageViewInGoogle();
+    }
   }, []);
 
   useEffect(() => {
@@ -131,8 +133,8 @@ const ContactUsPage = ({ headerBanners }:any) => {
                   <div className="slider_info ">
                     <h1 className="heading">
                       {headerBanners &&
-                        headerBanners.length > 0 &&
-                        headerBanners[0].title}
+                        headerBanners?.length > 0 &&
+                        headerBanners?.[0]?.title}
                     </h1>
                     <div className="banner_divider"></div>
                   </div>
@@ -145,9 +147,9 @@ const ContactUsPage = ({ headerBanners }:any) => {
           className="desktop_main_banner"
           style={{
             backgroundImage: `url(${headerBanners &&
-              headerBanners.length > 0 &&
-              headerBanners[0].desktopImage1580x455 &&
-              headerBanners[0].desktopImage1580x455.url
+              headerBanners?.length > 0 &&
+              headerBanners?.[0]?.desktopImage1580x455 &&
+              headerBanners?.[0]?.desktopImage1580x455?.url
               })`,
           }}
         ></div>
@@ -155,9 +157,9 @@ const ContactUsPage = ({ headerBanners }:any) => {
           className="mobile_main_banner"
           style={{
             backgroundImage: `url(${headerBanners &&
-              headerBanners.length > 0 &&
-              headerBanners[0].mobileImage430x260 &&
-              headerBanners[0].mobileImage430x260.url
+              headerBanners?.length > 0 &&
+              headerBanners?.[0]?.mobileImage430x260 &&
+              headerBanners?.[0]?.mobileImage430x260?.url
               })`,
           }}
         ></div>
@@ -183,4 +185,4 @@ function mapStateToProps(state:any) {
   };
 }
 
-export default connect(mapStateToProps, {})(ContactUsPage);
+export default connect(mapStateToProps, {})(GetAQuote);
