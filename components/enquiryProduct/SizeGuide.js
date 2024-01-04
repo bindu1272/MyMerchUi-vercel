@@ -40,9 +40,9 @@ const SizeGuide = ({
               <tbody>
                 {sizeGuide &&
                   sizeGuide.data &&
-                  sizeGuide.data.map(d => {
+                  sizeGuide.data.map((d,index) => {
                     return (
-                      <tr>
+                      <tr key={index}>
                         <td>{d.size}</td>
                         <td>{d.width}</td>
                         <td>{d.height}</td>

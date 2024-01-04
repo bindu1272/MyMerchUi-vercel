@@ -346,9 +346,9 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               <Carousel {...settings}>
                 {teamMembers &&
                   teamMembers.length > 0 &&
-                  teamMembers.map((tm:any) => {
+                  teamMembers.map((tm:any,index:any) => {
                     return (
-                      <div className="team_details">
+                      <div className="team_details" key={index}>
                         <img
                           //src={`${process.env.REACT_APP_STRAPI_API_URL}${tm.profilePicture160x160.url}`}
                           src={`${tm.profilePicture160x160.url}`}

@@ -44,9 +44,9 @@ const MerchMagicInAction = ({
                       <Carousel autoplay {...settings}>
                         {caseStudies &&
                           caseStudies.length > 0 &&
-                          caseStudies.map((cs) => {
+                          caseStudies.map((cs,index) => {
                             return (
-                              <img
+                              <img key={index}
                                 //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image330x330 && cs.image330x330.url}`}
                                 src={`${cs.image330x330 && cs.image330x330.url}`}
                                 onClick={() =>
@@ -63,9 +63,9 @@ const MerchMagicInAction = ({
                   <div className="row">
                     {caseStudies &&
                       caseStudies.length > 0 &&
-                      caseStudies.map((cs) => {
+                      caseStudies.map((cs,index) => {
                         return (
-                          <div className="col-sm-4">
+                          <div className="col-sm-4" key={index}>
                             <img
                               //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image330x330 && cs.image330x330.url}`}
                               src={`${cs.image330x330 && cs.image330x330.url}`}
@@ -84,10 +84,10 @@ const MerchMagicInAction = ({
                       <div className="ma_grid">
                         {caseStudies &&
                           caseStudies.length > 0 &&
-                          caseStudies.map((cs, i) => {
+                          caseStudies.map((cs, index) => {
                             return (
                               //<div className={`${i == 1 ? 'tall' : i == 6 ? 'wide' : 'ma-grid-item'}`}>
-                              <div className="ma-grid-item">
+                              <div className="ma-grid-item" key={index}>
                                 <img
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image330x330 && cs.image330x330.url}`}
                                   src={`${cs.image330x330 && cs.image330x330.url}`}

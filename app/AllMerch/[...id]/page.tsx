@@ -165,7 +165,7 @@ const EnquiryProductsPage = ({
             searchString: currentSearchString,
           },
           (response:any) => {
-            const resCategories:any = Object.keys(response).map(c => {
+            const resCategories:any = Object.keys(response).map((c,key) => {
               return ({
                 key: c,
                 name: response[c][0].categories[0].name,
@@ -202,7 +202,7 @@ const EnquiryProductsPage = ({
         )
       );
     } else {
-      const resCategories:any = Object.keys(enquiryProducts).map(c => {
+      const resCategories:any = Object.keys(enquiryProducts).map((c,key) => {
         return ({
           key: c,
           name: enquiryProducts[c][0].categories[0].name,

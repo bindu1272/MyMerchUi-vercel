@@ -46,9 +46,9 @@ const ReviewCuratedPack = ({
                 <>
                     <div className="cp_sub_items">
                         <h1 className="sub_items_title">Pack items included:</h1>
-                        {selectedProduct.product.child_products.map(cp => {
+                        {selectedProduct.product.child_products.map((cp,index) => {
                             return (
-                                <div className="cart_item">
+                                <div className="cart_item" key={index}>
                                     <div className="cart_img">
                                         <img src={cp.colours && cp.colours[0] && cp.colours[0].images[getDetailImageSpec()].product_image_url} />
                                     </div>

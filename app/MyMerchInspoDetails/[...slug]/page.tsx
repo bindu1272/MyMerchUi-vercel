@@ -168,8 +168,8 @@ const MyMerchInspoDetails = ({params}:any) => {
                   <Option value="all">View All</Option>
                   {inspoCategories &&
                     inspoCategories.length > 0 &&
-                    inspoCategories.map((bc:any) => {
-                      return <Option value={bc.name}>{bc.name}</Option>;
+                    inspoCategories.map((bc:any,index:any) => {
+                      return <Option value={bc.name} key={index}>{bc.name}</Option>;
                     })}
                 </Select>
               </div>

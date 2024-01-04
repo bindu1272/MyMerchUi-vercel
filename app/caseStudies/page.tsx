@@ -193,8 +193,8 @@ const CaseStudyPage = ({ headerBanners }:any) => {
                       <Option value="all">​View All</Option>
                       {caseStudyCategories &&
                         caseStudyCategories.length > 0 &&
-                        caseStudyCategories.map((csc:any) => {
-                          return <Option value={csc.name}>{csc.name}</Option>;
+                        caseStudyCategories.map((csc:any,index:any) => {
+                          return <Option value={csc.name} key={index}>{csc.name}</Option>;
                         })}
                     </Select>
                   </div>

@@ -376,9 +376,9 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                 <Carousel {...CustomiseSettings}>
                   {caseStudies &&
                     caseStudies.length > 0 &&
-                    caseStudies.map((cs:any) => {
+                    caseStudies.map((cs:any,index:any) => {
                       return (
-                        <div>
+                        <div key={index}>
                           <div className="custom_slider_info">
                             <div className="col-sm-12 col-lg-12 d-flex justify-content-center">
                               <div className="shape6">

@@ -28,9 +28,9 @@ const ProductCategories = ({
               <ul>
                 {categories &&
                   categories.length > 0 &&
-                  categories.map((c) => {
+                  categories.map((c,index) => {
                     return (
-                      <li>
+                      <li key={index}>
                         <a
                           onClick={() => onClickProductCategory(c.key)}
                           className={
@@ -67,9 +67,9 @@ const ProductCategories = ({
           <ul className={showProductCategoriesMobile ? "show" : "hide"}>
             {categories &&
               categories.length > 0 &&
-              categories.map((c) => {
+              categories.map((c,index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     <Link href=""
                       onClick={() => onClickProductCategoryMobile(c.key)}
                       to={c.key}

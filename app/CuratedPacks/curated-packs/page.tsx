@@ -77,6 +77,7 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
+    let window:any={}
     var currentUrl = new URL(window.location.href);
     if (currentUrl.pathname.toLowerCase().startsWith("/curatedpacks")) {
       return "curated-pack";
@@ -98,7 +99,7 @@ const EnquiryProductsPage = ({
   };
 
   const [stepsModalDisplayed, setStepsModelDisplayed]:any = useState(
-    localStorage.getItem(`${getCurrentProductsType()}-steps-display`)
+    // localStorage.getItem(`${getCurrentProductsType()}-steps-display`)
   );
 
   useEffect(() => {
@@ -140,6 +141,7 @@ const EnquiryProductsPage = ({
     setLoading(true);
     let currentProductsType = getCurrentProductsType();
     let currentSearchString = "";
+    let window:any={location:{href:{}}}
     const queryParams:any = getQueryParams(window.location.href);
     if (queryParams.searchString) {
       currentSearchString = queryParams.searchString;
@@ -165,7 +167,7 @@ const EnquiryProductsPage = ({
             searchString: currentSearchString,
           },
           (response:any) => {
-            const resCategories:any = Object.keys(response).map(c => {
+            const resCategories:any = Object.keys(response).map((c,key) => {
               return ({
                 key: c,
                 name: response[c][0].categories[0].name,
@@ -236,7 +238,7 @@ const EnquiryProductsPage = ({
 
   const onCloseStepsModal = () => {
     // localStorage.setItem(`${getCurrentProductsType()}-steps-display`, true);
-    localStorage.setItem(`${getCurrentProductsType()}-steps-display`,"true");
+    // localStorage.setItem(`${getCurrentProductsType()}-steps-display`,"true");
     setStepsModelDisplayed(true);
     setShowStepsModal(false);
   };

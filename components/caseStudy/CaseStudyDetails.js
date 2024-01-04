@@ -30,7 +30,7 @@ const CaseStudyDetails = ({
               </div>
               {caseStudy.contentText &&
                 caseStudy.contentText.length > 0 &&
-                caseStudy.contentText.map((ct) => {
+                caseStudy.contentText.map((ct,index) => {
                   return 
                   // <ReactMarkdown className={'merch_description'}
                   //   source={ct?.text}
@@ -110,8 +110,8 @@ const CaseStudyDetails = ({
                 {caseStudy.kit &&
                   caseStudy.kit.inclusions &&
                   caseStudy.kit.inclusions.length > 0 &&
-                  caseStudy.kit.inclusions.map((i) => {
-                    return <li><span></span>{i.name}</li>
+                  caseStudy.kit.inclusions.map((i,index) => {
+                    return <li key={index}><span></span>{i.name}</li>
                   })
                 }
               </ul>

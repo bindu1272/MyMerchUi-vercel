@@ -43,7 +43,7 @@ const Users = ({
           setTotalUsersCount(response.total);
           const users =
             response.data &&
-            response.data.map((item:any) => {
+            response.data.map((item:any,key:any) => {
               item.key = item.id;
             });
           setUsers(response.data);
@@ -74,7 +74,7 @@ const Users = ({
           setTotalUsersCount(response.total);
           const users =
             response.data &&
-            response.data.map((item:any) => {
+            response.data.map((item:any,key:any) => {
               item.key = item.id;
             });
           setUsers(response.data);
@@ -107,7 +107,7 @@ const Users = ({
           setTotalUsersCount(response.total);
           const users =
             response.data &&
-            response.data.map((item:any) => {
+            response.data.map((item:any,key:any) => {
               item.key = item.id;
             });
           setUsers(response.data);

@@ -15,9 +15,9 @@ const Products = ({
                 enquiryProducts[currentProductCategoryKey].length > 0 &&
                 <>
                     <section id={currentProductCategoryKey} className="custom_packs_items_block">
-                        {enquiryProducts[currentProductCategoryKey].map(p => {
+                        {enquiryProducts[currentProductCategoryKey].map((p,index) => {
                             return (
-                                <Product
+                                <Product key={index}
                                     product={p}
                                     cart={cart}
                                     onClickProduct={onClickProduct}

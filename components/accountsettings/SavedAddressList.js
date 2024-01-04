@@ -9,9 +9,9 @@ const SavedAddressList = ({
     onDeleteAddress
 }) => {
     return (
-        addresses && addresses.length > 0 && addresses.map((address) => {
+        addresses && addresses.length > 0 && addresses.map((address,index) => {
             return (
-                <SavedAddress
+                <SavedAddress key={index}
                     address={address}
                     selectedAddressId={selectedAddressId}
                     showSelection={showSelection}

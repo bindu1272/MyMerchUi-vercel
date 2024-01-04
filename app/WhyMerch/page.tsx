@@ -281,9 +281,9 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
               <Carousel {...customiseSettings}>
                 {momentsOfMerchMagic &&
                   momentsOfMerchMagic.length > 0 &&
-                  momentsOfMerchMagic.map((mm:any) => {
+                  momentsOfMerchMagic.map((mm:any,index:any) => {
                     return (
-                      <div>
+                      <div key={index}>
                         <div className="row align-items-center position-relative">
                           <div className="col-sm-6 col-lg-7 ">
                             <div className="testi_bubble">

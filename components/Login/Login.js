@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-import * as firebase from "firebase/app";
+// import * as firebase from "firebase/app";
+import { initializeApp } from 'firebase/app';
+import FirebaseConfig from "@/Firebase/firebase";
 import { notification, Spin } from "antd";
 import LoginForm from "./LoginForm";
 import ForgotPassword from "./ForgotPassword";
@@ -12,6 +14,11 @@ import {
   forgotPasswordRequest,
 } from "../../actions/authActions";
 import { trackPageViewInGoogle } from "../../utilities/GoogleSetUp";
+
+// if (!firebase.apps.length) {
+//   firebase.initializeApp(FirebaseConfig);
+// }
+const firebase = initializeApp(FirebaseConfig)
 
 const LoginContainer = ({
   showLogin,

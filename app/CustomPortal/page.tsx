@@ -272,7 +272,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12">
               <h1 className="merch_title no-border">Proof is in the packs</h1>
               <p className="merch_description col-sm-12 col-lg-6">
-                Here are some brands already making the most of the 'MyMerch magic'.
+                Here are some brands already making the most of the `&apos;`MyMerch magic`&apos;`.
                 See how we’ve brought their packs to life.
               </p>
             </div>
@@ -281,9 +281,9 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                 <Carousel autoplay arrows {...CustomiseSettings}>
                   {caseStudies &&
                     caseStudies.length > 0 &&
-                    caseStudies.map((cs:any) => {
+                    caseStudies.map((cs:any,index:any) => {
                       return (
-                        <div>
+                        <div key={index}>
                           <div className="custom_slider_info">
                             <div className="col-sm-12 col-lg-12 d-flex justify-content-center">
                               <div className="shape6">

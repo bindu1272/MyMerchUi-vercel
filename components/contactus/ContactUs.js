@@ -102,8 +102,8 @@ const ContactUs = ({
                         <Space direction="vertical" size={"middle"}>
                           {helpOptions &&
                             helpOptions.length > 0 &&
-                            helpOptions.map((ho) => {
-                              return <Radio value={ho.name}>{ho.name}</Radio>
+                            helpOptions.map((ho,index) => {
+                              return <Radio value={ho.name} key={index}>{ho.name}</Radio>
                             })
                           }
                         </Space>

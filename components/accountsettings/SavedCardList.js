@@ -9,9 +9,9 @@ const SavedCardList = ({
     onDeleteCard,
 }) => {
     return (
-        cards && cards.length > 0 && cards.map((card) => {
+        cards && cards.length > 0 && cards.map((card,index) => {
             return (
-                <SavedCard
+                <SavedCard key={index}
                     card={card}
                     selectedCardId={selectedCardId}
                     showSelection={showSelection}

@@ -192,8 +192,8 @@ const BlogsPage = ({ headerBanners,params }:any) => {
                     <Option value="all">View All</Option>
                     {blogCategories &&
                       blogCategories.length > 0 &&
-                      blogCategories.map((bc:any) => {
-                        return <Option value={bc.name}>{bc.name}</Option>;
+                      blogCategories.map((bc:any,index:any) => {
+                        return <Option value={bc.name} key={index}>{bc.name}</Option>;
                       })}
                   </Select>
                 </div>
