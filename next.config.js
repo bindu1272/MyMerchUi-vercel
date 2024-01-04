@@ -10,7 +10,8 @@ const nextConfig = {
       env:{
         REACT_APP_STRAPI_API_URL : process.env.REACT_APP_STRAPI_API_URL,
         REACT_APP_IMAGES_SRC_URL:process.env.REACT_APP_IMAGES_SRC_URL,
-        REACT_APP_API_URL: process.env.REACT_APP_API_URL
+        REACT_APP_API_URL: process.env.REACT_APP_API_URL,
+        GATSBY_API_URL : process.env.GATSBY_API_URL
       },
       reactStrictMode: false,
       typescript: {
