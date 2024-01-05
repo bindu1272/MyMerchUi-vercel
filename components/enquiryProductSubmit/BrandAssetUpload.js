@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal, Upload, Button, message } from "antd";
 import { CloudUploadOutlined } from "@ant-design/icons";
+import Image from "next/image";
 const { Dragger } = Upload;
 
 const BrandAssetUpload = ({
@@ -91,7 +92,7 @@ const BrandAssetUpload = ({
         footer={null}
         onCancel={onCancelFilePreview}
       >
-        <img
+        <Image  width={30} height={30}
           alt="File Preview"
           style={{
             width: "100%",
