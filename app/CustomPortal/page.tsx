@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-// import ScrollAnimation from "react-animate-on-scroll";
+import ScrollAnimation from "react-animate-on-scroll";
 import { Carousel, Modal, notification } from "antd";
 import S3Image from "@/common/S3Image";
 import MerchTitle from "@/components/MerchTitle";
@@ -163,9 +163,9 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                 <div className="row">
                   <div className="col-sm-6 ">
                     <div className="mh_info_block">
-                      {/* <ScrollAnimation animateIn="bounceIn" delay={100}>
+                      <ScrollAnimation animateIn="bounceIn" delay={100}>
                         <S3Image src={"/icons/custom-portal-1.svg"} />
-                      </ScrollAnimation> */}
+                      </ScrollAnimation>
 
                       <label>Your merch, your way</label>
                       <p>
