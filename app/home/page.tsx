@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { notification } from "antd";
+import Slider from "react-slick";
 import S3Image from "@/common/S3Image";
 import MerchTitle from "@/components/MerchTitle";
 import MerchSimplified from "@/components/MerchSimplified";
@@ -116,6 +117,51 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
           title={"Australia's Leading Promotional Products & Branded Merchandise Supplier"}
           description={"MyMerch is the trusted supplier of promotional products and branded merchandise for brands throughout Australia. Design & order your custom merch today."}
         /> */}
+        
+<Slider {...headerBannerSliderSettings}>
+          {headerBanners &&
+            headerBanners.length > 0 &&
+            headerBanners.map((hb:any) => {
+              return (
+                <div className="carousel-item ">
+                  <div
+                    className="container"
+                    style={{ position: "relative", zIndex: 9999 }}
+                  >
+                    <div className="row">
+                      <div className="col-sm-5 col-lg-6">
+                        <div className="slider_info">
+                          <h1 className="heading">{hb.title}</h1>
+                          <div className="banner_divider"></div>
+                          <p>{hb.description}</p>
+                          {/* <a
+                            href={hb.linkButtonURL}
+                            className="btn-medium btn-bg-blue border-radius-md"
+                          >
+                            {hb.linkButtonLabel}
+                          </a> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="desktop_banner_img"
+                    style={{
+                      backgroundImage: `url(${hb.desktopImage1580x455 && hb.desktopImage1580x455.url
+                        })`,
+                    }}
+                  ></div>
+                  <div
+                    className="mobile_banner_img"
+                    style={{
+                      backgroundImage: `url(${hb.mobileImage430x260 && hb.mobileImage430x260.url
+                        })`,
+                    }}
+                  ></div>
+                </div>
+              );
+            })}
+        </Slider>
       
       </section>
       <section className="brands_section">
@@ -123,6 +169,57 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
           <div className="row">
             <div className="col-sm-12">
               <h1>Brands we’ve worked with:</h1>
+              <Slider {...brandsSliderSettings}>
+                {brandsImages &&
+                  brandsImages?.length > 0 &&
+                  brandsImages?.map((bi:any) => {
+                    return (
+                      <div className="carousel-item ">
+                        <div className="container">
+                          <div className="row">
+                            <div className="col-sm-12">
+                              <Image
+                                src={
+                                  bi?.mobileImage400x40 &&
+                                  bi?.mobileImage400x40?.url
+                                }
+                                className="img-fluid d-block d-sm-none"
+                                alt=""
+                                // layout="fill"
+                                width={200}
+                                height={100}
+                              />
+                              <Image
+                                src={
+                                  bi?.smallDesktopImage660x60 &&
+                                  bi?.smallDesktopImage660x60?.url
+                                }
+                                className="img-fluid d-none d-sm-block d-lg-none"
+                                alt=""
+                                // layout="fill"
+                                width={800}
+                                height={300}
+
+                              />
+                              <Image
+                                src={
+                                  bi?.desktopImage1050x75 &&
+                                  bi?.desktopImage1050x75?.url
+                                }
+                                className="img-fluid d-none d-lg-block"
+                                alt=""
+                                // layout="fill"
+                                width={1002}
+                                height={500}
+
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </Slider>
            
             </div>
           </div>
