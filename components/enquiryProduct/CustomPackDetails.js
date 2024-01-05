@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Form, Input } from "antd";
 import SizeGuide from "./SizeGuide";
 import { getDetailImageSpec } from "./EnquiryProductHelper";
+import Image from "next/image";
 
 const CustomPackDetails = ({
   currentProduct,
@@ -28,7 +29,7 @@ const CustomPackDetails = ({
             <div className="packs_details_block">
               <div className="pack_slider">
                 <div className="img_block">
-                  <img
+                  <Image alt="" width={388} height={498}
                     src={
                       currentProductColour.images[getDetailImageSpec()]
                         .product_image_url

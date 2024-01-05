@@ -3,6 +3,7 @@ import { Button } from "antd";
 import { PlusCircleOutlined, CheckCircleFilled } from "@ant-design/icons";
 import S3Image from "../../common/S3Image";
 import { getThumbnailImageSpec } from "./EnquiryProductHelper";
+import Image from "next/image";
 
 const Product = ({ product, cart, onClickProduct, onClickProductSeeMore }) => {
   let isProductSelected = cart.products.find((p) => p.id == product.id);
@@ -33,7 +34,7 @@ const Product = ({ product, cart, onClickProduct, onClickProductSeeMore }) => {
             </div>
           )}
         </div>
-        <img src={imgSrc} />
+        <Image alt="" src={imgSrc} width={325} height={415} />
         <div className="pack_info">
           <div className="pack_description">
             {product.product_description}.

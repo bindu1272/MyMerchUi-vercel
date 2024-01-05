@@ -480,7 +480,7 @@ const EnquiryProductsPage = ({
                   onClickProductSeeMore={onClickProductSeeMore}
                 />
                 {productCategories &&
-                  productCategories.length > 0 &&
+                  productCategories?.length > 0 &&
                   getCurrentProductsType() !== "curated-pack" &&
                   <div className="product_prev_next_block">
                     <a href={`${getCurrentProductsTypeUrl()}/${previousProductCategory.key}`}>
