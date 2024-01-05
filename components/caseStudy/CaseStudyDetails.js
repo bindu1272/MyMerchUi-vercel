@@ -40,10 +40,9 @@ const CaseStudyDetails = ({
               {caseStudy.contentText &&
                 caseStudy.contentText.length > 0 &&
                 caseStudy.contentText.map((ct,index) => {
-                  return  <ReactMarkdown className={'merch_description'} key={index}
-                    children={ct?.text}
-                    // escapeHtml={false}
-                  />
+                  return  <ReactMarkdown className={'merch_description'} key={index}>
+                    {ct?.text}
+                    </ReactMarkdown>
                 })
               }
               <div className="row cs_img_section">

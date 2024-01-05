@@ -36,10 +36,10 @@ const BlogDetails = ({ blog }) => {
               {blog.contentText &&
                 blog.contentText.length > 0 &&
                 blog.contentText.map((ct,index) => {
-                  return <ReactMarkdown className={'merch_description'} key={index}
-                    children={ct.text}
+                  return <ReactMarkdown className={'merch_description'} key={index}>{ct.text}</ReactMarkdown>
+                    // children={ct.text}
                     // escapeHtml={false}
-                  />
+                  // />
                 })}
             </div>
           </div>
