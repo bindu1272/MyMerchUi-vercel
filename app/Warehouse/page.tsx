@@ -18,6 +18,7 @@ import {
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
 import { notification } from "antd";
+import Image from "next/image";
 
 
 const Warehouse = ({ headerBanners, footerBanners }:any) => {
@@ -264,7 +265,7 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} />
+                  <Image alt="" src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} width={450} height={279}/>
                 </div>
               </div>
             </div>

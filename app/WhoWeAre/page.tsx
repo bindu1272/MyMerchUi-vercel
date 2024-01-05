@@ -17,6 +17,7 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
 
 const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
   const settings = {
@@ -349,7 +350,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   teamMembers.map((tm:any,index:any) => {
                     return (
                       <div className="team_details" key={index}>
-                        <img
+                        <Image alt="" width={20} height={20}
                           //src={`${process.env.REACT_APP_STRAPI_API_URL}${tm.profilePicture160x160.url}`}
                           src={`${tm.profilePicture160x160.url}`}
                         />
@@ -416,7 +417,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img
+                  <Image alt="" width={450} height={279}
                     src={
                       footerBanners[0].footerImage450x250 &&
                       footerBanners[0].footerImage450x250.url

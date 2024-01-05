@@ -16,6 +16,7 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
 
 const Whymerch = ({ headerBanners, footerBanners }:any) => {
   const customiseSettings = {
@@ -293,14 +294,14 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                                 </Parallax>
                               </ParallaxProvider>
                             </div>
-                            <img
+                            <Image alt="" width={442} height={274}
                               src={mm.image450x275 && mm.image450x275.url}
                               className="img-fluid"
                             />
                           </div>
                           <div className="col-sm-6 col-lg-5">
                             <div className="d-flex align-items-center justify-content-center flex-column text-center">
-                              <img src={mm.logo.url} />
+                              <Image alt="" src={mm.logo.url} width={310} height={118}/>
                               <p className="mt-4 pb-4">
                                 <strong>{mm.description}</strong>
                                 <span>
@@ -352,7 +353,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img
+                  <Image alt="" width={450} height={279}
                     src={
                       footerBanners[0].footerImage450x250 &&
                       footerBanners[0].footerImage450x250.url
