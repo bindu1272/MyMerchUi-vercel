@@ -76,6 +76,10 @@ const EnquiryProductsPage = ({
   const [currentProductQuantity, setCurrentProductQuantity] = useState();
   const [currentProductUnitPrice, setCurrentProductUnitPrice] = useState();
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
+  const [isClient, setIsClient] = useState(false)
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const getCurrentProductsType = () => {
     if (pathname.toLowerCase().startsWith("/curatedpacks")) {
@@ -98,7 +102,7 @@ const EnquiryProductsPage = ({
   };
 
   const [stepsModalDisplayed, setStepsModelDisplayed]:any = useState(
-    // localStorage.getItem(`${getCurrentProductsType()}-steps-display`)
+    localStorage.getItem(`${getCurrentProductsType()}-steps-display`)
   );
 
   useEffect(() => {
@@ -236,7 +240,7 @@ const EnquiryProductsPage = ({
 
   const onCloseStepsModal = () => {
     // localStorage.setItem(`${getCurrentProductsType()}-steps-display`, true);
-    // localStorage.setItem(`${getCurrentProductsType()}-steps-display`,"true");
+    localStorage.setItem(`${getCurrentProductsType()}-steps-display`,"true");
     setStepsModelDisplayed(true);
     setShowStepsModal(false);
   };
@@ -429,7 +433,8 @@ const EnquiryProductsPage = ({
     }
   };
 
-  return loading ? (
+  return isClient ?
+   loading ? (
     <Loader />
   ) : (
     <>
@@ -527,7 +532,8 @@ const EnquiryProductsPage = ({
         />
       )}
     </>
-  );
+  )
+  :null
 };
 
 function mapStateToProps(state:any) {

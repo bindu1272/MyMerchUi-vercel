@@ -2,8 +2,10 @@ import axios from "axios";
 import handleError from "./handleError";
 import * as TYPES from "../constants/actionTypes";
 // import { store } from "../index"
-// import { store } from "@/app/layout"
-import { store } from "./configureStore";
+// import { store } from "@/app/layout";
+import {store} from "@/utilities/configureStore";
+
+// import { store } from "./configureStore";
 
 import * as URLS from "../constants/apiUrls";
 // import { createBrowserHistory } from "history";

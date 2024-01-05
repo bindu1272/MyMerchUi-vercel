@@ -59,7 +59,7 @@ const Header = ({
   const onLogout = () => {
     dispatch(logoutRequest());
     router.push(`/`);
-    window.location.reload();
+    // window.location.reload();
   };
 
   const onClickTitle = (itemUrl) => {
