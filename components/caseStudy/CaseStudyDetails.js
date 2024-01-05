@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-// import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 
 const CaseStudyDetails = ({
   caseStudy,
@@ -17,7 +17,7 @@ const CaseStudyDetails = ({
               <p className="merch_description blog_text">{caseStudy.clientDescription}</p>
               <div className="img_block">
                 {caseStudy.contentHeaderImage1030x500 ?
-                <Image alt="" width={20} height={10}
+                <Image alt="" width={1050} height={509}
                   src={`${caseStudy.contentHeaderImage1030x500 && caseStudy.contentHeaderImage1030x500.url}`}
                 /> : null
 }
@@ -40,18 +40,17 @@ const CaseStudyDetails = ({
               {caseStudy.contentText &&
                 caseStudy.contentText.length > 0 &&
                 caseStudy.contentText.map((ct,index) => {
-                  return 
-                  // <ReactMarkdown className={'merch_description'}
-                  //   source={ct?.text}
-                  //   // escapeHtml={false}
-                  // />
+                  return  <ReactMarkdown className={'merch_description'} key={index}
+                    children={ct?.text}
+                    // escapeHtml={false}
+                  />
                 })
               }
               <div className="row cs_img_section">
                 <div className="col-sm-6">
                   <div className="img_block">
                     {caseStudy.contentImage500x325_1 ?
-                    <Image alt="" width={20} height={10}
+                    <Image alt="" width={510} height={333}
                       src={`${caseStudy.contentImage500x325_1 && caseStudy.contentImage500x325_1.url}`}
                     />
                     :null}
@@ -73,7 +72,7 @@ const CaseStudyDetails = ({
                 <div className="col-sm-6">
                   <div className="img_block">
                     { caseStudy.contentImage500x325_2 ?
-                    <Image alt="" width={20} height={10}
+                    <Image alt="" width={510} height={334}
                       src={`${caseStudy.contentImage500x325_2 && caseStudy.contentImage500x325_2.url}`}
                     />:null
 }
@@ -99,7 +98,7 @@ const CaseStudyDetails = ({
                 <div className="col-sm-12">
                   {caseStudy.contentFooterImage1030x380 && caseStudy.contentFooterImage1030x380.url &&
                     <div className="img_block">
-                      <Image alt="" width={20} height={10}
+                      <Image alt="" width={1050} height={386}
                         src={`${caseStudy.contentFooterImage1030x380 && caseStudy.contentFooterImage1030x380.url}`}
                       />
                     </div>}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-// import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 
 const BlogDetails = ({ blog }) => {
   return (
@@ -35,13 +35,11 @@ const BlogDetails = ({ blog }) => {
               </div>
               {blog.contentText &&
                 blog.contentText.length > 0 &&
-                blog.contentText.map((ct) => {
-
-                  return 
-                  // <ReactMarkdown className={'merch_description'}
-                  //   source={ct.text}
-                  //   escapeHtml={false}
-                  // />
+                blog.contentText.map((ct,index) => {
+                  return <ReactMarkdown className={'merch_description'} key={index}
+                    children={ct.text}
+                    // escapeHtml={false}
+                  />
                 })}
             </div>
           </div>
