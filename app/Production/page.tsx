@@ -18,6 +18,7 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
 
 const Production = ({ headerBanners, footerBanners }:any) => {
   const settings = {
@@ -389,7 +390,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                                 </ParallaxProvider>
                               </div>
                               <div>
-                                <img
+                                <Image alt="" width={735} height={325}
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   className="img-fluid"
@@ -443,7 +444,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} />
+                  <Image alt="" src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} width={450} height={279}/>
                 </div>
               </div>
             </div>

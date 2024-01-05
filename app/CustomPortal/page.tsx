@@ -19,6 +19,7 @@ import {
 import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
 import { fetchCaseStudiesRequest } from "@/actions/strapiActions";
 import { CloseCircleOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 const CustomPortal = ({ headerBanners, footerBanners }:any) => {
   const settings = {
@@ -294,7 +295,8 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                                 </ParallaxProvider>
                               </div>
                               <div>
-                                <img
+                                <Image width={735} height={325}
+                                alt=""
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   className="img-fluid"
@@ -345,7 +347,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img
+                  <Image alt="" width={450} height={279}
                     src={
                       footerBanners[0].footerImage450x250 &&
                       footerBanners[0].footerImage450x250.url
