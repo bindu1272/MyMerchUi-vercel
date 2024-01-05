@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Blog = ({
@@ -5,7 +6,7 @@ const Blog = ({
 }) => {
     return (
         <div className="blog-item-info">
-            <img
+            <Image alt=""
                 //src={`${process.env.REACT_APP_STRAPI_API_URL}${blog.image330x330 && blog.image330x330.url}`}
                 src={`${blog.image330x330 && blog.image330x330.url}`}
                 width='500'
