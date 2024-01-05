@@ -121,9 +121,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
 <Slider {...headerBannerSliderSettings}>
           {headerBanners &&
             headerBanners.length > 0 &&
-            headerBanners.map((hb:any) => {
+            headerBanners.map((hb:any,index:any) => {
               return (
-                <div className="carousel-item ">
+                <div className="carousel-item " key={index}>
                   <div
                     className="container"
                     style={{ position: "relative", zIndex: 9999 }}
@@ -172,9 +172,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
               <Slider {...brandsSliderSettings}>
                 {brandsImages &&
                   brandsImages?.length > 0 &&
-                  brandsImages?.map((bi:any) => {
+                  brandsImages?.map((bi:any,index:any) => {
                     return (
-                      <div className="carousel-item ">
+                      <div className="carousel-item " key={index}>
                         <div className="container">
                           <div className="row">
                             <div className="col-sm-12">
