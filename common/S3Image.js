@@ -7,7 +7,7 @@ import Image from "next/image";
 const S3Image = (props) => {
     const backendUrl = process.env.NEXT_APP_IMAGES_SRC_URL;
     const [loaded, setLoaded] = useState(false);
-    let imageUrl = "http://dev-assets.mymerch.com.au/src/images"+`${props?.src}`;
+    let imageUrl = "https://dev-assets.mymerch.com.au/src/images"+`${props?.src}`;
     var attributes = {};
     Object.keys(props).forEach((key) => {
         if (key !== "src") {
