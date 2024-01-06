@@ -5,7 +5,7 @@ const nextConfig = {
         // Will be available on both server and client
       },
       images: {
-        domains: ['dev-assets.mymerch.com.au',"mymerch-strapi-staging.s3.ap-southeast-2.amazonaws.com","assets.mymerch.com.au"],
+        domains: ['dev-assets.mymerch.com.au',"mymerch-strapi-staging.s3.ap-southeast-2.amazonaws.com","assets.mymerch.com.au","mymerch-strapi-live.s3.ap-southeast-2.amazonaws.com"],
       },
       env:{
         REACT_APP_STRAPI_API_URL : process.env.REACT_APP_STRAPI_API_URL,
