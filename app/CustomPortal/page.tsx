@@ -213,8 +213,11 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   <div className="col-sm-6 col-lg-4 ">
                     <div className="mh_info_block">
                       {/* <ScrollAnimation animateIn="bounceIn" delay={400}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={400} style={{display:"flex", justifyContent:"center"}}>
+
                         <S3Image src={"/icons/custom-portal-4.svg"} width={99} height={88}/>
                       {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Delivering peace of mind</label>
                       <p>
                         Never worry about a delivery again with proof of
@@ -225,8 +228,11 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   <div className="col-sm-6 col-lg-4 ">
                     <div className="mh_info_block">
                       {/* <ScrollAnimation animateIn="bounceIn" delay={500}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={500} style={{display:"flex", justifyContent:"center"}}>
+
                         <S3Image src={"/icons/custom-portal-5.svg"} width={105} height={88}/>
                       {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Easy Reporting</label>
                       <p>
                         Get useful intel to help optimise your merch collection.
@@ -239,8 +245,11 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   <div className="col-sm-6  ">
                     <div className="mh_info_block">
                       {/* <ScrollAnimation animateIn="bounceIn" delay={600}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={600} style={{display:"flex", justifyContent:"center"}}>
+
                         <S3Image src={"/icons/custom-portal-6.svg"} width={93} height={88}/>
                       {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Budget Management</label>
                       <p>
                         No more budget surprises at the end of the year. Help
@@ -252,8 +261,11 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   <div className="col-sm-6 full-width">
                     <div className="mh_info_block">
                       {/* <ScrollAnimation animateIn="bounceIn" delay={700}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={700} style={{display:"flex", justifyContent:"center"}}>
+
                         <S3Image src={"/icons/custom-portal-7.svg"} width={100} height={88}/>
                       {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Order and deliver seamlessly</label>
                       <p>
                         Running low on merch? Order a new batch through the
