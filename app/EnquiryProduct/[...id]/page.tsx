@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 // import { useHistory, useLocation } from "react-router-dom";
 import { useRouter,usePathname } from "next/navigation";
 import { useDispatch, connect } from "react-redux";
-import { notification, Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { notification } from "antd";
+// import { store } from "@/index";
 import { store } from "@/utilities/configureStore";
 import * as TYPES from "@/constants/actionTypes";
 import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
@@ -13,33 +13,41 @@ import ProductDetails from "@/components/enquiryProduct/ProductDetails";
 import OverwriteCartPopup from "@/components/enquiryProduct/OverwriteCartPopup";
 import { fetchEnquiryProductRequest } from "@/actions/enquiryProductActions";
 import {
-    getEnquiryProducts,
     getEnquiryProductsType,
     getEnquiryProductsQuantity,
-    getEnquiryProductsSearchString,
 } from "@/selectors/enquiryProductSelector";
 import { getCart } from "@/selectors/cartSelector";
+// import { Link } from "react-router-dom";
 import Link from "next/link";
 import { RightOutlined } from "@ant-design/icons";
-const EnquiryProductsPage = ({
-    enquiryProducts,
+
+const EnquiryProductDetailsPage = ({
     enquiryProductsType,
     enquiryProductsQuantity,
-    enquiryProductsSearchString,
     cart,
 }:any) => {
     const dispatch = useDispatch();
     const history = useRouter();
-    const pathName :any= usePathname();
-    // useLocation();
+    const pathname = usePathname();
     const [loading, setLoading] = useState(true);
-    const [currentProduct, setCurrentProduct]:any = useState({});
+    const [currentProduct, setCurrentProduct] :any= useState({});
     const [currentProductColour, setCurrentProductColour] = useState({});
     const [currentProductQuantity, setCurrentProductQuantity] = useState();
     const [currentProductUnitPrice, setCurrentProductUnitPrice] = useState();
     const [showProductSizeGuideModal, setShowProductSizeGuideModal] =
         useState(false);
     const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
+
+    const getCurrentProductsType = () => {
+        // var currentUrl = new URL(window.location.href);
+        if (pathname.toLowerCase().startsWith("/curatedpacks")) {
+            return "curated-pack";
+        } else if (pathname.toLowerCase().startsWith("/custompacks")) {
+            return "custom-pack";
+        } else {
+            return "all-merch";
+        }
+    };
 
     const getCurrentProductsTypeUrl = () => {
         if (enquiryProductsType == "curated-pack") {
@@ -57,7 +65,7 @@ const EnquiryProductsPage = ({
 
     useEffect(() => {
         setLoading(true);
-        var urlSplits = pathName.split("/");
+        var urlSplits = pathname.split("/");
         const currentProductSlug = urlSplits.length > 2 ? urlSplits[2] : "";
         dispatch(
             fetchEnquiryProductRequest(
@@ -105,7 +113,12 @@ const EnquiryProductsPage = ({
         });
         addProductToEnquiry();
         setShowOverwriteCartPopup(false);
-        history.push(getCurrentProductsTypeUrl());
+        let selectedCategoryKey = localStorage.getItem(`${getCurrentProductsType()}-selected-category`);
+        if (selectedCategoryKey) {
+            history.push(`${getCurrentProductsTypeUrl()}/${selectedCategoryKey}`);
+        } else {
+            history.push(getCurrentProductsTypeUrl());
+        }
     };
 
     const onCancelOverwriteCartPopup = () => {
@@ -152,7 +165,12 @@ const EnquiryProductsPage = ({
             setShowOverwriteCartPopup(true);
         } else {
             addProductToEnquiry();
-            history.push(getCurrentProductsTypeUrl());
+            let selectedCategoryKey = localStorage.getItem(`${getCurrentProductsType()}-selected-category`);
+            if (selectedCategoryKey) {
+                history.push(`${getCurrentProductsTypeUrl()}/${selectedCategoryKey}`);
+            } else {
+                history.push(getCurrentProductsTypeUrl());
+            }
         }
     };
 
@@ -269,12 +287,10 @@ const EnquiryProductsPage = ({
 
 function mapStateToProps(state:any) {
     return {
-        enquiryProducts: getEnquiryProducts(state),
         enquiryProductsType: getEnquiryProductsType(state),
         enquiryProductsQuantity: getEnquiryProductsQuantity(state),
-        enquiryProductsSearchString: getEnquiryProductsSearchString(state),
         cart: getCart(state),
     };
 }
 
-export default connect(mapStateToProps, {})(EnquiryProductsPage);
+export default connect(mapStateToProps, {})(EnquiryProductDetailsPage);

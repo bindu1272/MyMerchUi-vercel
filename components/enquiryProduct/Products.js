@@ -8,23 +8,28 @@ const Products = ({
     onClickProduct,
     onClickProductSeeMore
 }) => {
+    const products = (enquiryProducts && enquiryProducts?.length > 0)
+        ? currentProductCategoryKey.toLowerCase() === "all"
+            ? enquiryProducts
+            : enquiryProducts.filter(ep => ep.categories.some(c => c.key.toLowerCase() == currentProductCategoryKey.toLowerCase()))
+        : [];
     return (
         <div className="">
-            {enquiryProducts &&
-                enquiryProducts[currentProductCategoryKey] &&
-                enquiryProducts[currentProductCategoryKey].length > 0 &&
+            {products &&
+                products.length > 0 &&
                 <>
                     <section id={currentProductCategoryKey} className="custom_packs_items_block">
-                        {enquiryProducts[currentProductCategoryKey].map((p,index) => {
-                            return (
-                                <Product key={index}
-                                    product={p}
-                                    cart={cart}
-                                    onClickProduct={onClickProduct}
-                                    onClickProductSeeMore={onClickProductSeeMore}
-                                />
-                            )
-                        })}
+                        {
+                            products.map(p => {
+                                return (
+                                    <Product
+                                        product={p}
+                                        cart={cart}
+                                        onClickProduct={onClickProduct}
+                                        onClickProductSeeMore={onClickProductSeeMore}
+                                    />
+                                )
+                            })}
                     </section>
                 </>
             }

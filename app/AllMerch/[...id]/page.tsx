@@ -1,4 +1,5 @@
 "use client";
+import _ from "lodash";
 import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useDispatch, connect } from "react-redux";
@@ -32,6 +33,7 @@ import {
   fetchFooterBannersRequest,
 } from "@/actions/strapiActions";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 const EnquiryProductsPage = ({
   enquiryProducts,
@@ -42,7 +44,8 @@ const EnquiryProductsPage = ({
 }:any) => {
   const dispatch = useDispatch();
   const history = useRouter();
-  const pathname = usePathname() 
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [showStepsModal, setShowStepsModal] = useState(false);
   const [productsQuantity, setProductsQuantity] = useState(
@@ -65,11 +68,11 @@ const EnquiryProductsPage = ({
       enquiryProductsQuantity.type == "custom"
       ? false
       : true);
-  const [productCategories, setProductCategories] = useState([]);
+  const [productCategories, setProductCategories]:any = useState([]);
   const [showProductCategoriesMobile, setShowProductCategoriesMobile] = useState(false);
   const [currentProductCategoryKey, setCurrentProductCategoryKey] = useState("");
   const [previousProductCategory, setPreviousProductCategory]:any = useState({});
-  const [nextProductCategory, setNextProductCategory]:any = useState({});
+  const [nextProductCategory, setNextProductCategory] :any= useState({});
   const [currentProduct, setCurrentProduct]:any = useState({});
   const [currentProductColour, setCurrentProductColour] = useState({});
   const [currentProductQuantity, setCurrentProductQuantity] = useState();
@@ -77,10 +80,9 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    var currentUrl = new URL(window.location.href);
-    if (currentUrl.pathname.toLowerCase().startsWith("/curatedpacks")) {
+    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
       return "curated-pack";
-    } else if (currentUrl.pathname.toLowerCase().startsWith("/custompacks")) {
+    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
       return "custom-pack";
     } else {
       return "all-merch";
@@ -97,12 +99,15 @@ const EnquiryProductsPage = ({
     }
   };
 
-  const [stepsModalDisplayed, setStepsModelDisplayed]:any = useState(
-    localStorage.getItem(`${getCurrentProductsType()}-steps-display`)
+  const [stepsModalDisplayed, setStepsModelDisplayed] :any= useState(
+    // localStorage.getItem(`${getCurrentProductsType()}-steps-display`)
   );
 
   useEffect(() => {
+    if(typeof window != undefined){
     trackPageViewInGoogle();
+    }
+    // localStorage.removeItem(`${getCurrentProductsType()}-selected-category`);
   }, []);
 
   useEffect(() => {
@@ -140,9 +145,19 @@ const EnquiryProductsPage = ({
     setLoading(true);
     let currentProductsType = getCurrentProductsType();
     let currentSearchString = "";
-    const queryParams:any = getQueryParams(window.location.href);
-    if (queryParams.searchString) {
-      currentSearchString = queryParams.searchString;
+    let resCategories = [];
+    let allCategory = [{
+      id: 0,
+      key: "all",
+      name: "All",
+    }];
+    // const queryParams :any= getQueryParams(window.location.href);
+    // if (queryParams.searchString) {
+    //   currentSearchString = queryParams.searchString;
+    // }
+    const searchString:any = searchParams.get("searchString");
+    if (searchString) {
+      currentSearchString = searchString;
     }
     if (
       enquiryProducts == null ||
@@ -163,22 +178,16 @@ const EnquiryProductsPage = ({
           {
             type: currentProductsType,
             searchString: currentSearchString,
+            "applyGrouping": 0,
           },
           (response:any) => {
-            const resCategories:any = Object.keys(response).map((c,key) => {
-              return ({
-                key: c,
-                name: response[c][0].categories[0].name,
-              })
-            });
-            setProductCategories(resCategories);
+            response.forEach((p:any) => allCategory.push(...p.categories));
+            resCategories = _.uniqBy(allCategory, 'key');
             var urlSplits = pathname.split("/");
-            let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "";
-            if (!currentCategoryKey) {
-              currentCategoryKey = resCategories[0].key;
-            }
+            let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "all";
+            const currentProductCategoryIndex = resCategories.findIndex((c) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
+            setProductCategories(resCategories);
             setCurrentProductCategoryKey(currentCategoryKey);
-            const currentProductCategoryIndex = resCategories.findIndex((c:any) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
             setPreviousProductCategory(
               currentProductCategoryIndex == 0
                 ? resCategories[resCategories.length - 1]
@@ -202,20 +211,14 @@ const EnquiryProductsPage = ({
         )
       );
     } else {
-      const resCategories:any = Object.keys(enquiryProducts).map((c,key) => {
-        return ({
-          key: c,
-          name: enquiryProducts[c][0].categories[0].name,
-        })
-      });
-      setProductCategories(resCategories);
+      console.log("else");
+      enquiryProducts && enquiryProducts?.forEach((p:any) => allCategory.push(...p.categories));
+      resCategories = _.uniqBy(allCategory, 'key');
       var urlSplits = pathname.split("/");
-      let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "";
-      if (!currentCategoryKey) {
-        currentCategoryKey = resCategories[0].key;
-      }
-      setCurrentProductCategoryKey(currentCategoryKey);
+      let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "all";
       const currentProductCategoryIndex = resCategories.findIndex((c:any) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
+      setProductCategories(resCategories);
+      setCurrentProductCategoryKey(currentCategoryKey);
       setPreviousProductCategory(
         currentProductCategoryIndex == 0
           ? resCategories[resCategories.length - 1]
@@ -228,7 +231,7 @@ const EnquiryProductsPage = ({
       );
       setLoading(false);
     }
-  }, [window.location.href]);
+  }, []);
 
   const onClickHeaderTitle = () => {
     setShowStepsModal(true);
@@ -236,7 +239,6 @@ const EnquiryProductsPage = ({
 
   const onCloseStepsModal = () => {
     // localStorage.setItem(`${getCurrentProductsType()}-steps-display`, true);
-    localStorage.setItem(`${getCurrentProductsType()}-steps-display`,"true");
     setStepsModelDisplayed(true);
     setShowStepsModal(false);
   };
@@ -316,6 +318,7 @@ const EnquiryProductsPage = ({
 
   const onClickProductCategory = (key:any) => {
     setCurrentProductCategoryKey(key);
+    // localStorage.setItem(`${getCurrentProductsType()}-selected-category`, key);
     history.push(`${getCurrentProductsTypeUrl()}/${key}`);
   };
 
@@ -326,6 +329,7 @@ const EnquiryProductsPage = ({
   const onClickProductCategoryMobile = (key:any) => {
     setCurrentProductCategoryKey(key);
     setShowProductCategoriesMobile(false);
+    // localStorage.setItem(`${getCurrentProductsType()}-selected-category`, key);
     history.push(`${getCurrentProductsTypeUrl()}/${key}`);
   };
 
