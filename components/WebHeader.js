@@ -93,10 +93,10 @@ const WebHeader = ({
                 <Link className="call-link" style={{ color: "white" }} href="/GetAQuote">
                   Get a Quote
                 </Link>
-                <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}>|</span>
+                {/* <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}>|</span>
                 <Link href="" className="call-link" style={{ color: "white" }} onClick={() => setShowBulkOrder(true)}>
                   Bulk Enquiry
-                </Link>
+                </Link> */}
               </div>
               <div className="col-sm-7">
                 <div className="d-flex align-items-center justify-content-end">
