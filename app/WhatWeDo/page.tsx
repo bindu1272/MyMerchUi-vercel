@@ -100,7 +100,7 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles what_we_do_bubble">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/what-we-do-header-bubble.svg"} />
+                    <S3Image src={"/what-we-do-header-bubble.svg"} width={288} height={274}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>

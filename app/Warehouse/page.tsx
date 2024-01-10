@@ -77,7 +77,7 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles ware_house_banner">
                 <ParallaxProvider>
                   <Parallax translateY={["260px", "0px"]}>
-                    <S3Image src={"/production-header-bubble.svg"} />
+                    <S3Image src={"/production-header-bubble.svg"} width={306} height={284}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>

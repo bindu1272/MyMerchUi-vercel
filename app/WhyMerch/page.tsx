@@ -98,7 +98,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles why_merch_bubble">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/why-merch-header-bubble.svg"} />
+                    <S3Image src={"/why-merch-header-bubble.svg"} width={232} height={284} />
                   </Parallax>
                 </ParallaxProvider>
               </div>
