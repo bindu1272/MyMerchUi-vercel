@@ -20,9 +20,9 @@ const Products = ({
                 <>
                     <section id={currentProductCategoryKey} className="custom_packs_items_block">
                         {
-                            products.map(p => {
+                            products.map((p,index) => {
                                 return (
-                                    <Product
+                                    <Product key={index}
                                         product={p}
                                         cart={cart}
                                         onClickProduct={onClickProduct}
