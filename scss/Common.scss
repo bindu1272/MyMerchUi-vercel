@@ -6595,9 +6595,9 @@ textarea {
   @include alignItemsCenter;
   @include justifyContentCenter;
   column-gap: 50px;
-  img {
-    width: 100%;
-  }
+  // img {
+  //   width: 100%;
+  // }
   @media (max-width: 1140px) {
     img {
       width: 130px;
