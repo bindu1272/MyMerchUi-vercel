@@ -19,6 +19,7 @@ import {
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
 import Image from "next/image";
+import Link from "next/link";
 
 const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
   const dispatch = useDispatch();
@@ -250,12 +251,12 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
                   title={footerBanners[0].title}
                   className="border-left title-left"
                 />
-                <a
-                  href={footerBanners[0].linkButtonURL}
+                <Link
+                  href="/GetAQuote"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
-                  {footerBanners[0].linkButtonLabel}
-                </a>
+                  {footerBanners[0]?.linkButtonLabel}
+                </Link>
               </div>
               <div className="col-sm-5 col-lg-7 position-relative foot_right_block">
                 <div className="footer_bubbles">

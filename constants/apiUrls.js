@@ -64,7 +64,7 @@ export const ACCESS_API_POLL_URL = '/api-poll/access';
 export const FETCH_ENQUIRY_PRODUCTS_URL = BASE_URL + "/enquiry-product";
 export const FETCH_ENQUIRY_PRODUCT_URL = BASE_URL + "/enquiry-product/get-product-by-slug?slug=:slug";
 export const SUBMIT_ENQUIRY_PRODUCTS_URL = BASE_URL + "/enquiry-product/enquiry";
-export const UPLOAD_ENQUIRY_PRODUCT_BRAND_ASSET_URL = BASE_URL + "enquiry-product/file";
+export const UPLOAD_ENQUIRY_PRODUCT_BRAND_ASSET_URL = BASE_URL + "/enquiry-product/file";
 export const IMPORT_ENQUIRY_PRODUCTS_URL = BASE_URL + "/enquiry-product/import";
 export const FETCH_ENQUIRY_PRODUCT_SIZE_GUIDES_URL = BASE_URL + "/enquiry-product/get-size-charts";
 export const IMPORT_ENQUIRY_PRODUCT_SIZE_GUIDES_URL = BASE_URL + "/enquiry-product/import-size-charts";

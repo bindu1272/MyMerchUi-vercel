@@ -123,7 +123,7 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
           }}
         ></div>
       </section>
-      <section className="section_space">
+      <section className="section_space" style={{backgroundColor:"white"}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
