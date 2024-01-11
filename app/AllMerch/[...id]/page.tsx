@@ -515,14 +515,14 @@ const EnquiryProductsPage = ({
           </Button>
         </div>
       </div>
-      {(showStepsModal || !stepsModalDisplayed) && (
+      {/* {(showStepsModal || !stepsModalDisplayed) && (
         <StepsModal
           showStepsModal={showStepsModal || !stepsModalDisplayed}
           productsType={enquiryProductsType}
           onOkStepsModal={onCloseStepsModal}
           onCancelStepsModal={onCloseStepsModal}
         />
-      )}
+      )} */}
       {showOverwriteCartPopup && (
         <OverwriteCartPopup
           showOverwriteCartPopup={showOverwriteCartPopup}

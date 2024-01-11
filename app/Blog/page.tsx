@@ -125,7 +125,7 @@ const BlogsPage = ({ headerBanners,params }:any) => {
               <div className="banner_bubbles">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/inner-banner-shape.svg"} />
+                    <S3Image src={"/inner-banner-shape.svg"} width={308} height={292}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
