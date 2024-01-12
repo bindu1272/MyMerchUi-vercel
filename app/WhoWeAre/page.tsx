@@ -128,7 +128,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/who-we-are-header-bubble.svg"} />
+                    <S3Image src={"/who-we-are-header-bubble.svg"} width={305} height={277}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -188,7 +188,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               <div className="team_bubble">
                 <ParallaxProvider>
                   <Parallax translateY={["-0px", "-300px"]}>
-                    <S3Image src={"/we-love-bubble.svg"} />
+                    <S3Image src={"/we-love-bubble.svg"} width={296} height={187}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>

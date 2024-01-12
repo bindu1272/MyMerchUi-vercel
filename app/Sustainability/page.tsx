@@ -442,7 +442,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                 <div className="footer_bubbles">
                   <ParallaxProvider>
                     <Parallax translateY={["-50", "50"]}>
-                      <S3Image src={"/footer-bubbles.svg"} />
+                      <S3Image src={"/footer-bubbles.svg"}  width={211} height={223}/>
                     </Parallax>
                   </ParallaxProvider>
                 </div>
