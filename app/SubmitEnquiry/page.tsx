@@ -348,6 +348,9 @@ const EnquiryProductsSubmitPage = ({
     if (!brandAssetsUuid) {
       brandAssetsUuid = Math.random();
     }
+    if(value?.file?.size >  5 * 1024 * 1024){
+      return "";
+    }else{
     data.append("uuid", brandAssetsUuid);
     data.append("file", value.file);
     dispatch(
@@ -378,6 +381,7 @@ const EnquiryProductsSubmitPage = ({
         }
       )
     );
+      }
   };
 
   const onDeleteBrandAssetFile = (file:any) => {
