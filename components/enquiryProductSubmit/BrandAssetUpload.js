@@ -87,7 +87,7 @@ const BrandAssetUpload = ({
           </p>
           <label>(Max. file size 5mb)</label>
         </Dragger>
-        {fileInfo?.file?.size > 5 * 1024 * 1024 ? null :
+        {/* {fileInfo?.file?.size > 5 * 1024 * 1024 ? null : */}
         <Upload
           listType="picture-card"
           fileList={fileList}
@@ -97,7 +97,6 @@ const BrandAssetUpload = ({
         >
           {/* <Button>+ Add</Button> */}
         </Upload>
-}
       </div>
       <Modal
         visible={showFilePreview}
