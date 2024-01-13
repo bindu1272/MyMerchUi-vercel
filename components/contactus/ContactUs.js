@@ -124,14 +124,22 @@ const ContactUs = ({
                                   rules={[
                                     {
                                       required: f.isRequired,
-                                      message: f.isRequiredValidationMessage,
+                                      message: f?.label === "Quantity" ? "Please Enter Quantity" : f.isRequiredValidationMessage,
                                     },
                                   ]}
+                                  
+                                
                                 >
                                   <Input
                                     type="number"
                                     min={f.minValue ? f.minValue : 1}
                                     placeholder={f.placeholderText}
+                                    rules={[
+                                      {
+                                        required: f.isRequired,
+                                        message: f.isRequiredValidationMessage,
+                                      },
+                                    ]}
                                   />
                                 </Form.Item>
                               case "date":
