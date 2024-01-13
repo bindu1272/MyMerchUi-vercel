@@ -20,7 +20,7 @@ const Footer = () => {
                 <div className="col-sm-8 col-lg-4">
                   <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                      {/* <S3Image src="./new-logo-white.png" className="mb-3 footer_logo" layout="fill"/> */}
+                      <S3Image src={"/new-logo-white.png"} className="mb-3 footer_logo" width={164} height={62}/>
                       <p>
                         We create the tangible moments for your brand. Experts
                         in designing & producing branded & custom apparel,
