@@ -15,6 +15,7 @@ const ProductDetails = ({
     onClickViewSizeGuide,
     onOkSizeGuideModal,
     onCancelSizeGuideModal,
+    showError
 }) => {
     return (currentProduct.curated_pack
         ? <CuratedPackDetails
@@ -30,6 +31,7 @@ const ProductDetails = ({
             onClickViewSizeGuide={onClickViewSizeGuide}
             onOkSizeGuideModal={onOkSizeGuideModal}
             onCancelSizeGuideModal={onCancelSizeGuideModal}
+            showError={showError}
         />
         : <CustomPackDetails
             currentProduct={currentProduct}
@@ -44,6 +46,7 @@ const ProductDetails = ({
             onClickViewSizeGuide={onClickViewSizeGuide}
             onOkSizeGuideModal={onOkSizeGuideModal}
             onCancelSizeGuideModal={onCancelSizeGuideModal}
+            showError={showError}
         />
     );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Form, Input } from "antd";
+import { Modal, Form, Input,Alert } from "antd";
 import SizeGuide from "./SizeGuide";
 import { getDetailImageSpec } from "./EnquiryProductHelper";
 import Image from "next/image";
@@ -17,6 +17,7 @@ const CustomPackDetails = ({
   onClickViewSizeGuide,
   onOkSizeGuideModal,
   onCancelSizeGuideModal,
+  showError
 }) => {
   return (
     <>
@@ -131,6 +132,14 @@ const CustomPackDetails = ({
                   </Form>
                   <span>Units</span>
                 </div>
+                {showError && (
+        <Alert style={{width:"250px",marginLeft:"12px"}}
+          message="Error"
+          description="Quantity should be >= 50."
+          type="error"
+          showIcon
+        />
+      )}
               </div>
               <div className="col-5 col-md-4 text-end text-sm-end mt-4 m-sm-0">
                 <a

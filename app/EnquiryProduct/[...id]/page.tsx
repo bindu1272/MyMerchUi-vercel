@@ -34,6 +34,7 @@ const EnquiryProductDetailsPage = ({
     const [currentProductColour, setCurrentProductColour] = useState({});
     const [currentProductQuantity, setCurrentProductQuantity] = useState();
     const [currentProductUnitPrice, setCurrentProductUnitPrice] = useState();
+    const [showError,setShowError]:any = useState();
     const [showProductSizeGuideModal, setShowProductSizeGuideModal] =
         useState(false);
     const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
@@ -132,6 +133,7 @@ const EnquiryProductDetailsPage = ({
 
     const onChangeCurrentProductQuantity = (e:any) => {
         setCurrentProductQuantity(e.target.value);
+        setShowError(Number(e.target.value) < 50);
     };
 
     const onBlurCurrentProductQuantity = (e:any, minimumOrderQuantity:any) => {
@@ -140,6 +142,7 @@ const EnquiryProductDetailsPage = ({
                 ? minimumOrderQuantity
                 : e.target.value;
         setCurrentProductQuantity(qty);
+        setShowError(false);
         setCurrentProductUnitPrice(
             calculateProductUnitPrice(qty, currentProduct.prices)
         );
@@ -268,6 +271,7 @@ const EnquiryProductDetailsPage = ({
                                     onClickViewSizeGuide={onClickViewSizeGuide}
                                     onOkSizeGuideModal={onOkProductSizeGuideModal}
                                     onCancelSizeGuideModal={onCancelProductSizeGuideModal}
+                                    showError = {showError}
                                 />
                             </div>
                         </div>

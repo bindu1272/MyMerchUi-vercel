@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Form, Input } from "antd";
+import { Form, Input,Alert } from "antd";
 import ImageGallery from "react-image-gallery";
 import SizeGuide from "./SizeGuide";
 import { getDetailImageSpec } from "./EnquiryProductHelper";
@@ -17,6 +17,7 @@ const CuratedPackDetails = ({
     onClickViewSizeGuide,
     onOkSizeGuideModal,
     onCancelSizeGuideModal,
+    showError
 }) => {
     const galleryImages =
         currentProduct.colours &&
@@ -144,10 +145,21 @@ const CuratedPackDetails = ({
                                             onBlur={(e) => {
                                                 onBlurCurrentProductQuantity(e)
                                             }}
+
                                         />
+                               
                                     </Form>
+
                                     <span>Units</span>
                                 </div>
+                                {showError && (
+        <Alert style={{width:"250px",marginLeft:"12px"}}
+          message="Error"
+          description="Quantity should be >= 50."
+          type="error"
+          showIcon
+        />
+      )}
                             </div>
                             <div className="col-5 col-md-4 text-end text-sm-end mt-4 m-sm-0">
                                 <a
