@@ -301,7 +301,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                           </div>
                           <div className="col-sm-6 col-lg-5">
                             <div className="d-flex align-items-center justify-content-center flex-column text-center">
-                              <Image alt="" src={mm.logo.url} width={310} height={118}/>
+                              <Image alt="" src={mm.logo.url} width={314} height={104}/>
                               <p className="mt-4 pb-4">
                                 <strong>{mm.description}</strong>
                                 <span>
