@@ -294,7 +294,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                                 </Parallax>
                               </ParallaxProvider>
                             </div>
-                            <Image alt="" width={442} height={274}
+                            <Image alt="" width={443} height={274}
                               src={mm.image450x275 && mm.image450x275.url}
                               className="img-fluid"
                             />
