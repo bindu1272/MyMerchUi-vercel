@@ -198,7 +198,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12">
               <MerchTitle title="Get sticky with it" />
               <div className="shape7">
-                <S3Image src={"/shape7.svg"} className="img-fluid m-auto" />
+                <S3Image src={"/shape7.svg"} className="img-fluid m-auto" width={822} height={381} />
                 <div className="bubble_shape">
                   <ParallaxProvider>
                     <Parallax translateY={["-50", "50"]}>
@@ -318,7 +318,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
             </div>
             <div className="col-sm-12 text-center mt-3">
               <a
-                href="/CaseStudies"
+                href="/caseStudies"
                 className="btn_blue pt-0"
                 style={{ fontSize: 14, whiteSpace: "nowrap" }}
               >
