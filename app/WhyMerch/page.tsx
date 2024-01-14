@@ -202,7 +202,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                 <div className="bubble_shape">
                   <ParallaxProvider>
                     <Parallax translateY={["-50", "50"]}>
-                      <S3Image src={"/bubble_shape.svg"} />
+                      <S3Image src={"/bubble_shape.svg"} width={250} height={290}/>
                     </Parallax>
                   </ParallaxProvider>
                 </div>
