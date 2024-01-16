@@ -352,7 +352,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   className="border-left title-left"
                 />
                 <a
-                  href={footerBanners[0].linkButtonURL}
+                  href="/GetAQuote"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}
