@@ -21,7 +21,7 @@ const Footer = () => {
                   <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12">
                       <S3Image src={"/new-logo-white.png"} className="mb-3 footer_logo" width={164} height={62}/>
-                      <p>
+                      <p style={{fontFamily:"Neutra Text"}}>
                         We create the tangible moments for your brand. Experts
                         in designing & producing branded & custom apparel,
                         promotional items & gifts. Modern merch, simply done
