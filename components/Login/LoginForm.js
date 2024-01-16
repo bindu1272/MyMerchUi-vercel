@@ -32,7 +32,7 @@ const LoginForm = ({
         onOk={onOk}
         onCancel={onCancel}
         footer={null}
-        width={700}
+        width={800}
       >
         <div className="user_login_block">
           <GoogleSetup
