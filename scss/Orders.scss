@@ -33,12 +33,14 @@
       margin-top: 20px;
       li {
         margin-bottom: 15px;
+        text-decoration: none;
       }
     }
     li {
       list-style-type: none;
       display: inline-block;
       a {
+        text-decoration: none;
         padding: 10px 15px;
         border-radius: 30px;
         background-color: #ffffff;

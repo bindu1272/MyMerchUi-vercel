@@ -1009,7 +1009,7 @@ $kinanteyFont: "kinanteyregular";
           }
         }
         .ant-input,
-        .ant-select-selector {
+        :global(.ant-select-selector) {
           min-height: 50px;
           font-size: 20px;
           border-radius: 6px;
@@ -1043,9 +1043,9 @@ $kinanteyFont: "kinanteyregular";
   }
 }
 
-.ant-select-dropdown {
-  .ant-select-item {
-    .ant-select-item-option-content {
+:global(.ant-select-dropdown) {
+  :global(.ant-select-item) {
+    :global(.ant-select-item-option-content) {
       font-size: 20px;
       font-family: "Neutra Text";
       color: #0b1920;
@@ -2291,6 +2291,7 @@ $kinanteyFont: "kinanteyregular";
   font-size: 20px;
   a {
     color: white;
+  text-decoration: none;
   }
 }
 
@@ -3894,7 +3895,7 @@ textarea {
     border-radius: 0 !important;
     width: 300px;
   }
-  .ant-select-selector {
+  :global(.ant-select-selector) {
     border: solid 1px #808080 !important;
     border-radius: 0 !important;
     width: 300px !important;
