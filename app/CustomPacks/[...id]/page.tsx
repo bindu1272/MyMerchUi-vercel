@@ -491,11 +491,11 @@ const EnquiryProductsPage = ({
                   productCategories.length > 0 &&
                   getCurrentProductsType() !== "curated-pack" &&
                   <div className="product_prev_next_block">
-                    <a href={`${getCurrentProductsTypeUrl()}/${previousProductCategory.key}`}>
+                    <a href={`${getCurrentProductsTypeUrl()}/${previousProductCategory?.key}`}>
                       <Image src={leftArrow} alt="" width={20} height={20}/>
                       {`Back to ${previousProductCategory.name}`}
                     </a>
-                    <a href={`${getCurrentProductsTypeUrl()}/${nextProductCategory.key}`}>
+                    <a href={`${getCurrentProductsTypeUrl()}/${nextProductCategory?.key}`}>
                       {`Continue to ${nextProductCategory.name}`}
                       <Image src={rightArrow} alt="" width={20} height={20}/>
                     </a>
