@@ -185,7 +185,7 @@ const BlogsPage = ({ headerBanners,params }:any) => {
                 <div className="col-sm-7 col-lg-8">
                   <Select
                     defaultValue="all"
-                    style={{ width: "100%" }}
+                    style={{ width: "100%" ,fontFamily:"Neutra Text"}}
                     size={"large"}
                     onChange={handleBlogCategoryChange}
                   >

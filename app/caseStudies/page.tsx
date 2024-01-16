@@ -186,7 +186,7 @@ const CaseStudyPage = ({ headerBanners }:any) => {
                   <div className="col-sm-12 col-lg-8">
                     <Select
                       defaultValue="all"
-                      style={{ width: "100%" }}
+                      style={{ width: "100%",fontFamily:"Neutra Text" }}
                       size={"large"}
                       onChange={handleCaseStudyCategoryChange}
                     >
