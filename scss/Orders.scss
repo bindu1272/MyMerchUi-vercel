@@ -19,6 +19,7 @@
       }
     }
     .ant-input {
+    font-family: "Neutra Text";
       background-color: #ffffff;
       font-size: 20px;
       border: none;
@@ -45,6 +46,7 @@
         border-radius: 30px;
         background-color: #ffffff;
         color: #000000;
+        font-family: "Neutra Text";
         @include displayFlex;
         @include alignItemsCenter;
         @include justifyContentCenter;
