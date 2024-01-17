@@ -41,9 +41,9 @@ const RegistrationForm = ({
             </div>
           </div>
         </div>
-        <Form
+        <Form 
           layout={"vertical"}
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: "white",fontFamily:"Neutra Text" }}
           onFinish={(values) => onSubmit(values)}
         >
           <Form.Item

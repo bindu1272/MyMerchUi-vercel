@@ -911,6 +911,7 @@ $kinanteyFont: "kinanteyregular";
 
 .reg_modal {
   padding-bottom: 0;
+  font-family: "Neutra Text";
   .ant-modal-content {
     border-radius: 6px;
     .ant-modal-close {
@@ -943,6 +944,7 @@ $kinanteyFont: "kinanteyregular";
             @include alignItemsCenter;
             margin-left: 10px;
             column-gap: 10px;
+            text-decoration: none;
           }
         }
         .ct_btn {
@@ -985,6 +987,7 @@ $kinanteyFont: "kinanteyregular";
           .ct_btn {
             width: 100%;
             margin-left: 10px;
+            text-decoration: none;
             @media (max-width: 650px) {
               margin-left: 0;
             }
@@ -1001,7 +1004,9 @@ $kinanteyFont: "kinanteyregular";
           a {
             color: #0032a0;
             font-weight: bold;
+            text-decoration: none;
           }
+
           .ant-checkbox-wrapper {
             span {
               font-size: 16px;

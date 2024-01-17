@@ -33,6 +33,7 @@ const LoginForm = ({
         onCancel={onCancel}
         footer={null}
         width={800}
+        style={{fontFamily:"Neutra Text"}}
       >
         <div className="user_login_block">
           <GoogleSetup
@@ -80,7 +81,7 @@ const LoginForm = ({
             >
               <Input.Password placeholder={"Password"} />
             </Form.Item>
-            <div className="form_group">
+            <div className="form_group" style={{fontFamily:"Neutra Text"}}>
               <Form.Item name="remember_me" valuePropName="checked">
                 <Checkbox>Stay signed in</Checkbox>
               </Form.Item>
