@@ -307,19 +307,19 @@
               span {
                 margin: 0;
               }
-              .ant-select-selector {
+              :global(.ant-select-selector) {
                 height: auto;
                 min-height: 50px;
                 @include displayFlex;
                 @include alignItemsCenter;
                 border-radius: 6px;
-                .ant-select-selection-item {
+                :global(.ant-select-selection-item) {
                   margin: 0;
                 }
               }
             }
-            .ant-input:focus,
-            .ant-input:hover {
+            :global(.ant-input:focus),
+            :global(.ant-input:hover) {
               border: 1px solid #0b1920;
               border-radius: 4px;
             }
@@ -378,7 +378,7 @@
           margin: 0;
           font-size: 20px;
         }
-        .ant-select-selector {
+        :global(.ant-select-selector) {
           height: auto;
           min-height: 50px;
           @include displayFlex;

@@ -74,7 +74,7 @@ body {
   margin: 0;
   color: rgba(0, 0, 0, 0.85);
   font-size: 16px;
-  font-family: "Neutra Text";
+  font-family: "Neutra Text" !important;
   line-height:22px;
   background-color: #fff;
 }
@@ -231,6 +231,7 @@ textarea {
       touch-action: manipulation;
 }
 table {
+  font-family: 'Neutra Text';
   border-collapse: collapse;
 }
 caption {
