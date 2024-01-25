@@ -100,6 +100,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
   }, [])
   return (
     <div>
+      <h1>helooooooooooooooooooooooooooooooooooooooooooooooooo</h1>
       <div className="container position-relative banner_shape">
         <div className="row">
           <div className="col-sm-12">
