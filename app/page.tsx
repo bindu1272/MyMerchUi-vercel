@@ -477,12 +477,12 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                   title={footerBanners[0].title}
                   className="border-left title-left"
                 />
-                {/* <a
-                  href={footerBanners[0].linkButtonURL}
+                <a
+                  href="/GetAQuote"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}
-                </a> */}
+                </a>
               </div>
               <div className="col-sm-7 col-lg-7 col-xl-7 position-relative foot_right_block">
                 <div className="footer_bubbles">

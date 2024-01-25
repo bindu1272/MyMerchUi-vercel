@@ -147,7 +147,7 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
           }}
         ></div>
       </section>
-      <section className="section_space pb-sm-0 memorable-moments-section">
+      <section className="section_space pb-sm-0 memorable-moments-section" style={{backgroundColor:"white"}}>
         <div className="container">
           <div className="row column-reverse">
             <div className="col-sm-6">

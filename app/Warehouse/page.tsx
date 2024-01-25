@@ -67,10 +67,10 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
   return (
     <>
       <section className="banner-section">
-        <GoogleSetup
+        {/* <GoogleSetup
           title={"Merchandise Warehouse & Distributor"}
           description={"We can store your branded merchandise for all your locations – and send them out at a click of a button. Exclusive shipping rates & save on delivery."}
-        />
+        /> */}
         <div className="container position-relative">
           <div className="row">
             <div className="col-sm-12">

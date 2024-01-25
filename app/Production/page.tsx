@@ -426,7 +426,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                                 </ParallaxProvider>
                               </div>
                               <div>
-                                <Image alt="" width={735} height={325}
+                                <Image alt="" width={cs.image735x325Circular?.width} height={cs.image735x325Circular?.height}
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   className="img-fluid"

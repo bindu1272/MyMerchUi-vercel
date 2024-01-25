@@ -365,7 +365,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   teamMembers.map((tm:any,index:any) => {
                     return (
                       <div className="team_details" key={index}>
-                        <Image alt="" width={20} height={20}
+                        <Image alt="" width={160} height={160}
                           //src={`${process.env.REACT_APP_STRAPI_API_URL}${tm.profilePicture160x160.url}`}
                           src={`${tm.profilePicture160x160.url}`}
                         />

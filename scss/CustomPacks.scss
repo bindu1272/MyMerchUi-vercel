@@ -2,6 +2,7 @@
 .custom_pack_section {
   margin-top: 73px;
   padding-bottom: 20px;
+  background-color: #fff;
   @media (min-width: 768px) {
     padding-bottom: 30px;
   }
@@ -714,6 +715,7 @@
             line-height: 35px;
             font-size: 12px;
             line-height: 22px;
+            font-family: "Neutra Text"!important;
             @media (min-width: 1140px) {
               font-size: 16px;
               line-height: 35px;
@@ -771,6 +773,7 @@
             text-align: center;
             margin-bottom: 12px;
             color: #fff;
+            font-family: "Neutra Text"!important;
             @media (min-width: 1140px) {
               font-size: 18px;
               font-weight: 500;

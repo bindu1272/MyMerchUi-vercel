@@ -315,7 +315,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                                 </ParallaxProvider>
                               </div>
                               <div>
-                                <Image width={735} height={325}
+                                <Image width={1031} height={500}
                                 alt=""
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}

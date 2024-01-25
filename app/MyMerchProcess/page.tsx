@@ -66,7 +66,7 @@ const MyMerchProcess = () => {
           <div className="row">
             <div className="col-sm-12">
               <h1>
-                The <S3Image src={"/new-logo-blue.png"} width={250} height={94} style={{ position: "relative", top: 5 }} /> process
+                The <S3Image src={"/new-logo-blue.png"} width={250} height={94} style={{ position: "relative", top: 15,verticalAlign:"middle",display:"unset" }} /> process
               </h1>
             </div>
           </div>
