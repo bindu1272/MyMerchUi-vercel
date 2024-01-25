@@ -100,7 +100,6 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
   }, [])
   return (
     <div>
-      <h1>helooooooooooooooooooooooooooooooooooooooooooooooooo</h1>
       <div className="container position-relative banner_shape">
         <div className="row">
           <div className="col-sm-12">
@@ -171,6 +170,8 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
           <div className="row">
             <div className="col-sm-12">
               <h1>Brands we’ve worked with:</h1>
+      <h1>helooooooooooooooooooooooooooooooooooooooooooooooooo</h1>
+
               <Slider {...brandsSliderSettings}>
                 {brandsImages &&
                   brandsImages?.length > 0 &&
