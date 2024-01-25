@@ -5,7 +5,6 @@ import ReactMarkdown from "react-markdown";
 const CaseStudyDetails = ({
   caseStudy,
 }) => {
-  console.log("hai",caseStudy)
   return (
     <div className="blog_details_section">
       <div className="blog_details_container">

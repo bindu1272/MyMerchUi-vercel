@@ -9,7 +9,7 @@ const Products = ({
     onClickProductSeeMore
 }) => {
     const products = (enquiryProducts && enquiryProducts?.length > 0)
-        ? currentProductCategoryKey.toLowerCase() === "all"
+        ? currentProductCategoryKey?.toLowerCase() === "all"
             ? enquiryProducts
             : enquiryProducts.filter(ep => ep.categories.some(c => c.key.toLowerCase() == currentProductCategoryKey.toLowerCase()))
         : [];

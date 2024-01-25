@@ -18,19 +18,19 @@ const Product = ({ product, cart, onClickProduct, onClickProductSeeMore }) => {
         <div className="badges_info">
           {product.tags && product.tags.toLowerCase().includes("hot") && (
             <div className="badge_icon" style={{ backgroundColor: "#EB7E89" }}>
-              <S3Image src={"/enquiry_product_hot.svg"} />
+              <S3Image src={"/enquiry_product_hot.svg"} width={52} height={52}/>
               <label>HOT!</label>
             </div>
           )}
           {product.tags && product.tags.toLowerCase().includes("eco") && (
             <div className="badge_icon" style={{ backgroundColor: "#D9B48F" }}>
-              <S3Image src={"/enquiry_product_eco.svg"} />
+              <S3Image src={"/enquiry_product_eco.svg"} width={52} height={52}/>
               <label>ECO</label>
             </div>
           )}
           {product.tags && product.tags.toLowerCase().includes("xprs") && (
             <div>
-              <S3Image src={"/enquiry_product_xprs.svg"} />
+              <S3Image src={"/enquiry_product_xprs.svg"} width={52} height={52}/>
             </div>
           )}
         </div>

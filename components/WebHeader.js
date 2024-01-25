@@ -23,14 +23,14 @@ const menu = (onLogout) => (
   <Menu className="avatar_menu">
     <Menu.Item>
       <Link href="/accountsettings"
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none",fontFamily:"Neutra Text" }}
       >
         Account Settings
       </Link>
     </Menu.Item>
     <Menu.Item>
       <Button type="text" onClick={onLogout}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none",fontFamily:"Neutra Text" }}
       >
         LogOut
       </Button>

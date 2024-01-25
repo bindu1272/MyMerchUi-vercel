@@ -32,7 +32,7 @@ const CustomPackDetails = ({
                 <div className="img_block">
                   <Image alt="" width={388} height={498}
                     src={
-                      currentProductColour.images[getDetailImageSpec()]
+                      currentProductColour?.images?.[getDetailImageSpec()]
                         .product_image_url
                     }
                   />
@@ -46,13 +46,13 @@ const CustomPackDetails = ({
                 <div className="item">
                   <label>Sizes: </label>
                   <p className="size_space">
-                    {currentProduct.sizes.toString().split(",").join(" ")}
+                    {currentProduct?.sizes?.toString().split(",").join(" ")}
                   </p>
                   <p>
                     {currentProduct.show_size_guide && (
                       <a
                         onClick={() =>
-                          onClickViewSizeGuide(currentProduct.size_chart_data)
+                          onClickViewSizeGuide(currentProduct?.size_chart_data)
                         }
                       >
                         View Size Guide
@@ -82,7 +82,7 @@ const CustomPackDetails = ({
                         return (
                           <span key={index}
                             className={
-                              c.colour_hex == currentProductColour.colour_hex
+                              c.colour_hex == currentProductColour?.colour_hex
                                 ? "selected"
                                 : ""
                             }
@@ -132,15 +132,9 @@ const CustomPackDetails = ({
                   </Form>
                   <span>Units</span>
                 </div>
-                {showError && (
-        <Alert style={{width:"250px",marginLeft:"12px"}}
-          message="Error"
-          description="Quantity should be >= 50."
-          type="error"
-          showIcon
-        />
-      )}
+           
               </div>
+             
               <div className="col-5 col-md-4 text-end text-sm-end mt-4 m-sm-0">
                 <a
                   className="btn_blue m-0"
@@ -149,6 +143,13 @@ const CustomPackDetails = ({
                   Add to enquiry
                 </a>
               </div>
+              {showError && (
+        <Alert style={{width:"250px",marginLeft:"44px",padding:"6px",border:"none",fontWeight:"600"}}
+          description="Quantity should be >= 50."
+          type="error"
+          showIcon
+        />
+      )}
               <div className="col-7 col-md-12  mt-4 m-sm-0">
                 <p className="info_message">
                   ⓘ Minimum order quantity is{" "}

@@ -32,7 +32,7 @@ const LoginForm = ({
         onOk={onOk}
         onCancel={onCancel}
         footer={null}
-        width={800}
+        width={720}
         style={{fontFamily:"Neutra Text"}}
       >
         <div className="user_login_block">
@@ -83,7 +83,7 @@ const LoginForm = ({
             </Form.Item>
             <div className="form_group" style={{fontFamily:"Neutra Text"}}>
               <Form.Item name="remember_me" valuePropName="checked">
-                <Checkbox>Stay signed in</Checkbox>
+                <Checkbox style={{fontFamily:"Neutra Text !important"}}>Stay signed in</Checkbox>
               </Form.Item>
               <Link href=""
                 onClick={(e) => {
@@ -102,7 +102,7 @@ const LoginForm = ({
                     htmlType="submit"
                     block
                     className="ct_btn mb-0"
-                    style={{ padding: "25px", fontSize: 20 }}
+                    style={{ padding: "25px", fontSize: 20,fontFamily:"Neutra Text !important" }}
                     loading={loading}
                   >
                     Login

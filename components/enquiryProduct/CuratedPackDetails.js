@@ -152,14 +152,7 @@ const CuratedPackDetails = ({
 
                                     <span>Units</span>
                                 </div>
-                                {showError && (
-        <Alert style={{width:"250px",marginLeft:"12px"}}
-          message="Error"
-          description="Quantity should be >= 50."
-          type="error"
-          showIcon
-        />
-      )}
+     
                             </div>
                             <div className="col-5 col-md-4 text-end text-sm-end mt-4 m-sm-0">
                                 <a
@@ -171,6 +164,13 @@ const CuratedPackDetails = ({
                                     Add to enquiry
                                 </a>
                             </div>
+                            {showError && (
+        <Alert style={{width:"250px",marginLeft:"44px",padding:"6px",border:"none",fontWeight:"600"}}
+          description="Quantity should be >= 50."
+          type="error"
+          showIcon
+        />
+      )}
                             <div className="col-7 col-md-12  mt-4 m-sm-0">
                                 <p className="info_message">
                                     ⓘ Minimum order quantity is{" "}
