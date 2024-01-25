@@ -1,7 +1,7 @@
 "use client";
 import _ from "lodash";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useDispatch, connect } from "react-redux";
 import { notification, Button } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
@@ -44,7 +44,7 @@ const EnquiryProductsPage = ({
   productsData,
   categoriesData,currentProductCategoryIndexData
 }:any) => {
-  // const pathname = usePathname();
+  const pathname = usePathname();
   
 
   // console.log("resCategories",resCategories);
@@ -88,13 +88,13 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    // if (pathname.toLowerCase().startsWith("/curatedpacks")) {
-    //   return "curated-pack";
-    // } else if (pathname.toLowerCase().startsWith("/custompacks")) {
-    //   return "custom-pack";
-    // } else {
+    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
+      return "curated-pack";
+    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
+      return "custom-pack";
+    } else {
       return "all-merch";
-    // }
+    }
   };
  
 
@@ -160,15 +160,14 @@ const EnquiryProductsPage = ({
       key: "all",
       name: "All",
     }];
-    // const queryParams :any= getQueryParams(window.location.href);
-    // if (queryParams.searchString) {
-    //   currentSearchString = queryParams.searchString;
-    // }
-    const searchString:any = null;
-    // searchParams.get("searchString");
-    if (searchString) {
-      currentSearchString = searchString;
+    const queryParams :any= getQueryParams(window.location.href);
+    if (queryParams.searchString) {
+      currentSearchString = queryParams.searchString;
     }
+    // const searchString:any = searchParams.get("searchString");
+    // if (searchString) {
+    //   currentSearchString = searchString;
+    // }
     if (
       enquiryProducts == null ||
       enquiryProducts.length == 0 ||
@@ -193,10 +192,8 @@ const EnquiryProductsPage = ({
           (response:any) => {
             response.forEach((p:any) => allCategory.push(...p.categories));
             resCategories = _.uniqBy(allCategory, 'key');
-            // var urlSplits = 
-            // pathname.split("/");
-            let currentCategoryKey = "all"
-            // urlSplits.length > 2 ? urlSplits[2] : "all";
+            var urlSplits = pathname.split("/");
+            let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "all";
             const currentProductCategoryIndex = resCategories.findIndex((c) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
             setProductCategories(resCategories);
             setCurrentProductCategoryKey(currentCategoryKey);
@@ -226,9 +223,8 @@ const EnquiryProductsPage = ({
       console.log("else");
       enquiryProducts && enquiryProducts?.forEach((p:any) => allCategory.push(...p.categories));
       resCategories = _.uniqBy(allCategory, 'key');
-      // var urlSplits = pathname.split("/");
-      let currentCategoryKey = "all"
-      // urlSplits.length > 2 ? urlSplits[2] : "all";
+      var urlSplits = pathname.split("/");
+      let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "all";
       const currentProductCategoryIndex = resCategories.findIndex((c:any) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
       setProductCategories(resCategories);
       setCurrentProductCategoryKey(currentCategoryKey);
