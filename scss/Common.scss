@@ -912,6 +912,18 @@ $kinanteyFont: "kinanteyregular";
 .reg_modal {
   padding-bottom: 0;
   font-family: "Neutra Text";
+  .payment_options{
+    .ant-form{
+      font-family: "Neutra Text" !important;
+      .ant-form-item-control-input-content, .ant-form-item-control-input-content,
+      .ant-input{
+      font-family: "Neutra Text" !important;
+      }
+      .ant-checkbox-wrapper{
+      font-family: "Neutra Text" !important;
+      }
+    }
+  }
   .ant-modal-content {
     border-radius: 6px;
     .ant-modal-close {
@@ -988,6 +1000,7 @@ $kinanteyFont: "kinanteyregular";
             width: 100%;
             margin-left: 10px;
             text-decoration: none;
+            font-family: "Neutra Text"!important;
             @media (max-width: 650px) {
               margin-left: 0;
             }
@@ -1014,11 +1027,22 @@ $kinanteyFont: "kinanteyregular";
           }
         }
         .ant-input,
-        :global(.ant-select-selector) {
+        .css-dev-only-do-not-override-gzal6t{
+          font-family: "Neutra Text";
+          }
+          .ant-input{
+            min-height: 50px;
+              font-size: 20px;
+              border-radius: 6px;
+              border: 1px solid #d9d9d9;
+          }
+         
+        .ant-select-selector {
           min-height: 50px;
           font-size: 20px;
           border-radius: 6px;
           border: 1px solid #d9d9d9;
+          
           @include displayFlex;
           @include alignItemsCenter;
         }
@@ -1103,6 +1127,7 @@ $kinanteyFont: "kinanteyregular";
   }
   .bread_crumb_nav {
     width: max-content;
+    font-family: "Neutra Text" !important;
     @include displayFlex;
     @include alignItemsCenter;
     @include flexDirectionRow;
@@ -2398,8 +2423,11 @@ textarea {
   }
   .item {
     @media (max-width: 650px) {
-      .ant-col {
+      :global(.ant-col) {
         width: 100%;
+        font-family: "Neutra Text";
+        height: 135px;
+    width: 155px;
       }
     }
     margin-bottom: 30px;
@@ -3609,6 +3637,7 @@ textarea {
 .merch-portal-section {
   position: relative;
   padding: 100px 0;
+  font-family: "Neutra Text";
   @media (max-width: 1024px) {
     padding: 50px 0;
   }
@@ -3742,6 +3771,7 @@ textarea {
     padding: 10px 0;
     border: solid 2px #fff;
     display: inline-flex;
+  text-decoration: none;
     @include alignItemsCenter;
     @include justifyContentCenter;
   }
@@ -3978,6 +4008,7 @@ textarea {
 .merch_inprocess {
   padding: 80px 0;
   background-color: #fff;
+  font-family: "Neutra Text"!important;
   h1 {
     font-size: 60px;
     text-align: center;
@@ -6287,6 +6318,7 @@ textarea {
   }
 }
 .merch_hub_section {
+  background-color: #fff;
   @media (min-width: 1140px) {
     [class*="col-"] {
       margin-bottom: 30px;
@@ -8333,6 +8365,7 @@ textarea {
   }
 }
 .memorable_moments_section {
+  background-color: white;
   .mm_info_items {
     @media (min-width: 768px) {
       @include displayFlex;

@@ -357,6 +357,23 @@
   padding: 20px;
   border-radius: 4px;
  background-color: #ffffff;
+ .row {
+  .col-sm-5 {
+    .ant-form {
+      .ant-form-item  {
+        .ant-row  {
+          .ant-col  {
+            font-family: "Neutra Text" !important;
+          }
+        }
+      }
+    }
+  }
+}
+ .ant-form-item-control-input{
+  font-family: "Neutra Text" !important;
+ }
+ 
   @media(max-width:1140px){
     width: 100%;
     margin-top: 30px;

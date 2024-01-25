@@ -17,6 +17,7 @@
 }
 .profile_settings_block {
   background-color: #d1dde6;
+  font-family: "Neutra Text" !important;
 
   .profile_info {
     background-color: #ffffff;
@@ -24,6 +25,8 @@
     // padding: 15px;
     margin: 40px auto;
     overflow: hidden;
+  font-family: "Neutra Text" !important;
+
     .ant-input {
       min-height: 50px;
       font-size: 20px;
@@ -65,9 +68,32 @@
       @include justifyContentCenter;
     }
     .ant-tabs {
+      font-family: "Neutra Text"!important;
+      .ant-tabs-content-holder, .ant-typography{
+      font-family: "Neutra Text"!important;
+      }
+      button{
+      font-family: "Neutra Text"!important;
+      }
       .ant-tabs-content {
         padding: 30px;
         font-size: 16px;
+        .ant-form{
+          font-family: "Neutra Text" !important;
+          .ant-form-item{
+            font-family: "Neutra Text" !important;
+          }
+          .ant-form-item-label{
+            font-family: "Neutra Text" !important;
+          }
+          .ant-input{
+            font-family: "Neutra Text" !important;
+          }
+          button{
+            font-family: "Neutra Text" !important;
+
+          }
+        }
       }
       .ant-tabs-nav {
         background-color: #eee;

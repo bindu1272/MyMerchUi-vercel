@@ -237,6 +237,7 @@ body {
 .order_history_info {
   .ant-table-container {
     font-family: "Neutra Text" !important;
+    font-size: 16px !important;
     .ant-table-content{
       :global(.ant-table-cell) {
         a {
@@ -289,21 +290,27 @@ body {
     font-family: "Neutra Text" !important;
   }
 }
-.ant-form {
+:global(.ant-form) {
   .ant-input {
     height: 45px;
     border-radius: 6px;
     border: 1px solid #cbd5e0;
+    font-family: "Neutra Text";
   }
 }
 .contact-form {
   padding: 20px;
+  .ant-form-item-required{
+    font-family: "Neutra Text" !important;
+  }
   @media (min-width: 1024px) {
     padding: 100px;
   }
   .ant-form {
+    font-family: "Neutra Text";
     &.ant-form-vertical {
       .ant-form-item {
+        font-family: "Neutra Text";
         @media (max-width: 650px) {
           @include flexDirectionRow;
         }
@@ -325,6 +332,13 @@ body {
             color: #000;
           }
         }
+      }
+      .ant-input{
+        height: 45px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e0;
+    font-family: "Neutra Text" !important;
+
       }
     }
     .ant-space-item {
@@ -364,10 +378,15 @@ body {
         height: 200px;
       }
     }
-    .ant-form-item-control {
-      .ant-form-item-control-input {
-        .ant-form-item-control-input-content {
-          .ant-slider {
+    :global(.ant-form-item-control) {
+      font-family: "Neutra Text";
+
+      :global(.ant-form-item-control-input) {
+        font-family: "Neutra Text";
+
+        :global(.ant-form-item-control-input-content) {
+          font-family: "Neutra Text";
+          :global(.ant-slider) {
             margin: 0;
             height: 20px;
             .ant-slider-rail {
