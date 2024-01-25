@@ -1,7 +1,7 @@
 "use client";
 import _ from "lodash";
 import React, { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useDispatch, connect } from "react-redux";
 import { notification, Button } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
@@ -33,7 +33,7 @@ import {
   fetchFooterBannersRequest,
 } from "@/actions/strapiActions";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 const EnquiryProductsPage = ({
   enquiryProducts,
@@ -44,14 +44,14 @@ const EnquiryProductsPage = ({
   productsData,
   categoriesData,currentProductCategoryIndexData
 }:any) => {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   
 
   // console.log("resCategories",resCategories);
 
   const dispatch = useDispatch();
   const history = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [showStepsModal, setShowStepsModal] = useState(false);
   const [intialRender, setIntialRender] = useState(false);
@@ -88,13 +88,13 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
-      return "curated-pack";
-    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
-      return "custom-pack";
-    } else {
+    // if (pathname.toLowerCase().startsWith("/curatedpacks")) {
+    //   return "curated-pack";
+    // } else if (pathname.toLowerCase().startsWith("/custompacks")) {
+    //   return "custom-pack";
+    // } else {
       return "all-merch";
-    }
+    // }
   };
  
 
@@ -164,7 +164,8 @@ const EnquiryProductsPage = ({
     // if (queryParams.searchString) {
     //   currentSearchString = queryParams.searchString;
     // }
-    const searchString:any = searchParams.get("searchString");
+    const searchString:any = null;
+    // searchParams.get("searchString");
     if (searchString) {
       currentSearchString = searchString;
     }
@@ -192,8 +193,10 @@ const EnquiryProductsPage = ({
           (response:any) => {
             response.forEach((p:any) => allCategory.push(...p.categories));
             resCategories = _.uniqBy(allCategory, 'key');
-            var urlSplits = pathname.split("/");
-            let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "all";
+            // var urlSplits = 
+            // pathname.split("/");
+            let currentCategoryKey = "all"
+            // urlSplits.length > 2 ? urlSplits[2] : "all";
             const currentProductCategoryIndex = resCategories.findIndex((c) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
             setProductCategories(resCategories);
             setCurrentProductCategoryKey(currentCategoryKey);
@@ -223,8 +226,9 @@ const EnquiryProductsPage = ({
       console.log("else");
       enquiryProducts && enquiryProducts?.forEach((p:any) => allCategory.push(...p.categories));
       resCategories = _.uniqBy(allCategory, 'key');
-      var urlSplits = pathname.split("/");
-      let currentCategoryKey = urlSplits.length > 2 ? urlSplits[2] : "all";
+      // var urlSplits = pathname.split("/");
+      let currentCategoryKey = "all"
+      // urlSplits.length > 2 ? urlSplits[2] : "all";
       const currentProductCategoryIndex = resCategories.findIndex((c:any) => c.key.toLowerCase() == currentCategoryKey.toLowerCase())
       setProductCategories(resCategories);
       setCurrentProductCategoryKey(currentCategoryKey);
