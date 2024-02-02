@@ -26,7 +26,7 @@ export const fetchBlogsRequest = (params, onSuccess, onFailure) => ({
 export function* fetchBlogs(action) {
     const { params, onSuccess, onFailure } = action;
     try {
-        let url = `${process.env.REACT_APP_STRAPI_API_URL}/blogs`;
+        let url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs`;
         if (params) {
             url = computePaginationURL(url, params);
         }
@@ -50,7 +50,7 @@ export const fetchBlogCategoriesRequest = (onSuccess, onFailure) => ({
 export function* fetchBlogCategories(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/blog-categories`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blog-categories`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -72,7 +72,7 @@ export const fetchBlogRequest = (blogId, onSuccess, onFailure) => ({
 export function* fetchBlog(action) {
     const { blogId, onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/blogs/${blogId}`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs/${blogId}`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -94,7 +94,7 @@ export const fetchCaseStudiesRequest = (params, onSuccess, onFailure) => ({
 export function* fetchCaseStudies(action) {
     const { params, onSuccess, onFailure } = action;
     try {
-        let url = `${process.env.REACT_APP_STRAPI_API_URL}/case-studies`;
+        let url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/case-studies`;
         if (params) {
             url = computePaginationURL(url, params);
         }
@@ -118,7 +118,7 @@ export const fetchCaseStudyCategoriesRequest = (onSuccess, onFailure) => ({
 export function* fetchCaseStudyCategories(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/case-study-categories`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/case-study-categories`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -140,7 +140,7 @@ export const fetchCaseStudyRequest = (caseStudyId, onSuccess, onFailure) => ({
 export function* fetchCaseStudy(action) {
     const { caseStudyId, onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/case-studies/${caseStudyId}`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/case-studies/${caseStudyId}`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -163,7 +163,7 @@ export function* fetchCuratedPacksStrapi(action) {
     const { params, onSuccess, onFailure } = action;
     try {
         const url = computePaginationURL(
-            `${process.env.REACT_APP_STRAPI_API_URL}/curated-packs`,
+            `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/curated-packs`,
             params
         );
         axios.get(url).then(response => {
@@ -183,7 +183,7 @@ export const fetchCuratedPacksCountRequest = (params, onSuccess, onFailure) => (
 export function* fetchCuratedPacksCount(action) {
     const { params, onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/curated-packs/count`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/curated-packs/count`;
         axios.get(url).then(response => {
             onSuccess && onSuccess(response);
         });
@@ -201,7 +201,7 @@ export const fetchCuratedPackRequest = (packId, onSuccess, onFailure) => ({
 export function* fetchCuratedPack(action) {
     const { packId, onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/curated-packs/${packId}`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/curated-packs/${packId}`;
         axios.get(url).then(response => {
             onSuccess && onSuccess(response);
         });
@@ -218,7 +218,7 @@ export const fetchContactUsHelpOptionsRequest = (onSuccess, onFailure) => ({
 export function* fetchContactUsHelpOptions(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/contact-us-help-options`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact-us-help-options`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -240,7 +240,7 @@ export const fetchMerchTeamMembersRequest = (params, onSuccess, onFailure) => ({
 export function* fetchMerchTeamMembers(action) {
     const { params, onSuccess, onFailure } = action;
     try {
-        let url = `${process.env.REACT_APP_STRAPI_API_URL}/merch-team-members`;
+        let url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/merch-team-members`;
         if (params) {
             url = computePaginationURL(url, params);
         }
@@ -265,7 +265,7 @@ export const fetchHeaderBannersRequest = (params, onSuccess, onFailure) => ({
 export function* fetchHeaderBanners(action) {
     const { params, onSuccess, onFailure } = action;
     try {
-        let url = `${process.env.REACT_APP_STRAPI_API_URL}/header-banners`;
+        let url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/header-banners`;
         if (params) {
             url = computePaginationURL(url, params);
         }
@@ -297,7 +297,7 @@ export const fetchFooterBannersRequest = (onSuccess, onFailure) => ({
 export function* fetchFooterBanners(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/footer-banners`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/footer-banners`;
         axios.get(url)
             .then(response => {
                 console.log("response",response)
@@ -327,7 +327,7 @@ export const fetchMomentsOfMerchMagicRequest = (onSuccess, onFailure) => ({
 export function* fetchMomentsOfMerchMagic(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/moments-of-merch-magics`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/moments-of-merch-magics`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -349,7 +349,7 @@ export const fetchInsposRequest = (params, onSuccess, onFailure) => ({
 export function* fetchInspos(action) {
     const { params, onSuccess, onFailure } = action;
     try {
-        let url = `${process.env.REACT_APP_STRAPI_API_URL}/inspos`;
+        let url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/inspos`;
         if (params) {
             url = computePaginationURL(url, params);
         }
@@ -373,7 +373,7 @@ export const fetchInspoCategoriesRequest = (onSuccess, onFailure) => ({
 export function* fetchInspoCategories(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/inspo-categories`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/inspo-categories`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -395,7 +395,7 @@ export const fetchInspoRequest = (inspoId, onSuccess, onFailure) => ({
 export function* fetchInspo(action) {
     const { inspoId, onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/inspos/${inspoId}`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/inspos/${inspoId}`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
@@ -416,7 +416,7 @@ export const fetchBrandsRequest = (onSuccess, onFailure) => ({
 export function* fetchBrands(action) {
     const { onSuccess, onFailure } = action;
     try {
-        const url = `${process.env.REACT_APP_STRAPI_API_URL}/worked-with-brands`;
+        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/worked-with-brands`;
         axios.get(url)
             .then(response => {
                 onSuccess && onSuccess(response.data);
