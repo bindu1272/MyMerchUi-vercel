@@ -1,6 +1,6 @@
 export const PER_PAGE = 10;
 
-export const BASE_URL = process.env.REACT_APP_API_URL
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL
 
 export const FETCH_CATEGORIES_URL = BASE_URL + "/product-categories";
 export const REARRANGE_CATEGORIES_URL = BASE_URL + "/product-categories/rearrange";

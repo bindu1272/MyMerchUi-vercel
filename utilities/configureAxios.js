@@ -61,7 +61,7 @@ const configureAxios = (baseURL) => {
             localStorage.removeItem("refresh_token");
             if (oldRefreshToken) {
               originalReq._retry = true;
-              let res = fetch(process.env.REACT_APP_API_URL + URLS.REFRESH_TOKEN_URL, {
+              let res = fetch(process.env.NEXT_PUBLIC_API_URL + URLS.REFRESH_TOKEN_URL, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -110,5 +110,5 @@ const configureAxios = (baseURL) => {
   return axiosInstance;
 };
 
-export const api = configureAxios(process.env.REACT_APP_API_URL) //'http://127.0.0.1:8000/api'
+export const api = configureAxios(process.env.NEXT_PUBLIC_API_URL) //'http://127.0.0.1:8000/api'
 export default configureAxios;
