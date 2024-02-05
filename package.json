@@ -33,6 +33,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.9.0",
     "react-scroll-parallax": "^3.0.3",
+    "react-scroll-up-button": "^1.6.4",
     "react-slick": "^0.29.0",
     "react-spring": "^9.7.3",
     "redux-logger": "^3.0.6",
