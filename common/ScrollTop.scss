@@ -1,0 +1,11 @@
+.ScrollUpButton{
+    width: 65px !important;
+    height: 65px !important;
+    background: darkgrey !important;
+    padding-left: 10px !important;
+    background-color: rgba(50, 50, 50, 0.5) !important;
+    z-index: 1000 !important;
+    svg{
+        margin-top: -6px;
+    }
+}
