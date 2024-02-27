@@ -118,7 +118,7 @@ const CustomPackDetails = ({
                       type="number"
                       min={currentProduct.minimum_order_quantity}
                       placeholder={currentProduct.minimum_order_quantity}
-                      value={currentProductQuantity}
+                      defaultValue={currentProduct.minimum_order_quantity || currentProductQuantity}
                       onChange={(e) => {
                         onChangeCurrentProductQuantity(e);
                       }}

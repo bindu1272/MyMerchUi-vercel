@@ -33,7 +33,6 @@ import {
   fetchFooterBannersRequest,
 } from "@/actions/strapiActions";
 import Image from "next/image";
-// import { useSearchParams } from "next/navigation";
 
 const EnquiryProductsPage = ({
   enquiryProducts,
@@ -42,16 +41,18 @@ const EnquiryProductsPage = ({
   enquiryProductsSearchString,
   cart,
   productsData,
-  categoriesData,currentProductCategoryIndexData
+  categoriesData,currentProductCategoryIndexData,
+  props
 }:any) => {
   const pathname = usePathname();
-  
-
+  const url = pathname.split("/");
+  let stepsModalCond = null;
+  if (typeof window !== "undefined") {
+    stepsModalCond = localStorage.getItem(url?.[1]);
+  }
   // console.log("resCategories",resCategories);
-
   const dispatch = useDispatch();
   const history = useRouter();
-  // const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [showStepsModal, setShowStepsModal] = useState(false);
   const [intialRender, setIntialRender] = useState(false);
@@ -88,9 +89,9 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
+    if (pathname.toLowerCase().startsWith("/curated-packs")) {
       return "curated-pack";
-    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
+    } else if (pathname.toLowerCase().startsWith("/custom-packs")) {
       return "custom-pack";
     } else {
       return "all-merch";
@@ -100,11 +101,11 @@ const EnquiryProductsPage = ({
 
   const getCurrentProductsTypeUrl = () => {
     if (enquiryProductsType == "curated-pack") {
-      return "/CuratedPacks";
+      return "/curated-packs";
     } else if (enquiryProductsType == "custom-pack") {
-      return "/CustomPacks";
+      return "/custom-packs";
     } else {
-      return "/AllMerch";
+      return "/all-merch";
     }
   };
 
@@ -151,7 +152,7 @@ const EnquiryProductsPage = ({
   }, [])
 
   useEffect(() => {
-    // setLoading(true);
+    setLoading(true);
     let currentProductsType = getCurrentProductsType();
     let currentSearchString = "";
     let resCategories = [];
@@ -207,10 +208,10 @@ const EnquiryProductsPage = ({
                 ? resCategories[0]
                 : resCategories[currentProductCategoryIndex + 1]
             );
-            // setLoading(false);
+            setLoading(false);
           },
           (error:any) => {
-            // setLoading(false);
+            setLoading(false);
             notification.error({
               message: "Error occurred while fetching products.",
               placement: "bottomRight",
@@ -238,9 +239,9 @@ const EnquiryProductsPage = ({
           ? resCategories[0]
           : resCategories[currentProductCategoryIndex + 1]
       );
-      // setLoading(false);
-      setIntialRender(true)
+      setLoading(false);
     }
+    setIntialRender(true)
   }, []);
 
   const onClickHeaderTitle = () => {
@@ -249,6 +250,7 @@ const EnquiryProductsPage = ({
 
   const onCloseStepsModal = () => {
     // localStorage.setItem(`${getCurrentProductsType()}-steps-display`, true);
+    localStorage.setItem(url?.[1],"one");
     setStepsModelDisplayed(true);
     setShowStepsModal(false);
   };
@@ -401,7 +403,7 @@ const EnquiryProductsPage = ({
   };
 
   const onClickProductSeeMore = (slug:any) => {
-    history.push(`/EnquiryProduct/${slug}`);
+    history.push(`/enquiry-product/${slug}`);
   };
 
   const calculateProductUnitPrice = (qty:any, prices:any) => {
@@ -439,10 +441,9 @@ const EnquiryProductsPage = ({
 
   const onClickViewCart = () => {
     if (cart.products.length > 0) {
-      history.push("/SubmitEnquiry");
+      history.push("/submit-enquiry");
     }
   };
-
   
 
   return  (
@@ -528,14 +529,26 @@ const EnquiryProductsPage = ({
           </Button>
         </div>
       </div>
-      {/* {(showStepsModal || !stepsModalDisplayed) && (
+      {/* {(showStepsModal || !stepsModalDisplayed) &&  (props?.params?.id?.length ===0) && (
         <StepsModal
-          showStepsModal={showStepsModal || !stepsModalDisplayed}
+          showStepsModal={showStepsModal  || !stepsModalDisplayed
+          }
           productsType={enquiryProductsType}
           onOkStepsModal={onCloseStepsModal}
           onCancelStepsModal={onCloseStepsModal}
         />
       )} */}
+      {
+        ( intialRender && props?.params && Object.keys(props?.params).length===0) && (stepsModalCond !== "one") &&(
+        <StepsModal
+        showStepsModal={showStepsModal  || !stepsModalDisplayed
+        }
+        productsType={enquiryProductsType}
+        onOkStepsModal={onCloseStepsModal}
+        onCancelStepsModal={onCloseStepsModal}
+      />
+        )
+      }
       {showOverwriteCartPopup && (
         <OverwriteCartPopup
           showOverwriteCartPopup={showOverwriteCartPopup}

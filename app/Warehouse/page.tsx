@@ -67,10 +67,10 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
   return (
     <>
       <section className="banner-section">
-        {/* <GoogleSetup
+        <GoogleSetup
           title={"Merchandise Warehouse & Distributor"}
           description={"We can store your branded merchandise for all your locations – and send them out at a click of a button. Exclusive shipping rates & save on delivery."}
-        /> */}
+        />
         <div className="container position-relative">
           <div className="row">
             <div className="col-sm-12">
@@ -139,12 +139,12 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
               <div className="store_send_save_section">
                 <div>
                   <h1>
-                    10<span>K</span>
+                    10<span className="span_item_10k">K</span>
                   </h1>
                 </div>
                 <div>
                   <p>
-                    Number of items we ship from our Mymerch warehouse every day
+                    Number of items we ship from our MyMerch warehouse every day
                   </p>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
           <div className="row ">
             <div className="col-sm-12 text-center mt-4 p-0">
               <a
-                href="/GetAQuote"
+                href="/get-a-quote"
                 className="btn_blue mt-0"
                 style={{ fontSize: 14, whiteSpace: "nowrap" }}
               >

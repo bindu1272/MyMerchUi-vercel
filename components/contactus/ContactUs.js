@@ -86,6 +86,12 @@ const ContactUs = ({
                       label="Company"
                       name="company"
                       className="col-lg-12"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please enter Company",
+                        },
+                      ]}
                     >
                       <Input placeholder="Enter Company" className="col-lg-12" />
                     </Form.Item>

@@ -9,10 +9,12 @@ const nextConfig = {
       },
       env:{
         NEXT_PUBLIC_STRAPI_API_URL : process.env.NEXT_PUBLIC_STRAPI_API_URL,
-        REACT_APP_IMAGES_SRC_URL:process.env.REACT_APP_IMAGES_SRC_URL,
+        // REACT_APP_IMAGES_SRC_URL:process.env.REACT_APP_IMAGES_SRC_URL,
         NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+        NEXT_APP_GA_ID : process.env.NEXT_APP_GA_ID,
         GATSBY_API_URL : process.env.GATSBY_API_URL,
-        NEXT_APP_IMAGES_SRC_URL: process.env.NEXT_APP_IMAGES_SRC_URL
+        NEXT_APP_IMAGES_SRC_URL: process.env.NEXT_APP_IMAGES_SRC_URL,
+        NEXT_JS_SITE_URL:process.env.NEXT_JS_SITE_URL
       },
       reactStrictMode: false,
       typescript: {

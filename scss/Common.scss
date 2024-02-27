@@ -2484,7 +2484,7 @@ textarea {
   margin-top: 133px;
   .bread_crumb {
     margin: 0;
-    background-color: #fff !important;
+    // background-color: #fff !important;
   }
   @media (max-width: 1024px) {
     margin-top: 73px;
@@ -4686,6 +4686,7 @@ textarea {
 }
 .merch_description {
   word-break: break-word;
+  // width: 66% !important;
   @include BodyText;
   font-weight: 500;
   color: #000;
@@ -7650,9 +7651,10 @@ textarea {
       @include PercentageText;
       color: $MerchBlue;
       position: absolute;
-      right: -10px;
+      right: -35px;
       top: -30px;
       line-height: normal;
+      font-size: 148px;
       @media (max-width: 768px) {
         font-size: 60px;
         top: 0;
@@ -8105,6 +8107,7 @@ textarea {
 }
 
 .we_love_merch_section {
+  background-color: #ffffff;
   @media (max-width: 650px) {
     .merch_title {
       text-align: center;
@@ -8140,6 +8143,7 @@ textarea {
 }
 
 .our_values_section {
+  background-color: #ffffff;
   .our_values_info_block {
     display: inline-flex;
     @include justifyContentCenter;
@@ -8218,6 +8222,7 @@ textarea {
 .csq_section {
   padding-top: 35px;
   padding-bottom: 35px;
+  background-color: #ffffff;
   @media (min-width: 1140px) {
     padding-top: 65px;
     padding-bottom: 65px;
@@ -8530,6 +8535,7 @@ textarea {
   }
 }
 .we_put_the_merch_section {
+  background-color: #ffffff;
   @media (min-width: 650px) and (max-width: 1140px) {
     .row {
       margin: 0 -5px;
@@ -8883,7 +8889,7 @@ textarea {
 
 .footer-section {
   position: relative;
-  z-index: 9;
+  z-index: 97;
   .footer_logo {
     width: 164px;
   }
@@ -9517,7 +9523,7 @@ textarea {
 .floating_icon {
   position: fixed;
   right: 0;
-  z-index: 999;
+  z-index: 97;
   background-image: url("https://dev-assets.mymerch.com.au/src/images/message-box.svg");
   background-repeat: no-repeat;
   background-size: contain;

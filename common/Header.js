@@ -14,24 +14,27 @@ import WebHeader from "@/components/WebHeader";
 import MessageBox from "./MessageBox";
 import { HEADER_NAV_ITEMS } from "@/constants/appConstants";
 import { getCart } from "@/selectors/cartSelector";
+import { useSearchParams } from "next/navigation";
+import { getEnquiryProductsSearchString } from "@/selectors/enquiryProductSelector";
 
 const Header = ({
   cart,
   userId,
   userName,
   userRoles,
+  searchTextCache
 }) => {
+  const params = useSearchParams();
   const dispatch = useDispatch();
   const router = useRouter();
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [toggleSidebar, setToggleSidebar] = useState(false);
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState(searchTextCache);
   const [showBulkOrder, setShowBulkOrder] = useState(false);
   const [redirect, setRedirect] = useState();
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const navigationOptions = [...HEADER_NAV_ITEMS];
-
   useEffect(() => {
     if (!userId) {
       const queryParams = getQueryParams(window.location.href);
@@ -68,13 +71,13 @@ const Header = ({
 
   const handleSearch = () => {
     const searchUrl = searchText
-      ? `/AllMerch?searchString=${searchText}`
-      : `/AllMerch`;
+      ? `/all-merch?searchString=${searchText}`
+      : `/all-merch`;
     router.push(searchUrl);
   };
 
   const onClickCart = () => {
-    router.push("/SubmitEnquiry");
+    router.push("/submit-enquiry");
   }
 
   return (
@@ -133,6 +136,7 @@ function mapStateToProps(state) {
     userId: getUserId(state),
     userName: getUserName(state),
     userRoles: getUserRoles(state),
+    searchTextCache: getEnquiryProductsSearchString(state)
   };
 }
 export default connect(mapStateToProps, {})(Header);

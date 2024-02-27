@@ -4,7 +4,7 @@ const MessageBox = (props) => {
   return (
     <div className={props.className}>
       <div className="floating_icon">
-        <a href="/GetAQuote">&nbsp;</a>
+        <a href="/get-a-quote">&nbsp;</a>
       </div>
     </div>
   );

@@ -98,13 +98,13 @@ const BlogsPage = ({ headerBanners,params }:any) => {
       return blogs.filter(
         (b:any) =>
           b.blog_category != null &&
-          b.blog_category.name.toLowerCase() === category.toLowerCase()
+          b.blog_category.name.toLowerCase() === decodeURIComponent(category).toLowerCase()
       );
     }
   };
 
   const handleBlogCategoryChange = (value:any) => {
-    history.push(`/Blog/${value}`);
+    history.push(`/blog/${value}`);
   };
 
   return loading ? (
@@ -184,7 +184,8 @@ const BlogsPage = ({ headerBanners,params }:any) => {
                 </div>
                 <div className="col-sm-7 col-lg-8">
                   <Select
-                    defaultValue="all"
+                    // defaultValue="all"
+                    defaultValue={decodeURIComponent(params?.category?.[0])}
                     style={{ width: "100%",fontFamily:"Neutra Text" }}
                     size={"large"}
                     onChange={handleBlogCategoryChange}

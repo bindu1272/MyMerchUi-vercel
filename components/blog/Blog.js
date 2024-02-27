@@ -19,7 +19,7 @@ const Blog = ({
                     <h3>{blog.description}</h3>
                     <a
                         className="btn_white"
-                        href={`/blogDetails/${blog.slug}`}
+                        href={`/blog-details/${blog.slug}`}
                     >
                         Read More
                     </a>

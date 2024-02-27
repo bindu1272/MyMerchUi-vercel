@@ -278,7 +278,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                       </div>
                       <div className="col-sm-12 text-center p-0">
                         <a
-                          href="/GetAQuote"
+                          href="/get-a-quote"
                           className="btn_blue mt-3"
                           style={{ fontSize: 14, whiteSpace: "nowrap" }}
                         >
@@ -386,7 +386,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                       </div>
                     </div>
                     <div className="col-sm-12 text-center">
-                      <a href="/GetAQuote" className="btn_blue">
+                      <a href="/get-a-quote" className="btn_blue">
                         Get started now
                       </a>
                     </div>
@@ -431,7 +431,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   className="img-fluid"
                                   onClick={() =>
-                                    history.push(`/caseStudyDetails/${cs.slug}`)
+                                    history.push(`/case-study-details/${cs.slug}`)
                                   }
                                 />
                               </div>
@@ -445,7 +445,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
             </div>
             <div className="col-sm-12 text-center mt-5 p-0">
               <a
-                href="/caseStudies"
+                href="/case-studies"
                 className="btn_blue"
                 style={{ fontSize: 14, whiteSpace: "nowrap" }}
               >

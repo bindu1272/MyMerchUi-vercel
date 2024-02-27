@@ -96,22 +96,22 @@ const Footer = () => {
                       <h1>Cool Stuff</h1>
                       <ul className="links">
                         <li>
-                          <Link href="/caseStudies">Case Studies</Link>
+                          <Link href="/case-studies">Case Studies</Link>
                         </li>
                         <li>
-                          <Link href="/Blog">Blog</Link>
+                          <Link href="/blog">Blog</Link>
                         </li>
                         <li>
-                          <Link href="/CustomPortal">Custom Portal</Link>
+                          <Link href="/custom-portal">Custom Portal</Link>
                         </li>
                         <li>
-                          <Link href="/MerchInBox">Merch in a Box</Link>
+                          <Link href="/merch-in-box">Merch in a Box</Link>
                         </li>
                         <li>
-                          <Link href="/MyMerchProcess">My Merch Process</Link>
+                          <Link href="/my-merch-process">My Merch Process</Link>
                         </li>
                         <li>
-                          <Link href="/Warehouse">
+                          <Link href="/warehouse">
                             Warehouse & Distribution
                           </Link>
                         </li>
@@ -131,19 +131,19 @@ const Footer = () => {
                       <h1>Information</h1>
                       <ul className="links">
                         <li>
-                          <Link href="/aboutus">About Us</Link>
+                          <Link href="/about-us">About Us</Link>
                         </li>
                         <li>
-                          <Link href="/GetAQuote">Get a Quote</Link>
+                          <Link href="/get-a-quote">Get a Quote</Link>
                         </li>
                         <li>
-                          <Link href="/FAQ">FAQ’s </Link>
+                          <Link href="/faq">FAQ’s </Link>
                         </li>
                         <li>
-                          <Link href="/PrivacyPolicy">Privacy Policy</Link>
+                          <Link href="/privacy-policy">Privacy Policy</Link>
                         </li>
                         <li>
-                          <Link href="/TermsConditions">Terms & Conditions</Link>
+                          <Link href="/terms-conditions">Terms & Conditions</Link>
                         </li>
                       </ul>
                     </div>
@@ -151,27 +151,27 @@ const Footer = () => {
                       <h1>Your Resources</h1>
                       <ul className="links">
                         <li>
-                          <Link href="/YourResources?tabIndex=1">Artwork Requirements </Link>
+                          <Link href="/your-resources?tabIndex=1">Artwork Requirements </Link>
                         </li>
                         <li>
-                          <Link href="/YourResources?tabIndex=2">Artwork Approvals </Link>
+                          <Link href="/your-resources?tabIndex=2">Artwork Approvals </Link>
                         </li>
                         <li>
-                          <Link href="/YourResources?tabIndex=3">Branding Methods </Link>
+                          <Link href="/your-resources?tabIndex=3">Branding Methods </Link>
                         </li>
                         <li>
-                          <Link href="/YourResources?tabIndex=4">Sample Policy </Link>
+                          <Link href="/your-resources?tabIndex=4">Sample Policy </Link>
                         </li>
                         <li>
-                          <Link href="/Delivery">Delivery </Link>
+                          <Link href="/delivery">Delivery </Link>
                         </li>
                         <li>
-                          <Link href="/ShippingTracking">
+                          <Link href="/shipping-tracking">
                             Shipping & Tracking{" "}
                           </Link>
                         </li>
                         <li>
-                          <Link href="/PaymentMethods">
+                          <Link href="/payment-methods">
                             Payment & Return Policy{" "}
                           </Link>
                         </li>

@@ -141,7 +141,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   title="Minimising our impact"
                   className="no-border"
                 />
-                <p className="merch_description col-sm-12 col-lg-8 mb-0">
+                <p className="merch_description col-sm-12 col-lg-8 mb-0" style={{width:"66%"}}>
                   At MyMerch, we understand our role in looking after the planet
                   and its inhabitants. That’s why we want to improve every part
                   of our operations to minimise our impact, and make the world a
@@ -166,7 +166,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   {/* </ScrollAnimation> */}
                   <label className="max-width">Eco-friendly products</label>
                 </div>
-                <p>
+                <p style={{width:"96%"}}>
                   We offer high quality, environmentally friendly and ethically
                   responsible products, so you can rest easy knowing your merch
                   is safe for the planet – and people.
@@ -182,7 +182,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   {/* </ScrollAnimation> */}
                   <label className="max-width">Reducing waste</label>
                 </div>
-                <p>
+                <p style={{width:"96%"}}>
                   We reduce the amount of space our waste takes up with our
                   onsite compactor - reducing collection requirements and CO2
                   emissions.
@@ -201,7 +201,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   {/* </ScrollAnimation> */}
                   <label>Paper and cardboard recycling</label>
                 </div>
-                <p>
+                <p style={{width:"98%"}}>
                   Local paper mills recycle our paper waste, which gets a second
                   (or third) life as Premium Paper Products. We also shred our
                   waste cardboard and turn it into two types of packaging
@@ -240,7 +240,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                     Cutting down kWh
                   </label>
                 </div>
-                <p>
+                <p style={{width:"97%"}}>
                   Using industry leading LED curing technology during production
                   reduces our power consumption from 10kWh to 2.9kWh. While our
                   low power lighting program throughout our warehouses and
@@ -250,7 +250,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
             </div>
             <div className="col-sm-12 text-center">
-              <a href="/category/eco" className="btn_blue">
+              <a href="/all-merch" className="btn_blue">
                 Check out our range of sustainable merch
               </a>
             </div>
@@ -432,7 +432,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   className="border-left title-left"
                 />
                 <a
-                  href={process.env.NEXT_JS_SITE_URL}
+                  href="/all-merch"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}

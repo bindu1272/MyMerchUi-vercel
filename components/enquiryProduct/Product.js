@@ -7,11 +7,12 @@ import Image from "next/image";
 
 const Product = ({ product, cart, onClickProduct, onClickProductSeeMore }) => {
   let isProductSelected = cart.products.find((p) => p.id == product.id);
-  const imgSrc = product.colours.find((c) => c.is_lifestyle_image)
+  const srcLinks = product.colours.find((c) => c.is_lifestyle_image)
     ? product.colours.find((c) => c.is_lifestyle_image).images[
       getThumbnailImageSpec()
     ].product_image_url
     : product.colours[0].images[getThumbnailImageSpec()].product_image_url;
+    const imgSrc = srcLinks.replace(/\\/g, '/');
   return (
     <div className="pack_item">
       <div className="pack_img">
@@ -34,7 +35,7 @@ const Product = ({ product, cart, onClickProduct, onClickProductSeeMore }) => {
             </div>
           )}
         </div>
-        <Image alt="" src={imgSrc} width={325} height={415} />
+        <Image alt="" src={decodeURIComponent(imgSrc)} width={325} height={400} />
         <div className="pack_info">
           <div className="pack_description">
             {product.product_description}.

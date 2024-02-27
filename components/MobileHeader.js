@@ -12,6 +12,7 @@ import {
 import S3Image from "../common/S3Image";
 import MobileSidebar from "./MobileSidebar";
 import MobileSearchModal from "./MobileSearchModal";
+import * as TYPES from "@/constants/actionTypes";
 // import "../common/customJquery";
 
 const MobileHeader = ({
@@ -62,7 +63,7 @@ const MobileHeader = ({
                 </Link>
               </div>
               <div className="d-flex align-items-center justify-content-end">
-                <a href="/GetAQuote" className="mail-link">
+                <a href="/get-a-quote" className="mail-link">
                   <MailOutlined />
                 </a>
                 <a href="callto:1800959308" className="call-link">
@@ -72,6 +73,10 @@ const MobileHeader = ({
                   className="mb_search"
                   onClick={() => {
                     setSearchText("");
+                    store.dispatch({
+                      type: TYPES.SET_ENQUIRY_PRODUCTS_SEARCH_STRING,
+                      payload: ""
+                    });
                     setShowLogin(false);
                     setShowSignUp(false);
                     onShowMobileSearch();
@@ -80,7 +85,7 @@ const MobileHeader = ({
                   <SearchOutlined />
                 </div>
                 <div className="avatar-block">
-                  <Link href="/SubmitEnquiry" className="cart-items">
+                  <Link href="/submit-enquiry" className="cart-items">
                     <span className="d-flex align-items-center">
                       <ShoppingCartOutlined />
                       <span className="cart-count">

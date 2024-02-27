@@ -14,6 +14,9 @@ import BulkOrder from "./BulkOrder"
 import WebHeaderNavigation from "../components/WebHeaderNavigation";
 import S3Image from "../common/S3Image";
 import React, { useState, useEffect } from "react";
+import { store } from "@/utilities/configureStore";
+import * as TYPES from "@/constants/actionTypes";
+
 // import dynamic from 'next/dynamic';
 
 // const DynamicLink = dynamic(() => import('next/link'), { ssr: false });
@@ -22,7 +25,7 @@ import React, { useState, useEffect } from "react";
 const menu = (onLogout) => (
   <Menu className="avatar_menu">
     <Menu.Item>
-      <Link href="/accountsettings"
+      <Link href="/account-settings"
         style={{ textDecoration: "none",fontFamily:"Neutra Text" }}
       >
         Account Settings
@@ -90,7 +93,7 @@ const WebHeader = ({
                   <PhoneOutlined className="mr-3" /><strong> 1800 959 308</strong>
                 </Link>
                 <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}></span>
-                <Link className="call-link" style={{ color: "white" }} href="/GetAQuote">
+                <Link className="call-link" style={{ color: "white" }} href="/get-a-quote">
                   Get a Quote
                 </Link>
                 {/* <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}>|</span>
@@ -106,12 +109,22 @@ const WebHeader = ({
                     value={searchText}
                     onChange={e => {
                       setSearchText(e.target.value)
+                      store.dispatch({
+                        type: TYPES.SET_ENQUIRY_PRODUCTS_SEARCH_STRING,
+                        payload: e.target.value
+                      });
                     }}
-                    onKeyPress={e => {
+                    onKeyDown={e => {
                       if (e.key === 'Enter') {
-                        handleSearch()
+                        handleSearch();
                       }
                     }}
+                    
+                    // onKeyPress={e => {
+                    //   if (e.key === 'Enter') {
+                    //     handleSearch()
+                    //   }
+                    // }}
                   />
                   <div className="avatar-block">
                     {!userId ? (
