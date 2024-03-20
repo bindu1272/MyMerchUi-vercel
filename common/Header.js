@@ -24,9 +24,9 @@ const Header = ({
   userRoles,
   searchTextCache
 }) => {
-  // const params = useSearchParams();
+  const params = useSearchParams();
   const dispatch = useDispatch();
-  // const router = useRouter();
+  const router = useRouter();
   const [showSignUp, setShowSignUp] = useState(false);
   // const [showLogin, setShowLogin] = useState(false);
   // const [toggleSidebar, setToggleSidebar] = useState(false);
