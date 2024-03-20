@@ -81,52 +81,53 @@ const Header = ({
   }
 
   return (
-    <>
-      <MessageBox />
-      <div className="mobile_header">
-        <MobileHeader
-          cart={cart}
-          redirect={redirect}
-          toggleSidebar={toggleSidebar}
-          onCloseMobileSearch={onCloseMobileSearch}
-          onShowMobileSearch={onShowMobileSearch}
-          handleToggleSidebar={handleToggleSidebar}
-          showMobileSearch={showMobileSearch}
-          showLogin={showLogin}
-          setShowLogin={setShowLogin}
-          navigationOptions={navigationOptions}
-          showSignUp={showSignUp}
-          setShowSignUp={setShowSignUp}
-          userId={userId}
-          searchText={searchText}
-          setSearchText={setSearchText}
-          handleSearch={handleSearch}
-          onClickTitle={onClickTitle}
-          onClickCart={onClickCart}
-        />
-      </div>
-      <section className="main-header">
-        <WebHeader
-          cart={cart}
-          redirect={redirect}
-          onLogout={onLogout}
-          userId={userId}
-          userName={userName}
-          userRoles={userRoles}
-          showLogin={showLogin}
-          setShowLogin={setShowLogin}
-          navigationOptions={navigationOptions}
-          showSignUp={showSignUp}
-          setShowSignUp={setShowSignUp}
-          showBulkOrder={showBulkOrder}
-          setShowBulkOrder={setShowBulkOrder}
-          searchText={searchText}
-          setSearchText={setSearchText}
-          handleSearch={handleSearch}
-          onClickCart={onClickCart}
-        />
-      </section>
-    </>
+    <h1>hello</h1>
+    // <>
+    //   <MessageBox />
+    //   <div className="mobile_header">
+    //     <MobileHeader
+    //       cart={cart}
+    //       redirect={redirect}
+    //       toggleSidebar={toggleSidebar}
+    //       onCloseMobileSearch={onCloseMobileSearch}
+    //       onShowMobileSearch={onShowMobileSearch}
+    //       handleToggleSidebar={handleToggleSidebar}
+    //       showMobileSearch={showMobileSearch}
+    //       showLogin={showLogin}
+    //       setShowLogin={setShowLogin}
+    //       navigationOptions={navigationOptions}
+    //       showSignUp={showSignUp}
+    //       setShowSignUp={setShowSignUp}
+    //       userId={userId}
+    //       searchText={searchText}
+    //       setSearchText={setSearchText}
+    //       handleSearch={handleSearch}
+    //       onClickTitle={onClickTitle}
+    //       onClickCart={onClickCart}
+    //     />
+    //   </div>
+    //   <section className="main-header">
+    //     <WebHeader
+    //       cart={cart}
+    //       redirect={redirect}
+    //       onLogout={onLogout}
+    //       userId={userId}
+    //       userName={userName}
+    //       userRoles={userRoles}
+    //       showLogin={showLogin}
+    //       setShowLogin={setShowLogin}
+    //       navigationOptions={navigationOptions}
+    //       showSignUp={showSignUp}
+    //       setShowSignUp={setShowSignUp}
+    //       showBulkOrder={showBulkOrder}
+    //       setShowBulkOrder={setShowBulkOrder}
+    //       searchText={searchText}
+    //       setSearchText={setSearchText}
+    //       handleSearch={handleSearch}
+    //       onClickCart={onClickCart}
+    //     />
+    //   </section>
+    // </>
   );
 };
 
