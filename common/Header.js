@@ -25,7 +25,7 @@ const Header = ({
   searchTextCache
 }) => {
   // const params = useSearchParams();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const router = useRouter();
   const [showSignUp, setShowSignUp] = useState(false);
   // const [showLogin, setShowLogin] = useState(false);
