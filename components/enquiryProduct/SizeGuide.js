@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "antd";
+import Image from "next/image";
 
 const SizeGuide = ({
   sizeGuide,
@@ -40,9 +41,9 @@ const SizeGuide = ({
               <tbody>
                 {sizeGuide &&
                   sizeGuide.data &&
-                  sizeGuide.data.map(d => {
+                  sizeGuide.data.map((d,index) => {
                     return (
-                      <tr>
+                      <tr key={index}>
                         <td>{d.size}</td>
                         <td>{d.width}</td>
                         <td>{d.height}</td>
@@ -54,7 +55,7 @@ const SizeGuide = ({
               </tbody>
             </table>
           </div>
-          <img src={sizeGuide && sizeGuide.image_url} />
+          <Image alt="" src={sizeGuide && sizeGuide.image_url}  width={100} height={100}/>
         </>
       </Modal>
     </>

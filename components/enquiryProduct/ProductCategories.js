@@ -26,22 +26,41 @@ const ProductCategories = ({
           <Collapse defaultActiveKey={["1"]}>
             <Panel header="Categories" key="1">
               <ul>
-                {categories &&
-                  categories.length > 0 &&
-                  categories.map((c) => {
-                    return (
-                      <li>
+                {categories && (
+                  <ul>
+                    {categories.length === 2 ? (
+                      <li key={1}>
                         <a
-                          onClick={() => onClickProductCategory(c.key)}
+                          onClick={() =>
+                            onClickProductCategory(categories[1].key)
+                          }
                           className={
-                            currentProductCategoryKey == c.key ? "active" : ""
+                            currentProductCategoryKey === categories[1].key
+                              ? "active"
+                              : ""
                           }
                         >
-                          {c.name}
+                          {categories[1].name}
                         </a>
                       </li>
-                    );
-                  })}
+                    ) : (
+                      categories.map((c, index) => (
+                        <li key={index}>
+                          <a
+                            onClick={() => onClickProductCategory(c.key)}
+                            className={
+                              currentProductCategoryKey === c.key
+                                ? "active"
+                                : ""
+                            }
+                          >
+                            {c.name}
+                          </a>
+                        </li>
+                      ))
+                    )}
+                  </ul>
+                )}
               </ul>
             </Panel>
           </Collapse>
@@ -67,10 +86,11 @@ const ProductCategories = ({
           <ul className={showProductCategoriesMobile ? "show" : "hide"}>
             {categories &&
               categories.length > 0 &&
-              categories.map((c) => {
+              categories.map((c, index) => {
                 return (
-                  <li>
-                    <Link href=""
+                  <li key={index}>
+                    <Link
+                      href=""
                       onClick={() => onClickProductCategoryMobile(c.key)}
                       to={c.key}
                       spy={true}

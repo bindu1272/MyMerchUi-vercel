@@ -77,9 +77,9 @@ const CustomPackDetailsPopup = ({
                             <div className="color_list">
                                 {currentProduct.colours &&
                                     currentProduct.colours.length > 0 &&
-                                    currentProduct.colours.map((c) => {
+                                    currentProduct.colours.map((c,index) => {
                                         return (
-                                            <span
+                                            <span key={index}
                                                 className={
                                                     c.colour_hex == currentProductColour.colour_hex
                                                         ? "selected"

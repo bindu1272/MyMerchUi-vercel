@@ -14,6 +14,9 @@ import BulkOrder from "./BulkOrder"
 import WebHeaderNavigation from "../components/WebHeaderNavigation";
 import S3Image from "../common/S3Image";
 import React, { useState, useEffect } from "react";
+import { store } from "@/utilities/configureStore";
+import * as TYPES from "@/constants/actionTypes";
+
 // import dynamic from 'next/dynamic';
 
 // const DynamicLink = dynamic(() => import('next/link'), { ssr: false });
@@ -23,14 +26,14 @@ const menu = (onLogout) => (
   <Menu className="avatar_menu">
     <Menu.Item>
       <Link href="/accountsettings"
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none",fontFamily:"Neutra Text" }}
       >
         Account Settings
       </Link>
     </Menu.Item>
     <Menu.Item>
       <Button type="text" onClick={onLogout}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none",fontFamily:"Neutra Text" }}
       >
         LogOut
       </Button>
@@ -93,10 +96,10 @@ const WebHeader = ({
                 <Link className="call-link" style={{ color: "white" }} href="/GetAQuote">
                   Get a Quote
                 </Link>
-                <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}>|</span>
+                {/* <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}>|</span>
                 <Link href="" className="call-link" style={{ color: "white" }} onClick={() => setShowBulkOrder(true)}>
                   Bulk Enquiry
-                </Link>
+                </Link> */}
               </div>
               <div className="col-sm-7">
                 <div className="d-flex align-items-center justify-content-end">
@@ -106,12 +109,22 @@ const WebHeader = ({
                     value={searchText}
                     onChange={e => {
                       setSearchText(e.target.value)
+                      store.dispatch({
+                        type: TYPES.SET_ENQUIRY_PRODUCTS_SEARCH_STRING,
+                        payload: e.target.value
+                      });
                     }}
-                    onKeyPress={e => {
+                    onKeyDown={e => {
                       if (e.key === 'Enter') {
-                        handleSearch()
+                        handleSearch();
                       }
                     }}
+                    
+                    // onKeyPress={e => {
+                    //   if (e.key === 'Enter') {
+                    //     handleSearch()
+                    //   }
+                    // }}
                   />
                   <div className="avatar-block">
                     {!userId ? (

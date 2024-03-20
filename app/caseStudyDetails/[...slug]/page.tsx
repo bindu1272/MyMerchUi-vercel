@@ -30,7 +30,7 @@ const CaseStudyDetailsPage = ({params}:any) => {
         fetchReq,
         (response:any) => {
           const currentCaseStudyIndex = response.findIndex(
-            (b:any) => b.slug == params?.slug?.[0]
+            (b:any) => b.slug == decodeURIComponent(params?.slug?.[0])
           );
           setCurrentCaseStudy(response[currentCaseStudyIndex]);
           setLoading(false);
@@ -56,10 +56,10 @@ const CaseStudyDetailsPage = ({params}:any) => {
   ) : (
     <>
       <section className="bread_crumb">
-        {/* <GoogleSetup
+        <GoogleSetup
           title={`${currentCaseStudy.seoTitle}`}
           description={`${currentCaseStudy.seoDescription}`}
-        /> */}
+        />
         <div className="container">
           <div className="row">
             <div className="col-sm-7 d-flex">

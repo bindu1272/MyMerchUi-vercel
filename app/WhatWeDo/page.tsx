@@ -18,6 +18,8 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
+import Link from "next/link";
 
 const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
   const dispatch = useDispatch();
@@ -99,7 +101,7 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles what_we_do_bubble">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/what-we-do-header-bubble.svg"} />
+                    <S3Image src={"/what-we-do-header-bubble.svg"} width={288} height={274}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -145,7 +147,7 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
           }}
         ></div>
       </section>
-      <section className="section_space pb-sm-0 memorable-moments-section">
+      <section className="section_space pb-sm-0 memorable-moments-section" style={{backgroundColor:"white"}}>
         <div className="container">
           <div className="row column-reverse">
             <div className="col-sm-6">
@@ -205,7 +207,7 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
                         How good’s that?
                       </p>
                       <a className="btn_white" href="/Warehouse">
-                        Let's talk logistics
+                        Let`s talk logistics
                       </a>
                     </div>
                   </div>
@@ -249,12 +251,12 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
                   title={footerBanners[0].title}
                   className="border-left title-left"
                 />
-                <a
-                  href={footerBanners[0].linkButtonURL}
+                <Link
+                  href="/GetAQuote"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
-                  {footerBanners[0].linkButtonLabel}
-                </a>
+                  {footerBanners[0]?.linkButtonLabel}
+                </Link>
               </div>
               <div className="col-sm-5 col-lg-7 position-relative foot_right_block">
                 <div className="footer_bubbles">
@@ -265,7 +267,7 @@ const WhatWeDo = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} />
+                  <Image alt="" src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} width={450} height={279}/>
                 </div>
               </div>
             </div>

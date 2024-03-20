@@ -189,15 +189,15 @@ const MyMerchInspo = ({ headerBanners,params }:any) => {
                 <div className="col-sm-7 col-lg-8">
                   <Select
                     defaultValue="all"
-                    style={{ width: "100%" }}
+                    style={{ width: "100%",fontFamily:"Neutra Text" }}
                     size={"large"}
                     onChange={handleInspoCategoryChange}
                   >
                     <Option value="all">View All</Option>
                     {inspoCategories &&
                       inspoCategories.length > 0 &&
-                      inspoCategories.map((bc:any) => {
-                        return <Option value={bc.name}>{bc.name}</Option>;
+                      inspoCategories.map((bc:any,index:any) => {
+                        return <Option value={bc.name} key={index}>{bc.name}</Option>;
                       })}
                   </Select>
                 </div>

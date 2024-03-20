@@ -16,6 +16,7 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
 
 const Whymerch = ({ headerBanners, footerBanners }:any) => {
   const customiseSettings = {
@@ -97,7 +98,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles why_merch_bubble">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/why-merch-header-bubble.svg"} />
+                    <S3Image src={"/why-merch-header-bubble.svg"} width={232} height={284} />
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -197,11 +198,11 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12">
               <MerchTitle title="Get sticky with it" />
               <div className="shape7">
-                <S3Image src={"/shape7.svg"} className="img-fluid m-auto" />
+                <S3Image src={"/shape7.svg"} className="img-fluid m-auto" width={822} height={381} />
                 <div className="bubble_shape">
                   <ParallaxProvider>
                     <Parallax translateY={["-50", "50"]}>
-                      <S3Image src={"/bubble_shape.svg"} />
+                      <S3Image src={"/bubble_shape.svg"} width={250} height={290}/>
                     </Parallax>
                   </ParallaxProvider>
                 </div>
@@ -217,7 +218,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                 Done right, it can generate sales, grow followers and brand
                 ambassadors and get your message in front of new audiences.
               </p>
-              <p className="merch_description col-sm-12 col-lg-8">
+              <p className="merch_description col-sm-12 col-lg-8"  style={{width:"66% !important"}}>
                 Build a community or lifestyle. Raise funds and show you care.
                 Make a moment memorable while creating additional revenue
                 streams. No matter your goals, merch will help you get there.
@@ -225,7 +226,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
             </div>
             <div className="col-sm-12 text-center p-0">
               <a
-                href="/category/all"
+                href="/AllMerch"
                 className="btn_blue m-0 pt-0"
                 style={{ fontSize: 14, whiteSpace: "nowrap" }}
               >
@@ -281,9 +282,9 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
               <Carousel {...customiseSettings}>
                 {momentsOfMerchMagic &&
                   momentsOfMerchMagic.length > 0 &&
-                  momentsOfMerchMagic.map((mm:any) => {
+                  momentsOfMerchMagic.map((mm:any,index:any) => {
                     return (
-                      <div>
+                      <div key={index}>
                         <div className="row align-items-center position-relative">
                           <div className="col-sm-6 col-lg-7 ">
                             <div className="testi_bubble">
@@ -293,14 +294,14 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                                 </Parallax>
                               </ParallaxProvider>
                             </div>
-                            <img
+                            <Image alt="" width={443} height={274}
                               src={mm.image450x275 && mm.image450x275.url}
                               className="img-fluid"
                             />
                           </div>
                           <div className="col-sm-6 col-lg-5">
                             <div className="d-flex align-items-center justify-content-center flex-column text-center">
-                              <img src={mm.logo.url} />
+                              <Image alt="" src={mm.logo.url} width={314} height={104}/>
                               <p className="mt-4 pb-4">
                                 <strong>{mm.description}</strong>
                                 <span>
@@ -317,7 +318,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
             </div>
             <div className="col-sm-12 text-center mt-3">
               <a
-                href="/CaseStudies"
+                href="/caseStudies"
                 className="btn_blue pt-0"
                 style={{ fontSize: 14, whiteSpace: "nowrap" }}
               >
@@ -352,7 +353,7 @@ const Whymerch = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img
+                  <Image alt="" width={450} height={279}
                     src={
                       footerBanners[0].footerImage450x250 &&
                       footerBanners[0].footerImage450x250.url

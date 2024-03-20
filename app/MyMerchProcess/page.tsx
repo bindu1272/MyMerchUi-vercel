@@ -42,7 +42,7 @@ const MyMerchProcess = () => {
       <section
         className="merch-portal-top-banner border-center-align mt-0"
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_IMAGES_SRC_URL}/mib-Process-banner.svg)`,
+          backgroundImage: `url(${process.env.NEXT_APP_IMAGES_SRC_URL}/mib-Process-banner.svg)`,
         }}
       >
         <div className="container-fluid">
@@ -66,7 +66,7 @@ const MyMerchProcess = () => {
           <div className="row">
             <div className="col-sm-12">
               <h1>
-                The <S3Image src={"/new-logo-blue.png"} width={250} height={94} style={{ position: "relative", top: 5 }} /> process
+                The <S3Image src={"/new-logo-blue.png"} width={250} height={94} style={{ position: "relative", top: 15,verticalAlign:"middle",display:"unset" }} /> process
               </h1>
             </div>
           </div>

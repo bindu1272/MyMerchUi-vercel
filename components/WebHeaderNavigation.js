@@ -13,16 +13,16 @@ const WebHeaderNavigation = ({
             <div className="navigation">
                 <ul>
                     {navigationOptions &&
-                        navigationOptions.map((option) => (
-                            <li className="has-children navigation-item" key={option.key}>
-                                <Link href="" style={{textDecoration:"none"}}>
+                        navigationOptions.map((option,index) => (
+                            <li className="has-children navigation-item" key={option?.key || index} >
+                                <Link href="" style={{textDecoration:"none"}} key={index}>
                                     {option.name}
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <div className="mega-menu">
                                         <div className="mega-dropdown-menu">
-                                            {option.children && option.children.map((child) => (
-                                                <ul>
+                                            {option.children && option.children.map((child,index) => (
+                                                <ul key={index}>
                                                     <li
                                                         className={child.key === currentParentKey ? "active" : ""}
                                                         key={"child" + child.key}
@@ -33,7 +33,7 @@ const WebHeaderNavigation = ({
                                                         {child.children &&
                                                             child.children.length > 0 &&
                                                             <ul className="child_nav">
-                                                                {child.children.map((grandChild) => (
+                                                                {child.children.map((grandChild,index) => (
                                                                     <li
                                                                         key={"grandChild" + grandChild.key}
                                                                         onMouseEnter={() => {

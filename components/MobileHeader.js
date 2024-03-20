@@ -12,6 +12,7 @@ import {
 import S3Image from "../common/S3Image";
 import MobileSidebar from "./MobileSidebar";
 import MobileSearchModal from "./MobileSearchModal";
+import * as TYPES from "@/constants/actionTypes";
 // import "../common/customJquery";
 
 const MobileHeader = ({
@@ -72,6 +73,10 @@ const MobileHeader = ({
                   className="mb_search"
                   onClick={() => {
                     setSearchText("");
+                    store.dispatch({
+                      type: TYPES.SET_ENQUIRY_PRODUCTS_SEARCH_STRING,
+                      payload: ""
+                    });
                     setShowLogin(false);
                     setShowSignUp(false);
                     onShowMobileSearch();

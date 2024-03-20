@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import Slider from "react-slick";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { notification } from "antd";
+import Slider from "react-slick";
 import S3Image from "@/common/S3Image";
 import MerchTitle from "@/components/MerchTitle";
 import MerchSimplified from "@/components/MerchSimplified";
@@ -117,12 +117,13 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
           title={"Australia's Leading Promotional Products & Branded Merchandise Supplier"}
           description={"MyMerch is the trusted supplier of promotional products and branded merchandise for brands throughout Australia. Design & order your custom merch today."}
         /> */}
-        <Slider {...headerBannerSliderSettings}>
+        
+<Slider {...headerBannerSliderSettings}>
           {headerBanners &&
             headerBanners.length > 0 &&
-            headerBanners.map((hb:any) => {
+            headerBanners.map((hb:any,index:any) => {
               return (
-                <div className="carousel-item ">
+                <div className="carousel-item " key={index}>
                   <div
                     className="container"
                     style={{ position: "relative", zIndex: 9999 }}
@@ -133,12 +134,12 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           <h1 className="heading">{hb.title}</h1>
                           <div className="banner_divider"></div>
                           <p>{hb.description}</p>
-                          <a
+                          {/* <a
                             href={hb.linkButtonURL}
                             className="btn-medium btn-bg-blue border-radius-md"
                           >
                             {hb.linkButtonLabel}
-                          </a>
+                          </a> */}
                         </div>
                       </div>
                     </div>
@@ -161,6 +162,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
               );
             })}
         </Slider>
+      
       </section>
       <section className="brands_section">
         <div className="container">
@@ -170,9 +172,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
               <Slider {...brandsSliderSettings}>
                 {brandsImages &&
                   brandsImages?.length > 0 &&
-                  brandsImages?.map((bi:any) => {
+                  brandsImages?.map((bi:any,index:any) => {
                     return (
-                      <div className="carousel-item ">
+                      <div className="carousel-item " key={index}>
                         <div className="container">
                           <div className="row">
                             <div className="col-sm-12">
@@ -218,6 +220,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                     );
                   })}
               </Slider>
+           
             </div>
           </div>
         </div>
@@ -275,7 +278,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           good’s that?
                         </p>
                         <a href="/Warehouse" className="btn_white">
-                          Let's talk logistics
+                          Let`&apos;`s talk logistics
                         </a>
                       </div>
                     </div>

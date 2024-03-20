@@ -17,10 +17,10 @@ const InspoDetails = ({
         <div className="row">
           <div className="col-sm-12">
             <div className="grid">
-              <ReactMarkdown
-                source={inspo.content}
-                escapeHtml={false}
-              />
+              <ReactMarkdown>{inspo?.content}</ReactMarkdown>
+                {/* children={inspo.content} */}
+                {/* // escapeHtml={false} */}
+              {/* /> */}
             </div>
           </div>
         </div>

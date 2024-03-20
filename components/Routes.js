@@ -50,7 +50,7 @@ const Routes = (props) => {
     // <Router history={history}>
       <Layout>
         {/* <Header /> */}
-        <ScrollToTop>
+        {/* <ScrollToTop> */}
           {/* <Content style={{ minHeight: 700, backgroundColor: "#d1dde6" }}>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/admin" component={AdminPage} />
@@ -91,7 +91,7 @@ const Routes = (props) => {
             <Route path="/MyMerchInspo/:category?" component={MyMerchInspo} />
             <Route path="/MyMerchInspoDetails/:slug" component={MyMerchInspoDetails} />
           </Content> */}
-        </ScrollToTop>
+        {/* </ScrollToTop> */}
         {/* <Footer /> */}
       </Layout>
     // </Router>

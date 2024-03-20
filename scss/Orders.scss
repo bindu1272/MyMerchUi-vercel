@@ -19,6 +19,7 @@
       }
     }
     .ant-input {
+    font-family: "Neutra Text" !important;
       background-color: #ffffff;
       font-size: 20px;
       border: none;
@@ -33,16 +34,19 @@
       margin-top: 20px;
       li {
         margin-bottom: 15px;
+        text-decoration: none;
       }
     }
     li {
       list-style-type: none;
       display: inline-block;
       a {
+        text-decoration: none;
         padding: 10px 15px;
         border-radius: 30px;
         background-color: #ffffff;
         color: #000000;
+        font-family: "Neutra Text";
         @include displayFlex;
         @include alignItemsCenter;
         @include justifyContentCenter;

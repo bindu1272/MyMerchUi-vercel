@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Carousel, notification } from "antd";
 import S3Image from "@/common/S3Image";
@@ -17,6 +17,10 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import "animate.css/animate.min.css";
+
 
 const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
   const settings = {
@@ -124,7 +128,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/who-we-are-header-bubble.svg"} />
+                    <S3Image src={"/who-we-are-header-bubble.svg"} width={305} height={277}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -184,7 +188,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               <div className="team_bubble">
                 <ParallaxProvider>
                   <Parallax translateY={["-0px", "-300px"]}>
-                    <S3Image src={"/we-love-bubble.svg"} />
+                    <S3Image src={"/we-love-bubble.svg"} width={296} height={187}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -200,7 +204,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                 or two over the years and decided to put an end to boring and
                 complicated merch once and for all.
               </p>
-              <p className="merch_description text-left">
+              <p className="merch_description text-left" style={{width:"99%"}}>
                 Today we offer a refined, thoughtfully selected and regularly
                 updated range of quality, on-trend products to make sure you
                 always deliver on delight.
@@ -230,9 +234,12 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12 text-center">
               <div className="our_values_info_block">
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={100}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={100}> */}
+              <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
                     <S3Image src={"/simplicity.svg"} width={106} height={126}/>
-                  </ScrollAnimation>
+                  {/* </ScrollAnimation> */}
+                  </AnimationOnScroll>
                   <label>Simplicity</label>
                   <p>
                     We ’re all about making things simpler in today’s complex
@@ -240,9 +247,12 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   </p>
                 </div>
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={200}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={200}> */}
+              <AnimationOnScroll animateIn="animate__bounceIn" delay={200} style={{display:"flex", justifyContent:"center"}}>
+
                     <S3Image src={"/obsessed.svg"} width={124} height={124} />
-                  </ScrollAnimation>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label>Obsessed</label>
                   <p>
                     With quality, our craft, customers, nailing briefs and
@@ -252,9 +262,12 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_values_info_block">
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={300}>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={300}> */}
+              <AnimationOnScroll animateIn="animate__bounceIn" delay={300} style={{display:"flex", justifyContent:"center"}}>
+
                     <S3Image src={"/customer-first.svg"} width={113} height={122}/>
-                  </ScrollAnimation>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label>Customer-first </label>
                   <p>
                     As an extension of our customers, we put your needs first,
@@ -263,9 +276,12 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   </p>
                 </div>
                 <div className="ov_details">
-                  <ScrollAnimation animateIn="bounceIn" delay={400}>
+              <AnimationOnScroll animateIn="animate__bounceIn" delay={400} style={{display:"flex", justifyContent:"center"}}>
+
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={400}> */}
                     <S3Image src={"/thoughtful.svg"} width={97} height={122}/>
-                  </ScrollAnimation>
+                  {/* </ScrollAnimation> */}
+                  </AnimationOnScroll>
                   <label>Thoughtful</label>
                   <p>
                     We carefully consider every detail to make sure we get it
@@ -346,10 +362,10 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
               <Carousel {...settings}>
                 {teamMembers &&
                   teamMembers.length > 0 &&
-                  teamMembers.map((tm:any) => {
+                  teamMembers.map((tm:any,index:any) => {
                     return (
-                      <div className="team_details">
-                        <img
+                      <div className="team_details" key={index}>
+                        <Image alt="" width={160} height={160}
                           //src={`${process.env.REACT_APP_STRAPI_API_URL}${tm.profilePicture160x160.url}`}
                           src={`${tm.profilePicture160x160.url}`}
                         />
@@ -416,7 +432,7 @@ const WhoWeAre = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img
+                  <Image alt="" width={450} height={279}
                     src={
                       footerBanners[0].footerImage450x250 &&
                       footerBanners[0].footerImage450x250.url

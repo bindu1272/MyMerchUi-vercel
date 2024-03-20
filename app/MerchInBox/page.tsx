@@ -11,7 +11,7 @@ const MerchInBox = () => {
     trackPageViewInGoogle();
   }, []);
 
-  const MerchUnbox = `${process.env.REACT_APP_IMAGES_SRC_URL}/Merch-Unbox.mp4`;
+  const MerchUnbox = `${process.env.NEXT_APP_IMAGES_SRC_URL}/Merch-Unbox.mp4`;
 
   return (
     <>

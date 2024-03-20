@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { useDispatch } from "react-redux";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Carousel } from "antd";
 import S3Image from "@/common/S3Image";
@@ -17,6 +18,9 @@ import {
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
 import { notification } from "antd";
+import Image from "next/image";
+import "animate.css/animate.min.css";
+
 
 
 const Sustainability = ({ headerBanners, footerBanners }:any) => {
@@ -83,7 +87,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                 <div className="banner_bubbles sustainability_bubble">
                   <ParallaxProvider>
                     <Parallax translateY={["150px", "0px"]}>
-                      <S3Image src={"/inner-banner-shape.svg"} />
+                      <S3Image src={"/inner-banner-shape.svg"} width={308} height={292}/>
                     </Parallax>
                   </ParallaxProvider>
                 </div>
@@ -137,7 +141,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   title="Minimising our impact"
                   className="no-border"
                 />
-                <p className="merch_description col-sm-12 col-lg-8 mb-0">
+                <p className="merch_description col-sm-12 col-lg-8 mb-0" style={{width:"66%"}}>
                   At MyMerch, we understand our role in looking after the planet
                   and its inhabitants. That’s why we want to improve every part
                   of our operations to minimise our impact, and make the world a
@@ -151,14 +155,18 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
             <div className="our_commitement_section">
               <div className="our_commitement_info">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={100}>
+                <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={100}> */}
                     <S3Image
                       src={"/sustainability/Eco-friendly-products.svg"}
+                      width={136} height={80}
                     />
-                  </ScrollAnimation>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label className="max-width">Eco-friendly products</label>
                 </div>
-                <p>
+                <p style={{width:"96%"}}>
                   We offer high quality, environmentally friendly and ethically
                   responsible products, so you can rest easy knowing your merch
                   is safe for the planet – and people.
@@ -166,12 +174,15 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={200}>
-                    <S3Image src={"/sustainability/Reducing-waste.svg"} />
-                  </ScrollAnimation>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={200}> */}
+                  <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                    <S3Image src={"/sustainability/Reducing-waste.svg"} width={135} height={80}/>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label className="max-width">Reducing waste</label>
                 </div>
-                <p>
+                <p style={{width:"96%"}}>
                   We reduce the amount of space our waste takes up with our
                   onsite compactor - reducing collection requirements and CO2
                   emissions.
@@ -179,14 +190,18 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info full-width">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={300}>
+                <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={300}> */}
                     <S3Image
                       src={"/sustainability/Paper-and-cardboard-recycling.svg"}
+                      width={114} height={80}
                     />
-                  </ScrollAnimation>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label>Paper and cardboard recycling</label>
                 </div>
-                <p>
+                <p style={{width:"98%"}}>
                   Local paper mills recycle our paper waste, which gets a second
                   (or third) life as Premium Paper Products. We also shred our
                   waste cardboard and turn it into two types of packaging
@@ -195,11 +210,15 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info w-sm-50">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={400}>
+                <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={400}> */}
                     <S3Image
                       src={"/sustainability/Sustainable-supply-chain.svg"}
+                      width={136} height={80}
                     />
-                  </ScrollAnimation>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label>Sustainable supply chain</label>
                 </div>
                 <p>
@@ -211,14 +230,17 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
               <div className="our_commitement_info w-sm-50 w-xs-100">
                 <div className="img_title">
-                  <ScrollAnimation animateIn="bounceIn" delay={500}>
-                    <S3Image src={"/sustainability/Cutting-down-kWh.svg"} />
-                  </ScrollAnimation>
+                  {/* <ScrollAnimation animateIn="bounceIn" delay={500}> */}
+                  <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                    <S3Image src={"/sustainability/Cutting-down-kWh.svg"} width={114} height={80}/>
+                    </AnimationOnScroll>
+                  {/* </ScrollAnimation> */}
                   <label style={{ whiteSpace: "nowrap" }}>
                     Cutting down kWh
                   </label>
                 </div>
-                <p>
+                <p style={{width:"97%"}}>
                   Using industry leading LED curing technology during production
                   reduces our power consumption from 10kWh to 2.9kWh. While our
                   low power lighting program throughout our warehouses and
@@ -228,7 +250,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
             </div>
             <div className="col-sm-12 text-center">
-              <a href="/category/eco" className="btn_blue">
+              <a href="/AllMerch" className="btn_blue">
                 Check out our range of sustainable merch
               </a>
             </div>
@@ -410,7 +432,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   className="border-left title-left"
                 />
                 <a
-                  href={footerBanners[0].linkButtonURL}
+                  href="/AllMerch"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}
@@ -420,12 +442,12 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                 <div className="footer_bubbles">
                   <ParallaxProvider>
                     <Parallax translateY={["-50", "50"]}>
-                      <S3Image src={"/footer-bubbles.svg"} />
+                      <S3Image src={"/footer-bubbles.svg"}  width={211} height={223}/>
                     </Parallax>
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} />
+                  <Image alt="" src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} width={450} height={279} />
                 </div>
               </div>
             </div>

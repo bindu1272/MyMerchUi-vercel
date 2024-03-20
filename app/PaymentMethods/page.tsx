@@ -15,7 +15,7 @@ const PaymentMethods = () => {
     <>
       <div
         className="header_banner"
-        style={{ backgroundImage: `url(${process.env.REACT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
+        style={{ backgroundImage: `url(${process.env.NEXT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
       >
         <GoogleSetup
           title={"Payment & Return Policy"}

@@ -86,6 +86,12 @@ const ContactUs = ({
                       label="Company"
                       name="company"
                       className="col-lg-12"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please enter Company",
+                        },
+                      ]}
                     >
                       <Input placeholder="Enter Company" className="col-lg-12" />
                     </Form.Item>
@@ -102,8 +108,8 @@ const ContactUs = ({
                         <Space direction="vertical" size={"middle"}>
                           {helpOptions &&
                             helpOptions.length > 0 &&
-                            helpOptions.map((ho) => {
-                              return <Radio value={ho.name}>{ho.name}</Radio>
+                            helpOptions.map((ho,index) => {
+                              return <Radio value={ho.name} key={index}>{ho.name}</Radio>
                             })
                           }
                         </Space>
@@ -124,14 +130,22 @@ const ContactUs = ({
                                   rules={[
                                     {
                                       required: f.isRequired,
-                                      message: f.isRequiredValidationMessage,
+                                      message: f?.label === "Quantity" ? "Please Enter Quantity" : f.isRequiredValidationMessage,
                                     },
                                   ]}
+                                  
+                                
                                 >
                                   <Input
                                     type="number"
                                     min={f.minValue ? f.minValue : 1}
                                     placeholder={f.placeholderText}
+                                    rules={[
+                                      {
+                                        required: f.isRequired,
+                                        message: f.isRequiredValidationMessage,
+                                      },
+                                    ]}
                                   />
                                 </Form.Item>
                               case "date":

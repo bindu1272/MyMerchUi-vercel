@@ -125,7 +125,7 @@ const BlogsPage = ({ headerBanners,params }:any) => {
               <div className="banner_bubbles">
                 <ParallaxProvider>
                   <Parallax translateY={["150px", "0px"]}>
-                    <S3Image src={"/inner-banner-shape.svg"} />
+                    <S3Image src={"/inner-banner-shape.svg"} width={308} height={292}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -185,15 +185,15 @@ const BlogsPage = ({ headerBanners,params }:any) => {
                 <div className="col-sm-7 col-lg-8">
                   <Select
                     defaultValue="all"
-                    style={{ width: "100%" }}
+                    style={{ width: "100%" ,fontFamily:"Neutra Text"}}
                     size={"large"}
                     onChange={handleBlogCategoryChange}
                   >
                     <Option value="all">View All</Option>
                     {blogCategories &&
                       blogCategories.length > 0 &&
-                      blogCategories.map((bc:any) => {
-                        return <Option value={bc.name}>{bc.name}</Option>;
+                      blogCategories.map((bc:any,index:any) => {
+                        return <Option value={bc.name} key={index}>{bc.name}</Option>;
                       })}
                   </Select>
                 </div>

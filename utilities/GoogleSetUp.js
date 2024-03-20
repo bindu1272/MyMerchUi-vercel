@@ -3,7 +3,7 @@ import React from "react";
 import ReactGA from 'react-ga';
 
 export const initGA = trackingID => {
-    // trackingID && ReactGA.initialize(trackingID); //? trackingID : process.env.REACT_APP_GA_ID);
+    trackingID && ReactGA.initialize(trackingID) ? trackingID : process.env.NEXT_APP_GA_ID;
 };
 
 function GoogleSetup({
@@ -20,19 +20,19 @@ function GoogleSetup({
 }
 
 export const trackPageViewInGoogle = additionalText => {
-    // ReactGA.pageview(
-    //     window.location.pathname +
-    //     (additionalText ? additionalText : '') +
-    //     window.location.search
-    // );
+    ReactGA.pageview(
+        window.location.pathname +
+        (additionalText ? additionalText : '') +
+        window.location.search
+    );
 };
 
 export const trackEventInGoogle = (category, action, label) => {
-    // ReactGA.event({
-    //     category,
-    //     action,
-    //     label
-    // });
+    ReactGA.event({
+        category,
+        action,
+        label
+    });
 };
 
 export default GoogleSetup;

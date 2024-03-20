@@ -1,7 +1,8 @@
 import React from "react";
-import { Modal, Form, Input } from "antd";
+import { Modal, Form, Input,Alert } from "antd";
 import SizeGuide from "./SizeGuide";
 import { getDetailImageSpec } from "./EnquiryProductHelper";
+import Image from "next/image";
 
 const CustomPackDetails = ({
   currentProduct,
@@ -16,6 +17,7 @@ const CustomPackDetails = ({
   onClickViewSizeGuide,
   onOkSizeGuideModal,
   onCancelSizeGuideModal,
+  showError
 }) => {
   return (
     <>
@@ -28,9 +30,9 @@ const CustomPackDetails = ({
             <div className="packs_details_block">
               <div className="pack_slider">
                 <div className="img_block">
-                  <img
+                  <Image alt="" width={388} height={498}
                     src={
-                      currentProductColour.images[getDetailImageSpec()]
+                      currentProductColour?.images?.[getDetailImageSpec()]
                         .product_image_url
                     }
                   />
@@ -44,13 +46,13 @@ const CustomPackDetails = ({
                 <div className="item">
                   <label>Sizes: </label>
                   <p className="size_space">
-                    {currentProduct.sizes.toString().split(",").join(" ")}
+                    {currentProduct?.sizes?.toString().split(",").join(" ")}
                   </p>
                   <p>
                     {currentProduct.show_size_guide && (
                       <a
                         onClick={() =>
-                          onClickViewSizeGuide(currentProduct.size_chart_data)
+                          onClickViewSizeGuide(currentProduct?.size_chart_data)
                         }
                       >
                         View Size Guide
@@ -76,11 +78,11 @@ const CustomPackDetails = ({
                   <div className="color_list">
                     {currentProduct.colours &&
                       currentProduct.colours.length > 0 &&
-                      currentProduct.colours.map((c) => {
+                      currentProduct.colours.map((c,index) => {
                         return (
-                          <span
+                          <span key={index}
                             className={
-                              c.colour_hex == currentProductColour.colour_hex
+                              c.colour_hex == currentProductColour?.colour_hex
                                 ? "selected"
                                 : ""
                             }
@@ -116,7 +118,7 @@ const CustomPackDetails = ({
                       type="number"
                       min={currentProduct.minimum_order_quantity}
                       placeholder={currentProduct.minimum_order_quantity}
-                      value={currentProductQuantity}
+                      defaultValue={currentProduct.minimum_order_quantity || currentProductQuantity}
                       onChange={(e) => {
                         onChangeCurrentProductQuantity(e);
                       }}
@@ -130,7 +132,9 @@ const CustomPackDetails = ({
                   </Form>
                   <span>Units</span>
                 </div>
+           
               </div>
+             
               <div className="col-5 col-md-4 text-end text-sm-end mt-4 m-sm-0">
                 <a
                   className="btn_blue m-0"
@@ -139,6 +143,13 @@ const CustomPackDetails = ({
                   Add to enquiry
                 </a>
               </div>
+              {showError && (
+        <Alert style={{width:"250px",marginLeft:"44px",padding:"6px",border:"none",fontWeight:"600"}}
+          description="Quantity should be >= 50."
+          type="error"
+          showIcon
+        />
+      )}
               <div className="col-7 col-md-12  mt-4 m-sm-0">
                 <p className="info_message">
                   ⓘ Minimum order quantity is{" "}

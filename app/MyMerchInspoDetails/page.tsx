@@ -107,7 +107,7 @@ const MyMerchInspoDetails = ({params}:any) => {
       <div
         className="casy-study-inner-banner"
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_IMAGES_SRC_URL}/inspo-bg.jpg)`,
+          backgroundImage: `url(${process.env.NEXT_APP_IMAGES_SRC_URL}/inspo-bg.jpg)`,
         }}
       >
         <div className="container-fluid">
@@ -168,8 +168,8 @@ const MyMerchInspoDetails = ({params}:any) => {
                   <Option value="all">View All</Option>
                   {inspoCategories &&
                     inspoCategories.length > 0 &&
-                    inspoCategories.map((bc:any) => {
-                      return <Option value={bc.name}>{bc.name}</Option>;
+                    inspoCategories.map((bc:any,index:any) => {
+                      return <Option value={bc.name} key={index}>{bc.name}</Option>;
                     })}
                 </Select>
               </div>

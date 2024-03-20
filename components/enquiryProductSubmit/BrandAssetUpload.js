@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal, Upload, Button, message } from "antd";
 import { CloudUploadOutlined } from "@ant-design/icons";
+import Image from "next/image";
 const { Dragger } = Upload;
 
 const BrandAssetUpload = ({
@@ -11,7 +12,8 @@ const BrandAssetUpload = ({
 }) => {
   const [showFilePreview, setShowFilePreview] = useState(false);
   const [filePreviewImage, setFilePreviewImage] = useState("");
-  const [filePreviewTitle, setFilePreviewTitle] = useState("");
+  const [filePreviewTitle, setFilePreviewTitle] = useState();
+  const [fileInfo,setFileInfo] = useState("");
 
   const onCancelFilePreview = () => {
     setShowFilePreview(false);
@@ -40,15 +42,26 @@ const BrandAssetUpload = ({
     name: "file",
     multiple: true,
     onChange(info) {
-      const { status } = info.file;
+      setFileInfo(info);
+      // Check file size here
+      if (info?.file?.size > 5 * 1024 * 1024) {
+        message.error(`${info?.file.name} exceeds the maximum file size of 5mb.`);
+        return ""
+        // Remove the file from the fileList to prevent it from being added
+        onDeleteFile(file);
+      }
+
+      const { status, file } = info?.file;
       if (status !== "uploading") {
         console.log(info.file, info.fileList);
       }
       if (status === "done") {
-        message.success(`${info.file.name} file uploaded successfully.`);
+        message.success(`${file.name} file uploaded successfully.`);
       } else if (status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
+        message.error(`${file.name} file upload failed.`);
       }
+
+      
     },
     onDrop(e) {
       console.log("Dropped files", e.dataTransfer.files);
@@ -58,7 +71,6 @@ const BrandAssetUpload = ({
   return (
     <>
       <div className="upload_info">
-       
         <Dragger
           {...props}
           fileList={fileList}
@@ -75,12 +87,13 @@ const BrandAssetUpload = ({
           </p>
           <label>(Max. file size 5mb)</label>
         </Dragger>
+        {/* {fileInfo?.file?.size > 5 * 1024 * 1024 ? null : */}
         <Upload
           listType="picture-card"
           fileList={fileList}
           customRequest={onUploadFile}
           onRemove={onDeleteFile}
-          onPreview={onPreviewFile}         
+          onPreview={onPreviewFile}
         >
           {/* <Button>+ Add</Button> */}
         </Upload>
@@ -91,7 +104,9 @@ const BrandAssetUpload = ({
         footer={null}
         onCancel={onCancelFilePreview}
       >
-        <img
+        <Image
+          width={30}
+          height={30}
           alt="File Preview"
           style={{
             width: "100%",

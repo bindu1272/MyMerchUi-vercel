@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -16,28 +17,29 @@ const BlogDetails = ({ blog }) => {
                 {blog.description}
               </p>
               <div className="img_block">
-                <img
-                  src={`${blog.contentImage1030x500 && blog.contentImage1030x500.url}`}
+                <Image alt="" width={1050} height={510}
+                  src={`${blog?.contentImage1030x500 && blog?.contentImage1030x500?.url}`}
                 />
               </div>
               <div className="img_block tablet">
-                <img
-                  src={`${blog.contentImage660x320 && blog.contentImage660x320.url}`}
+                <Image alt="" width={500} height={200}
+                  src={`${blog?.contentImage660x320 && blog?.contentImage660x320?.url}`}
                 />
               </div>
               <div className="img_block mobile">
-                <img
-                  src={`${blog.contentImage400x195 && blog.contentImage400x195.url}`}
+             {blog?.contentImage400x195 ?
+                <Image alt="" width={40} height={40}
+                  src={`${blog?.contentImage400x195 && blog?.contentImage400x195?.url}`}
                 />
+                :null}
               </div>
               {blog.contentText &&
                 blog.contentText.length > 0 &&
-                blog.contentText.map((ct) => {
-
-                  return <ReactMarkdown className={'merch_description'}
-                    source={ct.text}
-                    escapeHtml={false}
-                  />
+                blog.contentText.map((ct,index) => {
+                  return <ReactMarkdown className={'merch_description'} key={index}>{ct.text}</ReactMarkdown>
+                    // children={ct.text}
+                    // escapeHtml={false}
+                  // />
                 })}
             </div>
           </div>

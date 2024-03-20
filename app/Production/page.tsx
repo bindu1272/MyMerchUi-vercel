@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Carousel, notification } from "antd";
 import S3Image from "@/common/S3Image";
@@ -18,6 +19,9 @@ import {
     fetchHeaderBannersRequest,
     fetchFooterBannersRequest,
   } from "@/actions/strapiActions";
+import Image from "next/image";
+import "animate.css/animate.min.css";
+
 
 const Production = ({ headerBanners, footerBanners }:any) => {
   const settings = {
@@ -115,7 +119,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
               <div className="banner_bubbles">
                 <ParallaxProvider>
                   <Parallax translateY={["260px", "0px"]}>
-                    <S3Image src={"/production-header-bubble.svg"} />
+                    <S3Image src={"/production-header-bubble.svg"} width={306} height={284}/>
                   </Parallax>
                 </ParallaxProvider>
               </div>
@@ -188,11 +192,13 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                     <div className="col-sm-12 ">
                       <div className="cqa_info_section">
                         <div className="cqa_our_commitement_info">
-                          <ScrollAnimation animateIn="bounceIn" delay={100}>
+                          {/* <ScrollAnimation animateIn="bounceIn" delay={100}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
                             <S3Image
                               src={"/icons/access-to-insider-intel.svg"}
                             />
-                          </ScrollAnimation>
+                          {/* </ScrollAnimation> */}
+                          </AnimationOnScroll>
                           <label>Access to insider intel</label>
                           <p>
                             With over two decades in the biz, we’ve become
@@ -202,9 +208,12 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                           </p>
                         </div>
                         <div className="cqa_our_commitement_info">
-                          <ScrollAnimation animateIn="bounceIn" delay={200}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={200} style={{display:"flex", justifyContent:"center"}}>
+
+                          {/* <ScrollAnimation animateIn="bounceIn" delay={200}> */}
                             <S3Image src={"/icons/elevate-your-brand.svg"} />
-                          </ScrollAnimation>
+                          {/* </ScrollAnimation> */}
+                          </AnimationOnScroll>
                           <label>Elevate your brand</label>
                           <p>
                             Our in-house designers specialise in creating
@@ -214,11 +223,14 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                           </p>
                         </div>
                         <div className="cqa_our_commitement_info">
-                          <ScrollAnimation animateIn="bounceIn" delay={300}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                          {/* <ScrollAnimation animateIn="bounceIn" delay={300}> */}
                             <S3Image
                               src={"/icons/always-deliver-on-quality.svg"}
                             />
-                          </ScrollAnimation>
+                          {/* </ScrollAnimation> */}
+                          </AnimationOnScroll>
                           <label>Always deliver on quality</label>
                           <p>
                             Our in - house team manages every step of the
@@ -229,9 +241,12 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                           </p>
                         </div>
                         <div className="cqa_our_commitement_info">
-                          <ScrollAnimation animateIn="bounceIn" delay={400}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                          {/* <ScrollAnimation animateIn="bounceIn" delay={400}> */}
                             <S3Image src={"/icons/merch-with-confidence.svg"}  />
-                          </ScrollAnimation>
+                          {/* </ScrollAnimation> */}
+                          </AnimationOnScroll>
                           <label>Merch with confidence</label>
                           <p>
                             Experienced and tried and tested supply partners
@@ -243,9 +258,12 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                           </p>
                         </div>
                         <div className="cqa_our_commitement_info">
-                          <ScrollAnimation animateIn="bounceIn" delay={500}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                          {/* <ScrollAnimation animateIn="bounceIn" delay={500}> */}
                             <S3Image src={"/icons/good-for-your-brand.svg"}  />
-                          </ScrollAnimation>
+                          {/* </ScrollAnimation> */}
+                          </AnimationOnScroll>
                           <label>Good for your brand, good for the world</label>
                           <p>
                             Our products are responsibly sourced and
@@ -274,10 +292,13 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                   <div className="row">
                     <div className="col-lg-4">
                       <div className="cqa_our_commitement_info">
-                        <ScrollAnimation animateIn="bounceIn" delay={100}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+
+                        {/* <ScrollAnimation animateIn="bounceIn" delay={100}> */}
                           <S3Image src={"/icons/access-to-insider-intel.svg"} width={112} height={80}/>
-                          <label>Access to insider intel</label>
-                        </ScrollAnimation>
+                        {/* </ScrollAnimation> */}
+                        </AnimationOnScroll>
+                        <label>Access to insider intel</label>
                         <p>
                           With over two decades in the biz, we’ve become experts
                           in every step of the merch process. We have the
@@ -288,10 +309,14 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                     </div>
                     <div className="col-lg-4">
                       <div className="cqa_our_commitement_info">
-                        <ScrollAnimation animateIn="bounceIn" delay={200}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={200} style={{display:"flex", justifyContent:"center"}}>
+
+                        {/* <ScrollAnimation animateIn="bounceIn" delay={200}> */}
                           <S3Image src={"/icons/elevate-your-brand.svg"} width={67} height={80}/>
-                          <label>Elevate your brand</label>
-                        </ScrollAnimation>
+                        {/* </ScrollAnimation> */}
+                        </AnimationOnScroll>
+                        <label>Elevate your brand</label>
+
                         <p>
                           Our in-house designers specialise in creating
                           beautiful on-trend merch that gets people excited.
@@ -302,12 +327,16 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                     </div>
                     <div className="col-lg-4 col-sm-12">
                       <div className="cqa_our_commitement_info">
-                        <ScrollAnimation animateIn="bounceIn" delay={300}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={300} style={{display:"flex", justifyContent:"center"}}>
+
+                        {/* <ScrollAnimation animateIn="bounceIn" delay={300}> */}
                           <S3Image
                             src={"/icons/always-deliver-on-quality.svg"} width={77} height={80}
                           />
-                          <label>Always deliver on quality</label>
-                        </ScrollAnimation>
+                        {/* </ScrollAnimation> */}
+                        </AnimationOnScroll>
+                        <label>Always deliver on quality</label>
+
                         <p>
                           Our in - house team manages every step of the
                           production process with stringent quality controls –
@@ -318,10 +347,14 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                     </div>
                     <div className="col-sm-6">
                       <div className="cqa_our_commitement_info">
-                        <ScrollAnimation animateIn="bounceIn" delay={400}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={400} style={{display:"flex", justifyContent:"center"}}>
+
+                        {/* <ScrollAnimation animateIn="bounceIn" delay={400}> */}
                           <S3Image src={"/icons/merch-with-confidence.svg"} width={79} height={80}/>
-                          <label>Merch with confidence</label>
-                        </ScrollAnimation>
+                        {/* </ScrollAnimation> */}
+                        </AnimationOnScroll>
+                        <label>Merch with confidence</label>
+
                         <p>
                           Experienced and tried and tested supply partners mean
                           we bring you the best products at the best prices and
@@ -334,10 +367,14 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                     </div>
                     <div className="col-sm-6">
                       <div className="cqa_our_commitement_info">
-                        <ScrollAnimation animateIn="bounceIn" delay={500}>
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={500} style={{display:"flex", justifyContent:"center"}}>
+
+                        {/* <ScrollAnimation animateIn="bounceIn" delay={500}> */}
                           <S3Image src={"/icons/good-for-your-brand.svg"} width={86} height={80}/>
-                          <label>Good for your brand, good for the world</label>
-                        </ScrollAnimation>
+                        {/* </ScrollAnimation> */}
+                        </AnimationOnScroll>
+                        <label>Good for your brand, good for the world</label>
+
                         <p>
                           Our products are responsibly sourced and sustainable,
                           which means they not only help your business grow –
@@ -376,9 +413,9 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                 <Carousel {...CustomiseSettings}>
                   {caseStudies &&
                     caseStudies.length > 0 &&
-                    caseStudies.map((cs:any) => {
+                    caseStudies.map((cs:any,index:any) => {
                       return (
-                        <div>
+                        <div key={index}>
                           <div className="custom_slider_info">
                             <div className="col-sm-12 col-lg-12 d-flex justify-content-center">
                               <div className="shape6">
@@ -389,7 +426,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                                 </ParallaxProvider>
                               </div>
                               <div>
-                                <img
+                                <Image alt="" width={cs.image735x325Circular?.width} height={cs.image735x325Circular?.height}
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   className="img-fluid"
@@ -443,7 +480,7 @@ const Production = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} />
+                  <Image alt="" src={footerBanners[0].footerImage450x250 && footerBanners[0].footerImage450x250.url} width={450} height={279}/>
                 </div>
               </div>
             </div>

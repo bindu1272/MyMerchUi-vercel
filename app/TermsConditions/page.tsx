@@ -14,7 +14,7 @@ const TermsConditions = () => {
     <>
       <div
         className="header_banner"
-        style={{ backgroundImage: `url(${process.env.REACT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
+        style={{ backgroundImage: `url(${process.env.NEXT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
       >
         <GoogleSetup
           title={"Terms & Conditions"}
@@ -226,7 +226,7 @@ const TermsConditions = () => {
                                             <li>is generally offensive or in bad taste;</li>
                                         </ol>
                                         <li>
-                                            use "Spam", "blast-faxes" or recorded telephone messages
+                                            use  `&quot;`Spam `&quot;`,  `&quot;`blast-faxes `&quot;` or recorded telephone messages
                                             to market or sell any products or services,
                                         </li>
                                         <li>
@@ -261,7 +261,7 @@ const TermsConditions = () => {
                                         <li>
                                             frame or link or otherwise use or display the Website in
                                             such a manner so that it appears to be part of its own or
-                                            someone else's website, without specific agreement.
+                                            someone else`&apos;`s website, without specific agreement.
                                         </li>
                                     </ol>
                                     <p>
@@ -295,7 +295,7 @@ const TermsConditions = () => {
                                     <br/> <br/>
                                     <strong>4.4 Modification of the Website.</strong>
                                     <br/> My Merch reserves the right to modify the organization,
-                                    structure, content or "look and feel" of the Website and/or
+                                    structure, content or `&apos;`look and feel`&apos;` of the Website and/or
                                     the services, and may change, suspend, or discontinue any
                                     aspect of the Website and/or the service at any time without
                                     notice or any liability to user or any person. My Merch shall
@@ -344,7 +344,7 @@ const TermsConditions = () => {
                                 <Panel header="6. Registration" key="6">
                                     <p>
                                         User Account, Password, and Security You will receive a
-                                        password and account designation upon completing the Site's
+                                        password and account designation upon completing the Site`&apos;`s
                                         registration process. You are responsible for maintaining
                                         the confidentiality of the password and account, and are
                                         fully responsible for all activities that occur under your
@@ -402,8 +402,8 @@ const TermsConditions = () => {
                                     </p>
                                     <ul>
                                         <li>
-                                            My Merch provides the Website and Services on an "as is"
-                                            and "as available" basis. Nothing in these Terms of Use
+                                            My Merch provides the Website and Services on an &quot;as is&quot;
+                                            and &quot;as available&quot; basis. Nothing in these Terms of Use
                                             shall or may be construed as a representation or warranty
                                             by My Merch that the functionality or operation of the
                                             Website and/or the services will:
@@ -609,9 +609,9 @@ const TermsConditions = () => {
                                     its sole and unfettered discretion at any time, and user
                                     hereby agrees to abide by and be fully bound by such amended
                                     terms. The amended terms shall be effective automatically and
-                                    immediately once they are posted on the Website, and user's
+                                    immediately once they are posted on the Website, and user`&apos;s
                                     continued access and use of the Website and the Services on or
-                                    after such effective time constitutes the user's unequivocal
+                                    after such effective time constitutes the user`&apos;s unequivocal
                                     and unconditional acceptance of the amended terms. These Terms
                                     of Use may not be otherwise amended. If user does not agree to
                                     any amendments to these Terms of Use or to any of the current
@@ -653,7 +653,7 @@ const TermsConditions = () => {
                                         </li>
                                         <li>
                                             MyMerch reserves the right to vary the terms and conditions of the offer at
-                                            the company's own discretion.
+                                            the company`&apos;s own discretion.
                                         </li>
                                     </ul>
                                 </Panel>

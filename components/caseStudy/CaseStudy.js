@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const CaseStudy = ({
@@ -6,7 +7,7 @@ const CaseStudy = ({
     return (
         <>
             <div className="cs-item-info">
-                <img
+                <Image alt="" width={330} height={330}
                     //src={`${process.env.REACT_APP_STRAPI_API_URL}${caseStudy.image330x330 && caseStudy.image330x330.url}`}
                     src={`${caseStudy.image330x330 && caseStudy.image330x330.url}`}
                 />

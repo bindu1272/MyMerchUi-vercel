@@ -110,8 +110,8 @@ const ProductsTable = ({
               </div>
             </div>
             <div className="col-sm-12">
-              <div className="order_history_info">
-                <Table
+              <div className="order_history_info" style={{fontFamily:"Neutra Text"}}>
+                <Table style={{fontFamily:"Neutra Text"}}
                   columns={columns}
                   bordered={true}
                   dataSource={products}

@@ -22,7 +22,7 @@ const AddCardForm = ({
       >
         <div className="payment_options">
           <div className="form_group">
-            <S3Image src={"/cards.png"} alt="mymerch" />
+            <S3Image src={"/cards.png"} alt="mymerch" width={407} height={42}/>
           </div>
           <Form
             initialValues={{}}

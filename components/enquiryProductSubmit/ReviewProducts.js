@@ -43,8 +43,8 @@ const ReviewProducts = ({
 
   cart.products &&
     cart.products.length > 0 &&
-    cart.products.forEach((cp) => {
-      if (cp.product.categories.map((c) => c.key).includes("packaging")) {
+    cart.products.forEach((cp,index) => {
+      if (cp.product.categories.map((c,index) => c.key).includes("packaging")) {
         selectedPackagingProducts.push(cp);
       } else {
         selectedMerchProducts.push(cp);
@@ -113,12 +113,12 @@ const ReviewProducts = ({
                     <>
                       <p className="category_title">Merch: </p>
                       <div className="curated_packs_items">
-                        {selectedMerchProducts.map((smp) => {
+                        {selectedMerchProducts.map((smp,index) => {
                           var productCost = smp.unitPrice * smp.quantity
                           subTotalCost = subTotalCost + productCost
                           if (productsType == "curated-pack") {
                             return (
-                              <ReviewCuratedPack
+                              <ReviewCuratedPack key={index}
                                 selectedProduct={smp}
                                 productCost={productCost}
                                 onClickEditProduct={onClickEditProduct}
@@ -127,7 +127,7 @@ const ReviewProducts = ({
                             );
                           } else {
                             return (
-                              <ReviewCustomPack
+                              <ReviewCustomPack key={index}
                                 selectedProduct={smp}
                                 productCost={productCost}
                                 productsType={productsType}
@@ -170,12 +170,12 @@ const ReviewProducts = ({
                     <>
                       <p className="category_title">Packaging:</p>
                       <div className="curated_packs_items">
-                        {selectedPackagingProducts.map((spp) => {
+                        {selectedPackagingProducts.map((spp,index) => {
                           var productCost = spp.unitPrice * spp.quantity;
                           subTotalCost = subTotalCost + productCost;
                           if (productsType == "curated-pack") {
                             return (
-                              <ReviewCuratedPack
+                              <ReviewCuratedPack key={index}
                                 selectedProduct={spp}
                                 productCost={productCost}
                                 onClickEditProduct={onClickEditProduct}
@@ -184,7 +184,7 @@ const ReviewProducts = ({
                             );
                           } else {
                             return (
-                              <ReviewCustomPack
+                              <ReviewCustomPack key={index}
                                 selectedProduct={spp}
                                 productCost={productCost}
                                 productsType={cart.productsType}

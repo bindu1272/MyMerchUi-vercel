@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import ScrollAnimation from "react-animate-on-scroll";
+// import ScrollAnimation from "react-animate-on-scroll";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Carousel, Modal, notification } from "antd";
 import S3Image from "@/common/S3Image";
 import MerchTitle from "@/components/MerchTitle";
@@ -19,6 +20,8 @@ import {
 import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
 import { fetchCaseStudiesRequest } from "@/actions/strapiActions";
 import { CloseCircleOutlined } from "@ant-design/icons";
+import Image from "next/image";
+import "animate.css/animate.min.css";
 
 const CustomPortal = ({ headerBanners, footerBanners }:any) => {
   const settings = {
@@ -162,9 +165,12 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                 <div className="row">
                   <div className="col-sm-6 ">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={100}>
-                        <S3Image src={"/icons/custom-portal-1.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={100}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={100} style={{display:"flex", justifyContent:"center"}}>
+                        <S3Image src={"/icons/custom-portal-1.svg"} height={88} width={110}/>
+                        </AnimationOnScroll>
+                      {/* </ScrollAnimation> */}
+
                       <label>Your merch, your way</label>
                       <p>
                         Home to your merch, your portal comes fully customised
@@ -176,9 +182,11 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </div>
                   <div className="col-sm-6 ">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={200}>
-                        <S3Image src={"/icons/custom-portal-2.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={200}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={200} style={{display:"flex", justifyContent:"center"}}>
+                         <S3Image src={"/icons/custom-portal-2.svg"} height={88} width={115}/>
+                         </AnimationOnScroll>
+                      {/* </ScrollAnimation> */}
                       <label>Complete visibility</label>
                       <p>
                         NomoreFOMO. Get total transparency over your inventory,
@@ -189,9 +197,11 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </div>
                   <div className="col-sm-12 col-lg-4 ">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={300}>
-                        <S3Image src={"/icons/custom-portal-3.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={300}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={300} style={{display:"flex", justifyContent:"center"}}>
+                        <S3Image src={"/icons/custom-portal-3.svg"} width={99} height={88}/>
+                        </AnimationOnScroll>
+                      {/* </ScrollAnimation> */}
                       <label>Full control</label>
                       <p>
                         Double-ups or unauthorised orders can be costly. With a
@@ -202,9 +212,12 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </div>
                   <div className="col-sm-6 col-lg-4 ">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={400}>
-                        <S3Image src={"/icons/custom-portal-4.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={400}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={400} style={{display:"flex", justifyContent:"center"}}>
+
+                        <S3Image src={"/icons/custom-portal-4.svg"} width={99} height={88}/>
+                      {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Delivering peace of mind</label>
                       <p>
                         Never worry about a delivery again with proof of
@@ -214,9 +227,12 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </div>
                   <div className="col-sm-6 col-lg-4 ">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={500}>
-                        <S3Image src={"/icons/custom-portal-5.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={500}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={500} style={{display:"flex", justifyContent:"center"}}>
+
+                        <S3Image src={"/icons/custom-portal-5.svg"} width={105} height={88}/>
+                      {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Easy Reporting</label>
                       <p>
                         Get useful intel to help optimise your merch collection.
@@ -228,9 +244,12 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </div>
                   <div className="col-sm-6  ">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={600}>
-                        <S3Image src={"/icons/custom-portal-6.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={600}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={600} style={{display:"flex", justifyContent:"center"}}>
+
+                        <S3Image src={"/icons/custom-portal-6.svg"} width={93} height={88}/>
+                      {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Budget Management</label>
                       <p>
                         No more budget surprises at the end of the year. Help
@@ -241,9 +260,12 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </div>
                   <div className="col-sm-6 full-width">
                     <div className="mh_info_block">
-                      <ScrollAnimation animateIn="bounceIn" delay={700}>
-                        <S3Image src={"/icons/custom-portal-7.svg"} />
-                      </ScrollAnimation>
+                      {/* <ScrollAnimation animateIn="bounceIn" delay={700}> */}
+                      <AnimationOnScroll animateIn="animate__bounceIn" delay={700} style={{display:"flex", justifyContent:"center"}}>
+
+                        <S3Image src={"/icons/custom-portal-7.svg"} width={100} height={88}/>
+                      {/* </ScrollAnimation> */}
+                      </AnimationOnScroll>
                       <label>Order and deliver seamlessly</label>
                       <p>
                         Running low on merch? Order a new batch through the
@@ -271,7 +293,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12">
               <h1 className="merch_title no-border">Proof is in the packs</h1>
               <p className="merch_description col-sm-12 col-lg-6">
-                Here are some brands already making the most of the 'MyMerch magic'.
+                Here are some brands already making the most of the &apos;MyMerch magic&apos;.
                 See how we’ve brought their packs to life.
               </p>
             </div>
@@ -280,9 +302,9 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                 <Carousel autoplay arrows {...CustomiseSettings}>
                   {caseStudies &&
                     caseStudies.length > 0 &&
-                    caseStudies.map((cs:any) => {
+                    caseStudies.map((cs:any,index:any) => {
                       return (
-                        <div>
+                        <div key={index}>
                           <div className="custom_slider_info">
                             <div className="col-sm-12 col-lg-12 d-flex justify-content-center">
                               <div className="shape6">
@@ -293,7 +315,8 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                                 </ParallaxProvider>
                               </div>
                               <div>
-                                <img
+                                <Image width={cs?.image735x325Circular?.width} height={cs?.image735x325Circular?.height}
+                                alt=""
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   src={`${cs.image735x325Circular && cs.image735x325Circular.url}`}
                                   className="img-fluid"
@@ -329,7 +352,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   className="border-left title-left"
                 />
                 <a
-                  href={footerBanners[0].linkButtonURL}
+                  href="/GetAQuote"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}
@@ -344,7 +367,7 @@ const CustomPortal = ({ headerBanners, footerBanners }:any) => {
                   </ParallaxProvider>
                 </div>
                 <div className="footer_shape">
-                  <img
+                  <Image alt="" width={450} height={279}
                     src={
                       footerBanners[0].footerImage450x250 &&
                       footerBanners[0].footerImage450x250.url

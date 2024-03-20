@@ -103,7 +103,7 @@ const CaseStudyPage = ({ headerBanners,params }:any) => {
       return caseStudies.filter(
         (cs:any) =>
           cs.case_study_category != null &&
-          cs.case_study_category.name.toLowerCase() === category.toLowerCase()
+          cs.case_study_category.name.toLowerCase() === decodeURIComponent(category).toLowerCase()
       );
     }
   };
@@ -117,10 +117,10 @@ const CaseStudyPage = ({ headerBanners,params }:any) => {
   ) : (
     <>
       <div className="casy-study-section">
-        {/* <GoogleSetup
+        <GoogleSetup
           title={"Case Studies: Brands We've Worked With"}
           description={"We've provided custom merch solutions for many well known brands in Australia, including Officeworks, Target, Boost Juice, Rebel, Sony, ZIP, Telstra."}
-        /> */}
+        />
         <section className="banner-section">
           <div className="container position-relative">
             <div className="row">
@@ -184,16 +184,17 @@ const CaseStudyPage = ({ headerBanners,params }:any) => {
                   </div>
                   <div className="col-sm-12 col-lg-8">
                     <Select
-                      defaultValue="all"
-                      style={{ width: "100%" }}
+                      // defaultValue="all"
+                      defaultValue={decodeURIComponent(params?.category?.[0])}
+                      style={{ width: "100%",fontFamily:"Neutra Text" }}
                       size={"large"}
                       onChange={handleCaseStudyCategoryChange}
                     >
                       <Option value="all">​View All</Option>
                       {caseStudyCategories &&
                         caseStudyCategories.length > 0 &&
-                        caseStudyCategories.map((csc:any) => {
-                          return <Option value={csc.name}>{csc.name}</Option>;
+                        caseStudyCategories.map((csc:any,index:any) => {
+                          return <Option value={csc.name} key={index}>{csc.name}</Option>;
                         })}
                     </Select>
                   </div>

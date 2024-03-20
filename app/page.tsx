@@ -114,16 +114,17 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
         </div>
       </div>
       <section className="banner-section home_slider">
-        {/* <GoogleSetup
+        <GoogleSetup
           title={"Australia's Leading Promotional Products & Branded Merchandise Supplier"}
           description={"MyMerch is the trusted supplier of promotional products and branded merchandise for brands throughout Australia. Design & order your custom merch today."}
-        /> */}
-        <Slider {...headerBannerSliderSettings}>
+        />
+
+<Slider {...headerBannerSliderSettings}>
           {headerBanners &&
             headerBanners.length > 0 &&
-            headerBanners.map((hb:any) => {
+            headerBanners.map((hb:any,index:any) => {
               return (
-                <div className="carousel-item ">
+                <div className="carousel-item " key={index}>
                   <div
                     className="container"
                     style={{ position: "relative", zIndex: 9999 }}
@@ -134,12 +135,12 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           <h1 className="heading">{hb.title}</h1>
                           <div className="banner_divider"></div>
                           <p>{hb.description}</p>
-                          {/* <a
+                          <Link
                             href={hb.linkButtonURL}
                             className="btn-medium btn-bg-blue border-radius-md"
                           >
                             {hb.linkButtonLabel}
-                          </a> */}
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -162,6 +163,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
               );
             })}
         </Slider>
+      
       </section>
       <section className="brands_section">
         <div className="container">
@@ -171,9 +173,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
               <Slider {...brandsSliderSettings}>
                 {brandsImages &&
                   brandsImages?.length > 0 &&
-                  brandsImages?.map((bi:any) => {
+                  brandsImages?.map((bi:any,index:any) => {
                     return (
-                      <div className="carousel-item ">
+                      <div className="carousel-item " key={index}>
                         <div className="container">
                           <div className="row">
                             <div className="col-sm-12">
@@ -219,6 +221,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                     );
                   })}
               </Slider>
+            
             </div>
           </div>
         </div>
@@ -255,9 +258,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           right gear with your brand. Helping you create merch
                           that people get excited about.
                         </p>
-                        {/* <a href="/Production" className="btn_white">
+                        <Link href="/Production" className="btn_white">
                           Learn more
-                        </a> */}
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -275,9 +278,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           exclusive shipping rates, so you save on delivery. How
                           good’s that?
                         </p>
-                        {/* <a href="/Warehouse" className="btn_white">
-                          Let's talk logistics
-                        </a> */}
+                        <Link href="/Warehouse" className="btn_white">
+                          Let’s talk logistics
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -293,9 +296,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           at your fingertips with the MyMerch portal. Just don’t
                           let all that power go to your head.
                         </p>
-                        {/* <a href="/CustomPortal" className="btn_white">
+                        <Link href="/CustomPortal" className="btn_white">
                           Tell me more
-                        </a> */}
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -311,9 +314,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           curating the perfect items, beautifully packaged and
                           delivered direct.
                         </p>
-                        {/* <a href="/CustomPacks" className="btn_white">
+                        <Link href="/CustomPacks" className="btn_white">
                           Start creating
-                        </a> */}
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -329,9 +332,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           carefully considered and packaged beautifully to suit
                           any occasion.
                         </p>
-                        {/* <a href="/AllMerch" className="btn_white">
+                        <Link href="/AllMerch" className="btn_white">
                           Find your pack
-                        </a> */}
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -346,9 +349,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           update our curated range to reflect the latest trends
                           and carefully select, try and test every item.
                         </p>
-                        {/* <a href="/AllMerch" className="btn_white">
+                        <Link href="/AllMerch" className="btn_white">
                           Check out our gear
-                        </a> */}
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -421,9 +424,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
           </div>
           <div className="row">
             <div className="col-sm-12 text-center">
-              {/* <a href="/WhyMerch" className="btn_blue mt-5">
+              <Link href="/WhyMerch" className="btn_blue mt-5">
                 Learn why merch works
-              </a> */}
+              </Link>
             </div>
           </div>
           <div className="row">
@@ -474,20 +477,20 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                   title={footerBanners[0].title}
                   className="border-left title-left"
                 />
-                {/* <a
-                  href={footerBanners[0].linkButtonURL}
+                <Link
+                  href="/GetAQuote"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}
-                </a> */}
+                </Link>
               </div>
               <div className="col-sm-7 col-lg-7 col-xl-7 position-relative foot_right_block">
                 <div className="footer_bubbles">
                   <ParallaxProvider>
                     <Parallax translateY={["-50", "50"]}>
                       <S3Image src={"/footer-bubbles.svg"} 
-                      width={450}
-                      height={279}
+                      width={211}
+                      height={223}
                       />
                     </Parallax>
                   </ParallaxProvider>
@@ -499,8 +502,8 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                       footerBanners[0].footerImage450x250.url
                     }
                     alt=""
-                    width={450}
-                    height={279}
+                    width={footerBanners[0].footerImage450x250?.width}
+                    height={footerBanners[0].footerImage450x250?.height}
                   />
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import { getDetailImageSpec } from "../enquiryProduct/EnquiryProductHelper";
+import Image from "next/image";
 
 const ReviewCuratedPack = ({
     selectedProduct,
@@ -12,7 +13,7 @@ const ReviewCuratedPack = ({
         <>
             <div className="cart_item">
                 <div className="cart_img">
-                    <img src={selectedProduct.colour.images[getDetailImageSpec()].product_image_url} />
+                    <Image alt="" src={selectedProduct.colour.images[getDetailImageSpec()].product_image_url} width={50} height={50}/>
                 </div>
                 <div className="cp_info">
                     <h1 className="merch_title text-left">
@@ -46,11 +47,11 @@ const ReviewCuratedPack = ({
                 <>
                     <div className="cp_sub_items">
                         <h1 className="sub_items_title">Pack items included:</h1>
-                        {selectedProduct.product.child_products.map(cp => {
+                        {selectedProduct.product.child_products.map((cp,index) => {
                             return (
-                                <div className="cart_item">
+                                <div className="cart_item" key={index}>
                                     <div className="cart_img">
-                                        <img src={cp.colours && cp.colours[0] && cp.colours[0].images[getDetailImageSpec()].product_image_url} />
+                                        <Image alt="" src={cp.colours && cp.colours[0] && cp.colours[0].images[getDetailImageSpec()].product_image_url} />
                                     </div>
                                     <div className="cp_info">
                                         <div className="cart_item_info">

@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, connect } from "react-redux";
@@ -9,7 +10,7 @@ import Navigator from "./Navigator";
 import GoogleSetup, { trackPageViewInGoogle } from "../../utilities/GoogleSetUp";
 
 const Users = ({
-  user
+  user,
 }) => {
   const dispatch = useDispatch();
   const history = useRouter();

@@ -48,7 +48,7 @@ const YourResources = () => {
     <>
       <div
         className="header_banner"
-        style={{ backgroundImage: `url(${process.env.REACT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
+        style={{ backgroundImage: `url(${process.env.NEXT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
       >
         <GoogleSetup
           title={"Your Merchandise Printing Resources"}
@@ -94,7 +94,7 @@ const YourResources = () => {
                     editor to upload your files - just remember, the higher the
                     resolution the better. A PNG file at 300dpi is the best
                     option but you can upload a JPG, GIF, AI, or PDF too. If
-                    you're uploading a vector file or PDF, make sure it’s in RGB
+                    you`&apos;`re uploading a vector file or PDF, make sure it’s in RGB
                     format. If you’re not sure, reach out. We’ve got you.
                   </p>
                   <p>

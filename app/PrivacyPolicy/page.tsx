@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
     <>
       <div
         className="header_banner"
-        style={{ backgroundImage: `url(${process.env.REACT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
+        style={{ backgroundImage: `url(${process.env.NEXT_APP_IMAGES_SRC_URL}/banner.jpg)` }}
       >
         <GoogleSetup 
         title={"Privacy Policy"} 
@@ -61,12 +61,12 @@ const PrivacyPolicy = () => {
                   <p>
                     <strong>Effective Date: May 1, 2007</strong>
                     <br /> My Merch values the users of our website
-                    www.mymerch.com.au (the "Website"). Your privacy and trust
+                    www.mymerch.com.au (the Website ). Your privacy and trust
                     are very important to us. We recognize that you may be
                     concerned about our collection, use, and disclosure of the
-                    personally identifiable information ("Personal Information")
+                    personally identifiable information (Personal Information)
                     that we collect when you use the Website and the services
-                    offered on the Website ("My Merch Services"). This Privacy
+                    offered on the Website (My Merch Services). This Privacy
                     Policy describes the information that we collect from you,
                     how we collect this information, and what we do with it
                     after we collect it. By using the website you are accepting
@@ -252,7 +252,7 @@ const PrivacyPolicy = () => {
                 <Panel header="Tell-A-Friend" key="10">
                   <p>
                     If you choose to use our referral service to tell a friend
-                    about the Website, we will ask you for your friend's name
+                    about the Website, we will ask you for your friends name
                     and email address. We will automatically send your friend a
                     one-time email inviting him or her to visit the Website. We
                     store this information for the sole purpose of sending this
@@ -299,8 +299,8 @@ const PrivacyPolicy = () => {
                     addition, we will delete any information in our database
                     that we know originates from a child under the age of 13.
                     Thirteen to Seventeen. Prospective users between the ages of
-                    13 and 17 can only use the Website under their parent's or
-                    legal guardian's supervision. If you are between the ages of
+                    13 and 17 can only use the Website under their parents or
+                    legal guardians supervision. If you are between the ages of
                     13 and 17, you, your parent, or your legal guardian may
                     request that we deactivate any of your Personal Information
                     in our database and/or opt-out from receiving communications

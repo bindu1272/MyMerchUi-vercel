@@ -16,7 +16,7 @@ const Page = async(props:any) =>{
   //   }
   // };
  
-  let currentProductsType = "custom-pack";
+  let currentProductsType = "curated-pack";
   let currentSearchString = "";
   let params = {
     type: currentProductsType,
@@ -43,7 +43,7 @@ const Page = async(props:any) =>{
       productsData = {enquiryProducts}
       categoriesData = {resCategories}
       currentProductCategoryIndexData={currentCategoryKey}
-      props ={props}
+      props={props}
     />
   )
 }

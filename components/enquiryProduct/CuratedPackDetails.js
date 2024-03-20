@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Form, Input } from "antd";
+import { Form, Input,Alert } from "antd";
 import ImageGallery from "react-image-gallery";
 import SizeGuide from "./SizeGuide";
 import { getDetailImageSpec } from "./EnquiryProductHelper";
@@ -17,11 +17,12 @@ const CuratedPackDetails = ({
     onClickViewSizeGuide,
     onOkSizeGuideModal,
     onCancelSizeGuideModal,
+    showError
 }) => {
     const galleryImages =
         currentProduct.colours &&
         currentProduct.colours.length > 0 &&
-        currentProduct.colours.map((c) => (
+        currentProduct.colours.map((c,index) => (
             {
                 original: c.images[getDetailImageSpec()].product_image_url,
                 thumbnail: c.images[getDetailImageSpec()].product_image_url,
@@ -87,8 +88,8 @@ const CuratedPackDetails = ({
                                 </div>
                                 <div className="item">
                                     <label>Print Area:</label>
-                                    {currentProduct.child_products.map(cp => {
-                                        return <p>{cp.name}</p>
+                                    {currentProduct.child_products.map((cp,index) => {
+                                        return <p key={index}>{cp.name}</p>
                                     })}
                                 </div>
                                 <div className="item">
@@ -103,7 +104,7 @@ const CuratedPackDetails = ({
                                             currentProduct.colours.length > 0 &&
                                             currentProduct.colours.map((c, index) => {
                                                 return (
-                                                    <span
+                                                    <span key={index}
                                                         className={
                                                             c.colour_hex == currentProductColour.colour_hex
                                                                 ? "selected"
@@ -137,17 +138,21 @@ const CuratedPackDetails = ({
                                             type="number"
                                             min={currentProduct.minimum_order_quantity}
                                             placeholder={currentProduct.minimum_order_quantity}
-                                            value={currentProductQuantity}
+                                            defaultValue={currentProduct.minimum_order_quantity || currentProductQuantity}
                                             onChange={(e) => {
                                                 onChangeCurrentProductQuantity(e)
                                             }}
                                             onBlur={(e) => {
                                                 onBlurCurrentProductQuantity(e)
                                             }}
+
                                         />
+                               
                                     </Form>
+
                                     <span>Units</span>
                                 </div>
+     
                             </div>
                             <div className="col-5 col-md-4 text-end text-sm-end mt-4 m-sm-0">
                                 <a
@@ -159,6 +164,13 @@ const CuratedPackDetails = ({
                                     Add to enquiry
                                 </a>
                             </div>
+                            {showError && (
+        <Alert style={{width:"250px",marginLeft:"44px",padding:"6px",border:"none",fontWeight:"600"}}
+          description="Quantity should be >= 50."
+          type="error"
+          showIcon
+        />
+      )}
                             <div className="col-7 col-md-12  mt-4 m-sm-0">
                                 <p className="info_message">
                                     ⓘ Minimum order quantity is{" "}

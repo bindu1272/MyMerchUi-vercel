@@ -1,136 +1,15 @@
-"use client";
-import React, { useState, useEffect } from "react";
-// import { useHistory, useLocation } from "react-router-dom";
-import { useRouter,usePathname } from "next/navigation";
-import { useDispatch, connect } from "react-redux";
-import { notification, Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import { store } from "@/utilities/configureStore";
-import * as TYPES from "@/constants/actionTypes";
-import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
-import Loader from "@/components/enquiryProduct/Loader";
-import ProductDetails from "@/components/enquiryProduct/ProductDetails";
-import OverwriteCartPopup from "@/components/enquiryProduct/OverwriteCartPopup";
-import { fetchEnquiryProductRequest } from "@/actions/enquiryProductActions";
-import {
-    getEnquiryProducts,
-    getEnquiryProductsType,
-    getEnquiryProductsQuantity,
-    getEnquiryProductsSearchString,
-} from "@/selectors/enquiryProductSelector";
-import { getCart } from "@/selectors/cartSelector";
-import Link from "next/link";
-import { RightOutlined } from "@ant-design/icons";
-const EnquiryProductsPage = ({
-    enquiryProducts,
-    enquiryProductsType,
-    enquiryProductsQuantity,
-    enquiryProductsSearchString,
-    cart,
-}:any) => {
-    const dispatch = useDispatch();
-    const history = useRouter();
-    const pathName :any= usePathname();
-    // useLocation();
-    const [loading, setLoading] = useState(true);
-    const [currentProduct, setCurrentProduct]:any = useState({});
-    const [currentProductColour, setCurrentProductColour] = useState({});
-    const [currentProductQuantity, setCurrentProductQuantity] = useState();
-    const [currentProductUnitPrice, setCurrentProductUnitPrice] = useState();
-    const [showProductSizeGuideModal, setShowProductSizeGuideModal] =
-        useState(false);
-    const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
+import { FETCH_ENQUIRY_PRODUCT_URL } from "@/constants/apiUrls";
+import React from "react";
+import EnquiryProductDetailsPage from "@/components/enquiryProduct/EnquiryProductDetailsPage"
 
-    const getCurrentProductsTypeUrl = () => {
-        if (enquiryProductsType == "curated-pack") {
-            return "/CuratedPacks";
-        } else if (enquiryProductsType == "custom-pack") {
-            return "/CustomPacks";
-        } else {
-            return "/AllMerch";
-        }
-    };
-
-    useEffect(() => {
-        trackPageViewInGoogle();
-    }, []);
-
-    useEffect(() => {
-        setLoading(true);
-        var urlSplits = pathName.split("/");
-        const currentProductSlug = urlSplits.length > 2 ? urlSplits[2] : "";
-        dispatch(
-            fetchEnquiryProductRequest(
-                {
-                    slug: currentProductSlug,
-                },
-                (response:any) => {
-                    const csp = cart.products.find((sp:any) => sp.slug == currentProductSlug);
-                    if (csp) {
-                        setCurrentProductColour(csp.colour);
-                        setCurrentProductQuantity(csp.quantity);
-                        setCurrentProductUnitPrice(csp.unitPrice);
-                        setCurrentProduct(csp.product);
-                    } else {
-                        setCurrentProductColour(
-                            response.colours.find((c:any) => c.is_lifestyle_image)
-                                ? response.colours.find((c:any) => c.is_lifestyle_image)
-                                : response.colours[0]
-                        );
-                        let qty = enquiryProductsType.toLowerCase() == "curated-pack"
-                            ? enquiryProductsQuantity.value
-                            : response.minimum_order_quantity;
-                        setCurrentProductQuantity(qty);
-                        setCurrentProductUnitPrice(calculateProductUnitPrice(qty, response.prices));
-                        setCurrentProduct(response);
-                    }
-                    setLoading(false);
-                },
-                (error:any) => {
-                    setLoading(false);
-                    notification.error({
-                        message: "Error occurred while fetching product.",
-                        placement: "bottomRight",
-                        // bottom: 400,
-                    });
-                }
-            )
-        );
-    }, [window.location.href]);
-
-    const onOkOverwriteCartPopup = () => {
-        store.dispatch({
-            type: TYPES.RESET_CART_ENQUIRY_PRODUCTS,
-            payload: {},
-        });
-        addProductToEnquiry();
-        setShowOverwriteCartPopup(false);
-        history.push(getCurrentProductsTypeUrl());
-    };
-
-    const onCancelOverwriteCartPopup = () => {
-        setCurrentProduct({});
-        setShowOverwriteCartPopup(false);
-    };
-
-    const onClickProductColour = (selectedColour:any) => {
-        setCurrentProductColour(selectedColour);
-    };
-
-    const onChangeCurrentProductQuantity = (e:any) => {
-        setCurrentProductQuantity(e.target.value);
-    };
-
-    const onBlurCurrentProductQuantity = (e:any, minimumOrderQuantity:any) => {
-        let qty =
-            e.target.value < minimumOrderQuantity
-                ? minimumOrderQuantity
-                : e.target.value;
-        setCurrentProductQuantity(qty);
-        setCurrentProductUnitPrice(
-            calculateProductUnitPrice(qty, currentProduct.prices)
-        );
-    };
+const Page = async (props:any)=>{
+    const url: any = FETCH_ENQUIRY_PRODUCT_URL.replace(":slug", props?.params?.id?.[0])
+    const response = await fetch(url,{
+        next: {revalidate: 1000}
+    })
+    const res:any = await response.json();
+    const data = res?.data;
+    let qty = data?.minimum_order_quantity;
 
     const calculateProductUnitPrice = (qty:any, prices:any) => {
         let unitPriceObject = prices
@@ -143,138 +22,15 @@ const EnquiryProductsPage = ({
         return unitPriceObject.pu;
     };
 
-    const onClickAddProductToEnquiry = () => {
-        if (
-            cart.productsType != enquiryProductsType &&
-            cart.products &&
-            cart.products.length > 0
-        ) {
-            setShowOverwriteCartPopup(true);
-        } else {
-            addProductToEnquiry();
-            history.push(getCurrentProductsTypeUrl());
-        }
-    };
-
-    const addProductToEnquiry = () => {
-        const actionPayload = {
-            id: currentProduct.id,
-            colour: currentProductColour,
-            quantity: currentProductQuantity,
-            unitPrice: currentProductUnitPrice,
-            product: currentProduct,
-        };
-        store.dispatch({
-            type: TYPES.SET_CART_ENQUIRY_PRODUCTS_TYPE,
-            payload: enquiryProductsType,
-        });
-        if (cart.products.find((sp:any) => sp.id == currentProduct.id)) {
-            store.dispatch({
-                type: TYPES.UPDATE_ENQUIRY_PRODUCT,
-                payload: actionPayload,
-            });
-        } else {
-            store.dispatch({
-                type: TYPES.ADD_ENQUIRY_PRODUCT,
-                payload: actionPayload,
-            });
-        }
-    };
-
-    const onClickViewSizeGuide = () => {
-        setShowProductSizeGuideModal(true);
-    };
-
-    const onOkProductSizeGuideModal = () => {
-        setShowProductSizeGuideModal(false);
-    };
-
-    const onCancelProductSizeGuideModal = () => {
-        setShowProductSizeGuideModal(false);
-    };
-
-    return loading ? (
-        <Loader />
-    ) : (
-        <>
-            <GoogleSetup
-                title={`${currentProduct.name}`}
-                description={""}
-            />
-            <div
-                className="bread_crumb shadow-none"
-                style={{
-                    border: 0,
-                    backgroundColor: "transparent",
-                    position: "relative",
-                    zIndex: 99,
-                }}
-            >
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12">
-                            <div className="bread_crumb_nav">
-                                <Link href="/">Home</Link>
-                                <span className="arrow">
-                                    <RightOutlined />
-                                </span>
-                                <Link href={`${getCurrentProductsTypeUrl()}`}>Merch</Link>
-                                <span className="arrow">
-                                    <RightOutlined />
-                                </span>
-                                <Link href={`${getCurrentProductsTypeUrl()}/${currentProduct.categories[0].key}`}>{currentProduct.categories[0].name}</Link>
-                                <span className="arrow">
-                                    <RightOutlined />
-                                </span>
-                                <label className="mb-0">{currentProduct.name}</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="packs_category_section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12 col-xl-12 position-relative">
-                            <div className="custom_packs_items_section">
-                                <ProductDetails
-                                    currentProduct={currentProduct}
-                                    currentProductColour={currentProductColour}
-                                    currentProductQuantity={currentProductQuantity}
-                                    currentProductUnitPrice={currentProductUnitPrice}
-                                    showProductSizeGuideModal={showProductSizeGuideModal}
-                                    onChangeCurrentProductQuantity={onChangeCurrentProductQuantity}
-                                    onBlurCurrentProductQuantity={onBlurCurrentProductQuantity}
-                                    onClickProductColour={onClickProductColour}
-                                    onClickAddProductToEnquiry={onClickAddProductToEnquiry}
-                                    onClickViewSizeGuide={onClickViewSizeGuide}
-                                    onOkSizeGuideModal={onOkProductSizeGuideModal}
-                                    onCancelSizeGuideModal={onCancelProductSizeGuideModal}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {showOverwriteCartPopup && (
-                <OverwriteCartPopup
-                    showOverwriteCartPopup={showOverwriteCartPopup}
-                    onOkOverwriteCartPopup={onOkOverwriteCartPopup}
-                    onCancelOverwriteCartPopup={onCancelOverwriteCartPopup}
-                />
-            )}
-        </>
-    );
-};
-
-function mapStateToProps(state:any) {
-    return {
-        enquiryProducts: getEnquiryProducts(state),
-        enquiryProductsType: getEnquiryProductsType(state),
-        enquiryProductsQuantity: getEnquiryProductsQuantity(state),
-        enquiryProductsSearchString: getEnquiryProductsSearchString(state),
-        cart: getCart(state),
-    };
+    return(
+        <EnquiryProductDetailsPage
+            currentProductData = {data}
+            currentProductQuantityData = {qty}
+            currentProductUnitPriceData={calculateProductUnitPrice(qty, data?.prices)}
+            currentProductColourData = {data.colours.find((c:any) => c.is_lifestyle_image)
+                ? data.colours.find((c:any) => c.is_lifestyle_image)
+                : data.colours[0]}
+        />
+    )
 }
-
-export default connect(mapStateToProps, {})(EnquiryProductsPage);
+export default Page;

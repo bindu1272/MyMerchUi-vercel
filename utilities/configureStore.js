@@ -18,7 +18,7 @@ import "regenerator-runtime/runtime";
 const logger = createLogger();
 
 
-export const api = configureAxios(process.env.GATSBY_API_URL);
+// export const api = configureAxios(process.env.GATSBY_API_URL);
 
 
 const sagaMiddleware = createSagaMiddleware();
