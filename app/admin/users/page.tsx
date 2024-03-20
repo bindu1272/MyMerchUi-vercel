@@ -1,164 +1,25 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { useDispatch, connect } from "react-redux";
-import { Spin, notification } from "antd";
-import { fetchUsersRequest } from "@/actions/userActions";
-import UsersTable from "@/components/Admin/UsersTable";
-import { getUser } from "@/selectors/authSelector";
-import Navigator from "@/components/Admin/Navigator";
-import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
+import Users from "@/components/Admin/Users";
+import { computePaginationURL } from "@/utilities/helpers";
+import { FETCH_USERS_URL } from "@/constants/apiUrls";
 
-const Users = ({
-  user
-}:any) => {
-  const dispatch = useDispatch();
-  const history = useRouter();
-  const [searchText, setSearchText] = useState("");
-  const [users, setUsers] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalUsersCount, setTotalUsersCount] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [usersPerPage, setUsersPerPage] = useState(10);
 
-  useEffect(() => {
-    // window.scrollTo(0, 0);
-    trackPageViewInGoogle();
-  }, [])
 
-  useEffect(() => {
-    if (!user || !user.roles.includes("Admin")) {
-      history.push("/");
-    }
-  }, []);
+const UsersPage = async() => {
+  
+  // const url: any = computePaginationURL(FETCH_USERS_URL, {
+  //   page: 1,
+  // });
+  // const response:any = await fetch(url, {
+  //   headers: {
+  //     'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5MzM1NWFiMS1mNTZlLTRlMjMtOGQ1Mi1hMzk0YWVjZTc3OWEiLCJqdGkiOiIyNDZkYzUyMDE0MDkxNzBlODQ3OGFhZjM2ODE0NjA4YzVmMWIyNjUzNjUyNzJiYzRlMGY2MTBlM2I1Zjg5ZDY0YTc2ZmY3Zjc4NDI4MWViYyIsImlhdCI6MTcwOTAzMDE0OSwibmJmIjoxNzA5MDMwMTQ5LCJleHAiOjE3MDkwMzM3NDksInN1YiI6IjI0NiIsInNjb3BlcyI6W119.GY_YzbkGKl24izJoMMhZ9Vb8OoM5iN5zFEa6FyLHWY5jncPG3uxM0MipefUUCfJfGRBBRKqujAaGIakSyh8vJx9ZLyvhwofQm7QIbFWqzxezKAA5uCQ4tSm_av42r2LXI90UJyONShyXlMaeRyZTipxqX0xxZ60w_6Ozsv_ovtC-pgUdxIw7lNZv464AnJZ8EqIcfDncmXeMJvdSKQu0jHml_q5uXD-uJlj26rvxHgAGOexvhnu0Zxe7NLLL4thxIPdqg5BFmhVSgDbCcnY_zA9q-J4SdtNUXzxGt8seqiWrZwRU5jN3NSJNLZDg09ntGUAT8bER683lIx7ONVo23tvwLtpTuBZ6vC38rsEFlTBT-9AeyQt73OsrywFKo53Du3yVmUQEK1KuSIw9ZuJDVkQGD3INoNKdV0ymbWgpzJP3HDsD8JcdU1_SzJWmudUsZcjayRYcPlVORUBLmqUqj-KeGrkl_7mqBxTZ1CjsLiJJ9KDSbxHBvOwjyyUq-UjvO0Fn21GxjFBXnNsMICGHpA1dPJ5avJsux1UFLVvAfK65UgjDqXPeBL_XeNnUwkUctmJcwNcfToCiCziJRjYYyTM79ERMfu1Oa1t-qhXEIOREEr4zcHnYwFgsvVuMXompJpOpEZITpLz21MqWupcQwpAStogQ5LXSc3UqG10__S0',
+  //     'Content-Type': 'application/json',
+  //   },
+  // });
+  
+  // const usersResponse:any= await response?.json();
 
-  useEffect(() => {
-    setLoading(true);
-    dispatch(
-      fetchUsersRequest(
-        {
-          page: 1,
-        },
-        (response:any) => {
-          setTotalUsersCount(response.total);
-          const users =
-            response.data &&
-            response.data.map((item:any,key:any) => {
-              item.key = item.id;
-            });
-          setUsers(response.data);
-          setLoading(false);
-        },
-        (error:any) => {
-          setLoading(false);
-          notification.error({
-            message: "Error occurred while fetching users",
-            placement: "bottomRight",
-            // bottom: 400,
-          });
-        }
-      )
-    );
-  }, []);
-
-  const handleSearch = () => {
-    setLoading(true);
-    dispatch(
-      fetchUsersRequest(
-        {
-          search_string: searchText,
-          size: usersPerPage
-        },
-        (response:any) => {
-          setCurrentPage(response.current_page);
-          setTotalUsersCount(response.total);
-          const users =
-            response.data &&
-            response.data.map((item:any,key:any) => {
-              item.key = item.id;
-            });
-          setUsers(response.data);
-          setLoading(false);
-        },
-        (error:any) => {
-          setLoading(false);
-          notification.error({
-            message: "Error occurred while searching users",
-            placement: "bottomRight",
-            // bottom: 400,
-          });
-        }
-      )
-    );
-  };
-
-  const handleTableChange = (page:any) => {
-    setCurrentPage(page.current);
-    setUsersPerPage(page.pageSize);
-    setLoading(true);
-    dispatch(
-      fetchUsersRequest(
-        {
-          search_string: searchText,
-          page: page.current,
-          size: page.pageSize
-        },
-        (response:any) => {
-          setTotalUsersCount(response.total);
-          const users =
-            response.data &&
-            response.data.map((item:any,key:any) => {
-              item.key = item.id;
-            });
-          setUsers(response.data);
-          setLoading(false);
-        },
-        (error:any) => {
-          setLoading(false);
-          notification.error({
-            message: "Error occurred while fetching users",
-            placement: "bottomRight",
-            // bottom: 400,
-          });
-        }
-      )
-    );
-  };
-
-  return (
-    <>
-      {loading ? (
-        <Spin />
-      ) : (
-        <>
-          <GoogleSetup
-            title={"Admin - Users"}
-            description={""}
-          />
-          <Navigator active={"users"} />
-          <UsersTable
-            users={users}
-            searchText={searchText}
-            setSearchText={setSearchText}
-            pagination={{
-              current: currentPage,
-              pageSize: usersPerPage,
-              total: totalUsersCount,
-              showSizeChanger: true
-            }}
-            handleSearch={handleSearch}
-            handleTableChange={handleTableChange}
-          />
-        </>
-      )}
-    </>
-  );
+  return (<Users/>);
 };
 
-function mapStateToProps(state:any) {
-  return {
-    user: getUser(state),
-  };
-}
 
-export default connect(mapStateToProps, {})(Users);
+export default UsersPage;

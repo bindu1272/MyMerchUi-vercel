@@ -46,9 +46,9 @@ const EnquiryProductDetailsPage = ({
 
     const getCurrentProductsType = () => {
         // var currentUrl = new URL(window.location.href);
-        if (pathname.toLowerCase().startsWith("/curated-packs")) {
+        if (pathname.toLowerCase().startsWith("/curatedpacks")) {
             return "curated-pack";
-        } else if (pathname.toLowerCase().startsWith("/custom-packs")) {
+        } else if (pathname.toLowerCase().startsWith("/custompacks")) {
             return "custom-pack";
         } else {
             return "all-merch";
@@ -57,11 +57,11 @@ const EnquiryProductDetailsPage = ({
 
     const getCurrentProductsTypeUrl = () => {
         if (enquiryProductsType == "curated-pack") {
-            return "/curated-packs";
+            return "/CuratedPacks";
         } else if (enquiryProductsType == "custom-pack") {
-            return "/custom-packs";
+            return "/CustomPacks";
         } else {
-            return "/all-merch";
+            return "/AllMerch";
         }
     };
 

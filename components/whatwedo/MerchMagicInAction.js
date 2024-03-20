@@ -50,7 +50,7 @@ const MerchMagicInAction = ({
                                 //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image330x330 && cs.image330x330.url}`}
                                 src={`${cs.image330x330 && cs.image330x330.url}`}
                                 onClick={() =>
-                                  history.push(`/case-study-details/${cs.slug}`)
+                                  history.push(`/caseStudyDetails/${cs.slug}`)
                                 }
                               />
                             );
@@ -70,7 +70,7 @@ const MerchMagicInAction = ({
                               //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image330x330 && cs.image330x330.url}`}
                               src={`${cs.image330x330 && cs.image330x330.url}`}
                               onClick={() =>
-                                history.push(`/case-study-details/${cs.slug}`)
+                                history.push(`/caseStudyDetails/${cs.slug}`)
                               }
                             />
                           </div>
@@ -92,7 +92,7 @@ const MerchMagicInAction = ({
                                   //src={`${process.env.REACT_APP_STRAPI_API_URL}${cs.image330x330 && cs.image330x330.url}`}
                                   src={`${cs.image330x330 && cs.image330x330.url}`}
                                   onClick={() =>
-                                    history.push(`/case-study-details/${cs.slug}`)
+                                    history.push(`/caseStudyDetails/${cs.slug}`)
                                   }
                                 />
                               </div>
@@ -108,7 +108,7 @@ const MerchMagicInAction = ({
         </div>
         <div className="col-sm-12 text-center  p-0">
           <a
-            href="/why-merch"
+            href="/WhyMerch"
             className="btn_blue"
             style={{ fontSize: 14, whiteSpace: "nowrap" }}
           >

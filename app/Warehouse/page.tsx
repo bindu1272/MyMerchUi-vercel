@@ -251,7 +251,7 @@ const Warehouse = ({ headerBanners, footerBanners }:any) => {
           <div className="row ">
             <div className="col-sm-12 text-center mt-4 p-0">
               <a
-                href="/get-a-quote"
+                href="/GetAQuote"
                 className="btn_blue mt-0"
                 style={{ fontSize: 14, whiteSpace: "nowrap" }}
               >

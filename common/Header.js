@@ -71,13 +71,13 @@ const Header = ({
 
   const handleSearch = () => {
     const searchUrl = searchText
-      ? `/all-merch?searchString=${searchText}`
-      : `/all-merch`;
+      ? `/AllMerch?searchString=${searchText}`
+      : `/AllMerch`;
     router.push(searchUrl);
   };
 
   const onClickCart = () => {
-    router.push("/submit-enquiry");
+    router.push("/SubmitEnquiry");
   }
 
   return (

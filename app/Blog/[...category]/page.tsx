@@ -104,7 +104,7 @@ const BlogsPage = ({ headerBanners,params }:any) => {
   };
 
   const handleBlogCategoryChange = (value:any) => {
-    history.push(`/blog/${value}`);
+    history.push(`/Blog/${value}`);
   };
 
   return loading ? (

@@ -257,7 +257,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           right gear with your brand. Helping you create merch
                           that people get excited about.
                         </p>
-                        <a href="/production" className="btn_white">
+                        <a href="/Production" className="btn_white">
                           Learn more
                         </a>
                       </div>
@@ -277,7 +277,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           exclusive shipping rates, so you save on delivery. How
                           good’s that?
                         </p>
-                        <a href="/warehouse" className="btn_white">
+                        <a href="/Warehouse" className="btn_white">
                           Let`&apos;`s talk logistics
                         </a>
                       </div>
@@ -295,7 +295,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           at your fingertips with the MyMerch portal. Just don’t
                           let all that power go to your head.
                         </p>
-                        <a href="/custom-portal" className="btn_white">
+                        <a href="/CustomPortal" className="btn_white">
                           Tell me more
                         </a>
                       </div>
@@ -313,7 +313,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           curating the perfect items, beautifully packaged and
                           delivered direct.
                         </p>
-                        <a href="/custom-packs" className="btn_white">
+                        <a href="/CustomPacks" className="btn_white">
                           Start creating
                         </a>
                       </div>
@@ -331,7 +331,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           carefully considered and packaged beautifully to suit
                           any occasion.
                         </p>
-                        <a href="/all-merch" className="btn_white">
+                        <a href="/AllMerch" className="btn_white">
                           Find your pack
                         </a>
                       </div>
@@ -348,7 +348,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
                           update our curated range to reflect the latest trends
                           and carefully select, try and test every item.
                         </p>
-                        <a href="/all-merch" className="btn_white">
+                        <a href="/AllMerch" className="btn_white">
                           Check out our gear
                         </a>
                       </div>
@@ -379,7 +379,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
               </div>
             </div>
             <div className="col-sm-12 text-center">
-              <a href="/what-we-do" className="btn_blue">
+              <a href="/WhatWeDo" className="btn_blue">
                 Learn more
               </a>
             </div>
@@ -423,7 +423,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
           </div>
           <div className="row">
             <div className="col-sm-12 text-center">
-              <a href="/why-merch" className="btn_blue mt-5">
+              <a href="/WhyMerch" className="btn_blue mt-5">
                 Learn why merch works
               </a>
             </div>

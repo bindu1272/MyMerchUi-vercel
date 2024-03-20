@@ -25,7 +25,7 @@ import * as TYPES from "@/constants/actionTypes";
 const menu = (onLogout) => (
   <Menu className="avatar_menu">
     <Menu.Item>
-      <Link href="/account-settings"
+      <Link href="/accountsettings"
         style={{ textDecoration: "none",fontFamily:"Neutra Text" }}
       >
         Account Settings
@@ -93,7 +93,7 @@ const WebHeader = ({
                   <PhoneOutlined className="mr-3" /><strong> 1800 959 308</strong>
                 </Link>
                 <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}></span>
-                <Link className="call-link" style={{ color: "white" }} href="/get-a-quote">
+                <Link className="call-link" style={{ color: "white" }} href="/GetAQuote">
                   Get a Quote
                 </Link>
                 {/* <span style={{ color: "white", marginLeft: 15, marginRight: 15 }}>|</span>

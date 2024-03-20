@@ -250,7 +250,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
               </div>
             </div>
             <div className="col-sm-12 text-center">
-              <a href="/all-merch" className="btn_blue">
+              <a href="/AllMerch" className="btn_blue">
                 Check out our range of sustainable merch
               </a>
             </div>
@@ -432,7 +432,7 @@ const Sustainability = ({ headerBanners, footerBanners }:any) => {
                   className="border-left title-left"
                 />
                 <a
-                  href="/all-merch"
+                  href="/AllMerch"
                   className="footer_btn_blue mt-0 d-flex ms-0"
                 >
                   {footerBanners[0].linkButtonLabel}

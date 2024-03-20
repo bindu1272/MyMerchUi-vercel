@@ -18,7 +18,7 @@ const CaseStudy = ({
                         <h3>{caseStudy.clientDescription}</h3>
                         <a
                             className="btn_white"
-                            href={`/case-study-details/${caseStudy.slug}`}
+                            href={`/caseStudyDetails/${caseStudy.slug}`}
                         >
                             Read More
                         </a>

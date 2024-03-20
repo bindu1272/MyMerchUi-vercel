@@ -63,7 +63,7 @@ const MobileHeader = ({
                 </Link>
               </div>
               <div className="d-flex align-items-center justify-content-end">
-                <a href="/get-a-quote" className="mail-link">
+                <a href="/GetAQuote" className="mail-link">
                   <MailOutlined />
                 </a>
                 <a href="callto:1800959308" className="call-link">
@@ -85,7 +85,7 @@ const MobileHeader = ({
                   <SearchOutlined />
                 </div>
                 <div className="avatar-block">
-                  <Link href="/submit-enquiry" className="cart-items">
+                  <Link href="/SubmitEnquiry" className="cart-items">
                     <span className="d-flex align-items-center">
                       <ShoppingCartOutlined />
                       <span className="cart-count">

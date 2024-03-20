@@ -89,9 +89,9 @@ const EnquiryProductsPage = ({
   const [showOverwriteCartPopup, setShowOverwriteCartPopup] = useState(false);
 
   const getCurrentProductsType = () => {
-    if (pathname.toLowerCase().startsWith("/curated-packs")) {
+    if (pathname.toLowerCase().startsWith("/curatedpacks")) {
       return "curated-pack";
-    } else if (pathname.toLowerCase().startsWith("/custom-packs")) {
+    } else if (pathname.toLowerCase().startsWith("/custompacks")) {
       return "custom-pack";
     } else {
       return "all-merch";
@@ -101,11 +101,11 @@ const EnquiryProductsPage = ({
 
   const getCurrentProductsTypeUrl = () => {
     if (enquiryProductsType == "curated-pack") {
-      return "/curated-packs";
+      return "/CuratedPacks";
     } else if (enquiryProductsType == "custom-pack") {
-      return "/custom-packs";
+      return "/CustomPacks";
     } else {
-      return "/all-merch";
+      return "/AllMerch";
     }
   };
 
@@ -403,7 +403,7 @@ const EnquiryProductsPage = ({
   };
 
   const onClickProductSeeMore = (slug:any) => {
-    history.push(`/enquiry-product/${slug}`);
+    history.push(`/EnquiryProduct/${slug}`);
   };
 
   const calculateProductUnitPrice = (qty:any, prices:any) => {
@@ -441,7 +441,7 @@ const EnquiryProductsPage = ({
 
   const onClickViewCart = () => {
     if (cart.products.length > 0) {
-      history.push("/submit-enquiry");
+      history.push("/SubmitEnquiry");
     }
   };
   
