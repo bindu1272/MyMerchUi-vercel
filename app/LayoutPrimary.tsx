@@ -21,9 +21,8 @@ export default function LayoutPrimary({
     // }, [])
     return (
       <ReduxProvider>
-        <h1>hai</h1>
-        {/* <Header/>
-        {children} */}
+        <Header/>
+        {/* {children} */}
       </ReduxProvider>
     )
     }
