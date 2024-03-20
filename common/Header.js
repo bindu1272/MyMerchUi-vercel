@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-// import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { logoutRequest } from "@/actions/authActions";
 import {
   getUserId,
@@ -18,11 +18,11 @@ import { useSearchParams } from "next/navigation";
 import { getEnquiryProductsSearchString } from "@/selectors/enquiryProductSelector";
 
 const Header = ({
-  // cart,
-  // userId,
-  // userName,
-  // userRoles,
-  // searchTextCache
+  cart,
+  userId,
+  userName,
+  userRoles,
+  searchTextCache
 }) => {
   // const params = useSearchParams();
   // const dispatch = useDispatch();
@@ -131,14 +131,14 @@ const Header = ({
   );
 };
 
-// function mapStateToProps(state) {
-//   return {
-//     cart: getCart(state),
-//     userId: getUserId(state),
-//     userName: getUserName(state),
-//     userRoles: getUserRoles(state),
-//     searchTextCache: getEnquiryProductsSearchString(state)
-//   };
-// }
-// export default connect(mapStateToProps, {})(Header);
-export default Header;
+function mapStateToProps(state) {
+  return {
+    cart: getCart(state),
+    userId: getUserId(state),
+    userName: getUserName(state),
+    userRoles: getUserRoles(state),
+    searchTextCache: getEnquiryProductsSearchString(state)
+  };
+}
+export default connect(mapStateToProps, {})(Header);
+// export default Header;
