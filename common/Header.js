@@ -8,11 +8,11 @@ import {
   getUserName,
   getUserRoles,
 } from "@/selectors/authSelector";
-// import { getQueryParams } from "@/utilities/helpers";
-// import MobileHeader from "@/components/MobileHeader";
-// import WebHeader from "@/components/WebHeader";
-// import MessageBox from "./MessageBox";
-// import { HEADER_NAV_ITEMS } from "@/constants/appConstants";
+import { getQueryParams } from "@/utilities/helpers";
+import MobileHeader from "@/components/MobileHeader";
+import WebHeader from "@/components/WebHeader";
+import MessageBox from "./MessageBox";
+import { HEADER_NAV_ITEMS } from "@/constants/appConstants";
 import { getCart } from "@/selectors/cartSelector";
 import { useSearchParams } from "next/navigation";
 import { getEnquiryProductsSearchString } from "@/selectors/enquiryProductSelector";
@@ -24,17 +24,17 @@ const Header = ({
   userRoles,
   searchTextCache
 }) => {
-  // const params = useSearchParams();
-  // const dispatch = useDispatch();
-  // const router = useRouter();
-  // const [showSignUp, setShowSignUp] = useState(false);
-  // const [showLogin, setShowLogin] = useState(false);
-  // const [toggleSidebar, setToggleSidebar] = useState(false);
-  // const [searchText, setSearchText] = useState(searchTextCache);
-  // const [showBulkOrder, setShowBulkOrder] = useState(false);
-  // const [redirect, setRedirect] = useState();
-  // const [showMobileSearch, setShowMobileSearch] = useState(false);
-  // const navigationOptions = [...HEADER_NAV_ITEMS];
+  const params = useSearchParams();
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [searchText, setSearchText] = useState(searchTextCache);
+  const [showBulkOrder, setShowBulkOrder] = useState(false);
+  const [redirect, setRedirect] = useState();
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const navigationOptions = [...HEADER_NAV_ITEMS];
   // useEffect(() => {
   //   if (!userId) {
   //     const queryParams = getQueryParams(window.location.href);
