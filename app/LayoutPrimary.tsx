@@ -1,7 +1,7 @@
 "use client";
 import ReduxProvider from "./provider";
 import Header from "@/common/Header";
-import React, { useEffect } from "react";
+import React from "react";
 // import TagManager from 'react-gtm-module';
 // import { initGA } from '../utilities/GoogleSetUp';
 
