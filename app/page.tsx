@@ -114,10 +114,10 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
         </div>
       </div>
       <section className="banner-section home_slider">
-        <GoogleSetup
+        {/* <GoogleSetup
           title={"Australia's Leading Promotional Products & Branded Merchandise Supplier"}
           description={"MyMerch is the trusted supplier of promotional products and branded merchandise for brands throughout Australia. Design & order your custom merch today."}
-        />
+        /> */}
 
 <Slider {...headerBannerSliderSettings}>
           {headerBanners &&
