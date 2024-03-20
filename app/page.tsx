@@ -11,7 +11,7 @@ import {
   getHeaderBanners,
   getFooterBanners,
 } from "@/selectors/bannerSelector";
-import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
+// import GoogleSetup, { trackPageViewInGoogle } from "@/utilities/GoogleSetUp";
 import { fetchBrandsRequest } from "@/actions/strapiActions";
 import Image from "next/image";
 import {
@@ -47,9 +47,9 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
   const dispatch = useDispatch();
   const [brandsImages, setBrandsImages] = useState([]);
 
-  useEffect(() => {
-    trackPageViewInGoogle();
-  }, []);
+  // useEffect(() => {
+  //   trackPageViewInGoogle();
+  // }, []);
 
   useEffect(() => {
     dispatch(
