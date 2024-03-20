@@ -24,17 +24,17 @@ const Header = ({
   userRoles,
   searchTextCache
 }) => {
-  const params = useSearchParams();
-  const dispatch = useDispatch();
-  const router = useRouter();
+  // const params = useSearchParams();
+  // const dispatch = useDispatch();
+  // const router = useRouter();
   const [showSignUp, setShowSignUp] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
-  const [toggleSidebar, setToggleSidebar] = useState(false);
-  const [searchText, setSearchText] = useState(searchTextCache);
-  const [showBulkOrder, setShowBulkOrder] = useState(false);
-  const [redirect, setRedirect] = useState();
-  const [showMobileSearch, setShowMobileSearch] = useState(false);
-  const navigationOptions = [...HEADER_NAV_ITEMS];
+  // const [showLogin, setShowLogin] = useState(false);
+  // const [toggleSidebar, setToggleSidebar] = useState(false);
+  // const [searchText, setSearchText] = useState(searchTextCache);
+  // const [showBulkOrder, setShowBulkOrder] = useState(false);
+  // const [redirect, setRedirect] = useState();
+  // const [showMobileSearch, setShowMobileSearch] = useState(false);
+  // const navigationOptions = [...HEADER_NAV_ITEMS];
   // useEffect(() => {
   //   if (!userId) {
   //     const queryParams = getQueryParams(window.location.href);
