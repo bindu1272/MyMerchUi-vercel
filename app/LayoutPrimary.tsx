@@ -20,9 +20,10 @@ export default function LayoutPrimary({
     //   });
     // }, [])
     return (
-      <ReduxProvider>
-        <Header/>
-        {children}
-      </ReduxProvider>
+      <h1>hai</h1>
+      // <ReduxProvider>
+      //   <Header/>
+      //   {children}
+      // </ReduxProvider>
     )
     }
