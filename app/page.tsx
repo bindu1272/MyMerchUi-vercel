@@ -232,6 +232,7 @@ const HomePage = ({ headerBanners, footerBanners }:any) => {
             <div className="col-sm-12">
               <MerchTitle title="Your go-to merch crew" className="no-border" />
               <p className="merch_description col-sm-12 col-lg-8">
+                <h1>hello world</h1>
                 At MyMerch, we’re ready to make your merch dreams happen. Our
                 specialist designers and in-house production crew help you
                 create magical moments for your people. And to save you space
